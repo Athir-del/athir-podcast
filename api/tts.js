@@ -1,10 +1,19 @@
+const VOICES = {
+  'male-arabic': 'pNInz6obpgDQGcFmaJgB',
+  'female-arabic': 'EXAVITQu4vr4xnSDxMaL',
+  'youth-energetic': 'VR6AewLTigWG4xSOukaG',
+  'professional': 'ErXwobaYiN019PkySvjV'
+};
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
-  const { text } = req.body;
+  const { text, voice } = req.body;
   if (!text) return res.status(400).json({ error: 'النص مطلوب' });
 
+  const voiceId = VOICES[voice] || VOICES['male-arabic'];
+
   try {
-    const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/pNInz6obpgDQGcFmaJgB', {
+    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
       method: 'POST',
       headers: {
         'xi-api-key': process.env.ELEVENLABS_API_KEY,

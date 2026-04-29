@@ -134,7 +134,7 @@ textarea::placeholder{color:#334}
 <div class="option-card" onclick="selectOpt(this,'تحفيزي')"><div class="option-icon">🔥</div><div class="option-name">تحفيزي</div><div class="option-label">نجاح وتطوير الذات</div></div>
 <div class="option-card" onclick="selectOpt(this,'إخباري')"><div class="option-icon">📰</div><div class="option-name">إخباري</div><div class="option-label">أخبار وتحليلات</div></div>
 </div>
-<div class="btn-row">
+<div style="margin-bottom:15px"><div class="input-label"><span>🎙️ اختر الصوت</span></div><div class="options"><div class="option-card selected" onclick="selectVoice(this,'male-arabic')"><div class="option-icon">👨</div><div class="option-name">رجل عربي</div></div><div class="option-card" onclick="selectVoice(this,'female-arabic')"><div class="option-icon">👩</div><div class="option-name">امرأة عربية</div></div><div class="option-card" onclick="selectVoice(this,'youth-energetic')"><div class="option-icon">🔥</div><div class="option-name">شباب حماسي</div></div><div class="option-card" onclick="selectVoice(this,'professional')"><div class="option-icon">🎩</div><div class="option-name">رسمي احترافي</div></div></div></div><div class="btn-row">
 <button class="btn-generate" onclick="generate()" id="genBtn">⚡ توليد السكريبت</button>
 <button class="btn-clear" onclick="clearAll()">🗑️</button>
 </div>
@@ -186,7 +186,7 @@ btn.disabled=true;
 document.getElementById('loading').style.display='block';
 document.getElementById('loadText').textContent='🎙️ ElevenLabs يولّد الصوت...';
 try{
-const res=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.substring(0,500)})});
+const res=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.substring(0,500),voice:selectedVoice})});
 if(!res.ok){const err=await res.json();throw new Error(err.error);}
 const blob=await res.blob();
 const url=URL.createObjectURL(blob);
