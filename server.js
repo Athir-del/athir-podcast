@@ -2,9 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
+const Groq = require('groq-sdk');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 app.use(cors());
 app.use(express.json());
@@ -16,8 +18,28 @@ app.get('/health', (req, res) => {
 
 app.post('/api/generate', async (req, res) => {
   const { script } = req.body;
-  if (!script) return res.status(400).json({ error: 'Script is required' });
-  res.json({ message: 'تم استلام السكريبت بنجاح!', script });
+  if (!script) return res.status(400).json({ error: 'السكريبت مطلوب' });
+
+  try {
+    const completion = await groq.chat.completions.create({
+      messages: [
+        {
+          role: 'system',
+          content: 'أنت محرر بودكاست محترف. حسّن السكريبت المقدم وأضف له إيقاعاً احترافياً باللغة العربية.'
+        },
+        {
+          role: 'user',
+          content: script
+        }
+      ],
+      model: 'llama3-8b-8192',
+    });
+
+    const improved = completion.choices[0].message.content;
+    res.json({ message: 'تم التوليد بنجاح!', result: improved });
+  } catch (err) {
+    res.status(500).json({ error: 'خطأ في التوليد: ' + err.message });
+  }
 });
 
 app.listen(port, () => {
