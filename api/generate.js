@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         { role: 'system', content: 'أنت محرر بودكاست محترف. حسّن السكريبت باللغة العربية.' },
         { role: 'user', content: script }
       ],
-      model: 'llama3-8b-8192',
+      model: 'llama-3.3-70b-versatile',
     });
 
     res.json({ message: 'تم التوليد!', result: completion.choices[0].message.content });
