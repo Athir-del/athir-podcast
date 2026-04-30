@@ -174,7 +174,7 @@ h1{font-size:2.3rem}
     <div class="nav-link" onclick="document.getElementById('tools').scrollIntoView()">الأدوات</div>
     <div class="nav-link" onclick="document.getElementById('img-sec').scrollIntoView()">الصور</div>
   </div>
-  <button class="nav-btn" id="authBtn" onclick="handleAuth()">👤 تسجيل الدخول</button>
+  <span id="usageCounter" style="color:#4488ff;font-size:.85rem;padding:8px 15px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);border-radius:10px">🎯 متبقي: 3/3</span> <button class="nav-btn" id="authBtn" onclick="handleAuth()">👤 تسجيل الدخول</button>
 </nav>
 
 <!-- HERO -->
@@ -367,7 +367,7 @@ function selImgStyle(el,v){document.querySelectorAll('.img-style').forEach(e=>e.
 // Generate Script
 async function generate(){
   const script=document.getElementById('script').value;
-  if(!script.trim())return alert('اكتب الموضوع أولاً!');
+  if(!checkLimit())return; if(!script.trim())return alert('اكتب الموضوع أولاً!');
   document.getElementById('genBtn').disabled=true;
   document.getElementById('loader').style.display='block';
   document.getElementById('loaderText').textContent='الذكاء الاصطناعي يكتب سكريبتك...';
@@ -375,7 +375,7 @@ async function generate(){
   try{
     const res=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:script+' (الأسلوب: '+selStyleVal+')'})});
     const data=await res.json();
-    document.getElementById('resultText').textContent=data.result||data.error;
+    document.getElementById("resultText").textContent=data.result||data.error; incrementUsage();
     document.getElementById('result').style.display='block';
     document.getElementById('audioPlayer').style.display='none';
   }catch(e){alert('خطأ في الاتصال!');}
@@ -443,5 +443,5 @@ const user=window.fbAuth?.currentUser;
 if(user){window.fbSignOut();document.getElementById("authBtn").textContent="👤 تسجيل الدخول";}else{window.fbSignIn().then(()=>{document.getElementById("authBtn").textContent="✅ "+window.fbAuth.currentUser.displayName;});}
 }
 </script>
-</body>
+<div id="upgradeModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9999;align-items:center;justify-content:center"><div style="background:#0a0f2a;border:1px solid rgba(41,121,255,.3);border-radius:24px;padding:40px;text-align:center;max-width:400px;margin:20px"><div style="font-size:3rem;margin-bottom:15px">🚀</div><h3 style="font-size:1.4rem;margin-bottom:10px">انتهت توليداتك اليوم!</h3><p style="color:#667;margin-bottom:25px">لقد استخدمت 3/3 توليدات مجانية اليوم. عد غداً أو اشترك للحصول على توليدات غير محدودة!</p><button onclick="document.getElementById('upgradeModal').style.display='none'" style="padding:12px 30px;background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.1);border-radius:12px;cursor:pointer;font-family:Tajawal,sans-serif;margin-left:10px">لاحقاً</button></div></div><script src="/limit.js"></script></body>
 </html>
