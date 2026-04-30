@@ -174,7 +174,7 @@ h1{font-size:2.3rem}
     <div class="nav-link" onclick="document.getElementById('tools').scrollIntoView()">الأدوات</div>
     <div class="nav-link" onclick="document.getElementById('img-sec').scrollIntoView()">الصور</div>
   </div>
-  <button class="nav-btn">✨ مجاني</button>
+  <button class="nav-btn" id="authBtn" onclick="handleAuth()">👤 تسجيل الدخول</button>
 </nav>
 
 <!-- HERO -->
@@ -435,6 +435,13 @@ function downloadResult(){const a=document.createElement('a');a.href='data:text/
 (adsbygoogle=window.adsbygoogle||[]).push({});
 (adsbygoogle=window.adsbygoogle||[]).push({});
 (adsbygoogle=window.adsbygoogle||[]).push({});
+</script>
+<script type="module" src="/firebase-config.js"></script>
+<script>
+function handleAuth(){
+const user=window.fbAuth?.currentUser;
+if(user){window.fbSignOut();document.getElementById("authBtn").textContent="👤 تسجيل الدخول";}else{window.fbSignIn().then(()=>{document.getElementById("authBtn").textContent="✅ "+window.fbAuth.currentUser.displayName;});}
+}
 </script>
 </body>
 </html>
