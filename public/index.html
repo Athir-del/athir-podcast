@@ -324,6 +324,22 @@ h1{font-size:2.3rem}
   </div>
 </div>
 
+<!-- VIDEO -->
+<div class="img-section" style="--tool-color:#ff4081">
+<h3>🎬 مولّد الفيديو بالذكاء الاصطناعي</h3>
+<p style="color:#556;font-size:.85rem;margin-bottom:20px">اكتب وصفاً وسيولد الذكاء الاصطناعي فيديو احترافي في دقائق</p>
+<div class="img-input-row">
+<input class="img-input" id="videoPrompt" placeholder="مثال: استوديو بودكاست احترافي مع مقدم يتحدث...">
+<button class="btn-img" style="background:linear-gradient(135deg,#ff4081,#c2185b)" onclick="generateVideo()" id="videoBtn">🎬 توليد</button>
+</div>
+<div id="videoLoader" style="display:none;text-align:center;padding:20px;color:#ff4081">⏳ جاري توليد الفيديو... قد يستغرق دقيقتين</div>
+<div id="videoResult" style="display:none;margin-top:15px">
+<video id="generatedVideo" controls style="width:100%;border-radius:14px"></video>
+<div class="img-actions" style="margin-top:10px">
+<button class="r-btn green" onclick="downloadVideo()">💾 تحميل الفيديو</button>
+</div>
+</div>
+</div>
 <!-- MUSIC -->
 <div class="music-section">
   <h3>🎵 موسيقى خلفية مجانية</h3>
@@ -426,6 +442,41 @@ const tracks={calm:'https://assets.mixkit.co/music/preview/mixkit-dreaming-big-3
 function playMusic(type){if(currentAudio){currentAudio.pause();}currentAudio=new Audio(tracks[type]);currentAudio.loop=true;currentAudio.volume=0.25;currentAudio.play();}
 function stopMusic(){if(currentAudio){currentAudio.pause();currentAudio=null;}}
 
+// Video
+async function generateVideo(){
+const prompt=document.getElementById("videoPrompt").value;
+if(!prompt.trim())return alert("اكتب وصف الفيديو!");
+const btn=document.getElementById("videoBtn");
+btn.disabled=true;
+document.getElementById("videoLoader").style.display="block";
+document.getElementById("videoResult").style.display="none";
+try{
+const res=await fetch("/api/video",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({prompt})});
+const data=await res.json();
+if(data.error)throw new Error(data.error);
+const id=data.id;
+const check=setInterval(async()=>{
+const s=await fetch("/api/video-status?id="+id);
+const sd=await s.json();
+if(sd.status==="succeeded"){
+clearInterval(check);
+document.getElementById("generatedVideo").src=sd.output;
+document.getElementById("videoResult").style.display="block";
+document.getElementById("videoLoader").style.display="none";
+btn.disabled=false;
+}else if(sd.status==="failed"){
+clearInterval(check);
+alert("فشل التوليد!");
+document.getElementById("videoLoader").style.display="none";
+btn.disabled=false;
+}
+},5000);
+}catch(e){alert("خطأ: "+e.message);document.getElementById("videoLoader").style.display="none";btn.disabled=false;}
+}
+function downloadVideo(){
+const v=document.getElementById("generatedVideo");
+const a=document.createElement("a");a.href=v.src;a.download="athir-video.mp4";a.click();
+}
 // Utils
 function clearAll(){document.getElementById('script').value='';document.getElementById('cc').textContent='0/500';document.getElementById('result').style.display='none';}
 function copyResult(){navigator.clipboard.writeText(document.getElementById('resultText').textContent);alert('تم النسخ!');}
