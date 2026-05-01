@@ -2,186 +2,164 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>أثير AI — منصة الذكاء الاصطناعي العربية</title>
 <meta name="google-adsense-account" content="ca-pub-7535354659763641">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535354659763641" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KKGTFH3P');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--blue:#2979ff;--cyan:#00e5ff;--purple:#7c4dff;--green:#00e676;--red:#ff4081;--bg:#03040f;--border:rgba(255,255,255,.07)}
-body{font-family:"Tajawal",sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden;direction:rtl;text-align:right}
-.bg-img{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80' center/cover fixed') center/cover;opacity:.08}
-.bg-ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(135deg,rgba(3,4,15,.98),rgba(5,10,30,.96))}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden;direction:rtl}
+.bg-img{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.1;background-size:cover;background-position:center;transition:background-image 1s ease}
+.bg-ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(135deg,rgba(3,4,15,.97),rgba(5,10,30,.95))}
 .grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background-image:linear-gradient(rgba(41,121,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(41,121,255,.03) 1px,transparent 1px);background-size:60px 60px}
-.wing{position:fixed;left:-80px;top:50%;transform:translateY(-50%);z-index:0;opacity:.04;pointer-events:none}
-.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:15px;direction:rtl}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:12px}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;margin-bottom:40px;backdrop-filter:blur(20px)}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.logo-text{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-right{display:flex;align-items:center;gap:10px}
-.counter{padding:7px 14px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:var(--blue);border-radius:10px;font-size:.82rem}
-.nav-btn{padding:9px 18px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;margin-bottom:20px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:var(--blue);border-radius:8px;font-size:.78rem;white-space:nowrap}
+.nav-btn{padding:7px 14px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;white-space:nowrap}
 
 /* HERO */
-.hero{text-align:center;padding:40px 20px 50px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);color:var(--cyan);border-radius:30px;font-size:.82rem;margin-bottom:22px}
-.dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;animation:blink 2s infinite}
+.hero{text-align:center;padding:25px 15px 35px}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);color:var(--cyan);border-radius:30px;font-size:.78rem;margin-bottom:15px}
+.dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-size:3.2rem;font-weight:900;line-height:1.2;margin-bottom:15px}
+h1{font-size:2.2rem;font-weight:900;line-height:1.2;margin-bottom:12px}
 .grad{background:linear-gradient(135deg,var(--blue),var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:#556;font-size:1rem;max-width:500px;margin:0 auto 30px;line-height:1.7}
-.trial-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:var(--green);border-radius:30px;font-size:.9rem;font-weight:700;margin-bottom:30px}
-.stats{display:flex;justify-content:center;gap:40px}
-.stat-num{font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat-label{color:#445;font-size:.8rem}
+.hero-sub{color:#556;font-size:.9rem;max-width:400px;margin:0 auto 15px;line-height:1.6}
+.trial-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:var(--green);border-radius:30px;font-size:.82rem;font-weight:700;margin-bottom:20px}
+.stats{display:flex;justify-content:center;gap:25px;margin-top:5px}
+.stat{text-align:center}
+.stat-num{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{color:#445;font-size:.75rem}
+
+/* YT */
+.yt-banner{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.15);border-radius:12px;margin-bottom:15px;gap:10px}
+.yt-text{color:#ff4444;font-size:.82rem;font-weight:700}
+.yt-btn{padding:7px 14px;background:#ff0000;color:#fff;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700;white-space:nowrap}
 
 /* TOOLS NAV */
-.tools-nav{display:flex;gap:8px;margin-bottom:25px;overflow-x:auto;padding-bottom:5px}
-.tool-tab{padding:10px 20px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;cursor:pointer;font-size:.88rem;color:#667;transition:.3s;white-space:nowrap;font-family:'Tajawal',sans-serif}
-.tool-tab:hover{background:rgba(255,255,255,.06);color:#fff}
+.tools-nav{display:flex;gap:6px;margin-bottom:15px;overflow-x:auto;padding-bottom:3px}
+.tools-nav::-webkit-scrollbar{display:none}
+.tool-tab{padding:9px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:.82rem;color:#667;transition:.3s;white-space:nowrap;font-family:'Tajawal',sans-serif;flex-shrink:0}
 .tool-tab.active{background:rgba(41,121,255,.15);border-color:rgba(41,121,255,.3);color:var(--blue)}
 
 /* PANELS */
 .panel{display:none}
 .panel.active{display:block}
-.card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:22px;overflow:hidden;margin-bottom:25px}
-.card-head{padding:20px 25px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
-.live{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green)}
-.card-title{font-weight:700}
-.card-body{padding:25px}
-.lbl{color:#556;font-size:.83rem;margin-bottom:8px}
-textarea,input[type=text]{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:14px;border-radius:12px;font-size:.95rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none;transition:.3s}
-textarea{height:150px;resize:none;line-height:1.8}
+.card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:15px}
+.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.live{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 6px var(--green);flex-shrink:0}
+.card-title{font-weight:700;font-size:.95rem}
+.card-body{padding:18px}
+.lbl{color:#556;font-size:.8rem;margin-bottom:7px}
+textarea,input[type=text]{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:12px;border-radius:10px;font-size:.9rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none;transition:.3s}
+textarea{height:130px;resize:none;line-height:1.7}
 textarea:focus,input[type=text]:focus{border-color:rgba(41,121,255,.4)}
 textarea::placeholder,input::placeholder{color:#334}
 
-/* Style Grid */
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
-.sc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:10px;padding:10px;cursor:pointer;transition:.3s;text-align:center}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}
+.sc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:9px;padding:9px;cursor:pointer;transition:.3s;text-align:center}
 .sc:hover,.sc.s{border-color:rgba(41,121,255,.4);background:rgba(41,121,255,.08)}
-.si{font-size:1.3rem;margin-bottom:3px}
-.sn{font-size:.82rem;font-weight:700}
+.si{font-size:1.2rem;margin-bottom:2px}
+.sn{font-size:.78rem;font-weight:700}
 
-/* Voice Grid */
-.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
-.vc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:10px;padding:10px;cursor:pointer;transition:.3s;text-align:center}
+.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0}
+.vc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:9px;padding:9px;cursor:pointer;transition:.3s;text-align:center}
 .vc:hover,.vc.s{border-color:rgba(124,77,255,.4);background:rgba(124,77,255,.08)}
-.vi{font-size:1.2rem;margin-bottom:3px}
-.vn{font-size:.78rem;font-weight:700}
+.vi{font-size:1.1rem;margin-bottom:2px}
+.vn{font-size:.72rem;font-weight:700}
 
-/* Buttons */
-.btn-row{display:flex;gap:10px;margin-top:14px}
-.btn-main{flex:1;padding:14px;background:linear-gradient(135deg,#1a44bb,#0099ff);color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
+.btn-row{display:flex;gap:8px;margin-top:12px}
+.btn-main{flex:1;padding:13px;background:linear-gradient(135deg,#1a44bb,#0099ff);color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
 .btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,68,187,.4)}
 .btn-main:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.btn-sm{padding:14px 16px;background:rgba(255,255,255,.04);color:#889;border:1px solid var(--border);border-radius:12px;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
-.btn-sm:hover{background:rgba(255,255,255,.08);color:#fff}
+.btn-sm{padding:13px 14px;background:rgba(255,255,255,.04);color:#889;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Tajawal',sans-serif}
 
-/* Loader */
-.loader{display:none;padding:30px;text-align:center}
-.bars{display:flex;justify-content:center;align-items:flex-end;gap:4px;height:30px;margin-bottom:10px}
-.bar{width:5px;background:var(--blue);border-radius:3px;animation:bar .7s ease-in-out infinite}
+.loader{display:none;padding:25px;text-align:center}
+.bars{display:flex;justify-content:center;align-items:flex-end;gap:4px;height:28px;margin-bottom:8px}
+.bar{width:4px;background:var(--blue);border-radius:2px;animation:bar .7s ease-in-out infinite}
 .bar:nth-child(2){animation-delay:.1s;background:var(--cyan)}
 .bar:nth-child(3){animation-delay:.2s;background:var(--purple)}
 .bar:nth-child(4){animation-delay:.3s;background:var(--cyan)}
 .bar:nth-child(5){animation-delay:.4s;background:var(--blue)}
-@keyframes bar{0%,100%{height:8px}50%{height:30px}}
-.loader-txt{color:#556;font-size:.88rem}
+@keyframes bar{0%,100%{height:6px}50%{height:28px}}
+.loader-txt{color:#556;font-size:.85rem}
 
-/* Result */
-.result{display:none;margin-top:18px}
-.res-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
-.res-label{color:var(--green);font-weight:700;font-size:.9rem}
-.res-acts{display:flex;gap:6px;flex-wrap:wrap}
-.rbtn{padding:7px 13px;border-radius:8px;cursor:pointer;font-size:.8rem;font-family:'Tajawal',sans-serif;border:1px solid;transition:.3s}
-.rbtn:hover{opacity:.8}
+.result{display:none;margin-top:15px}
+.res-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.res-label{color:var(--green);font-weight:700;font-size:.85rem}
+.res-acts{display:flex;gap:5px;flex-wrap:wrap}
+.rbtn{padding:6px 11px;border-radius:7px;cursor:pointer;font-size:.75rem;font-family:'Tajawal',sans-serif;border:1px solid;transition:.3s}
 .rbtn:disabled{opacity:.4;cursor:not-allowed}
 .rbtn.g{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:var(--green)}
 .rbtn.b{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:var(--blue)}
 .rbtn.p{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:var(--purple)}
-.res-box{background:rgba(0,0,0,.5);border:1px solid rgba(0,230,118,.1);border-radius:12px;padding:18px;color:#bcd;line-height:2;font-size:.9rem;white-space:pre-wrap;max-height:300px;overflow-y:auto}
-audio{width:100%;margin-top:10px;border-radius:8px;display:none}
+.res-box{background:rgba(0,0,0,.5);border:1px solid rgba(0,230,118,.1);border-radius:10px;padding:15px;color:#bcd;line-height:1.9;font-size:.88rem;white-space:pre-wrap;max-height:280px;overflow-y:auto}
+audio{width:100%;margin-top:8px;border-radius:8px;display:none}
 
-/* Video */
-.vid-preview{display:none;margin-top:15px}
-video{width:100%;border-radius:12px}
-.progress-bar{width:100%;height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin:15px 0;overflow:hidden;display:none}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0%;animation:progress 120s linear forwards}
-@keyframes progress{to{width:95%}}
+.vid-preview{display:none;margin-top:12px}
+video{width:100%;border-radius:10px}
+.progress-bar{width:100%;height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin:12px 0;overflow:hidden;display:none}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0%;animation:prog 120s linear forwards}
+@keyframes prog{to{width:95%}}
 
-/* Image */
-.img-styles{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
-.is{padding:6px 14px;background:rgba(0,0,0,.2);border:1px solid var(--border);color:#667;border-radius:20px;cursor:pointer;font-size:.8rem;transition:.3s}
+.img-styles{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.is{padding:5px 12px;background:rgba(0,0,0,.2);border:1px solid var(--border);color:#667;border-radius:20px;cursor:pointer;font-size:.75rem;transition:.3s}
 .is.s{background:rgba(124,77,255,.1);border-color:rgba(124,77,255,.3);color:var(--purple)}
-.img-res{display:none;margin-top:15px}
-.img-res img{width:100%;border-radius:12px}
+.img-res{display:none;margin-top:12px}
+.img-res img{width:100%;border-radius:10px}
 
-/* Music */
-.music-btns{display:flex;gap:8px;flex-wrap:wrap}
-.mb{padding:10px 18px;border-radius:12px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.88rem;border:1px solid;transition:.3s;display:flex;align-items:center;gap:6px}
+.ai-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.ai-gallery img{width:100%;border-radius:8px;cursor:pointer;transition:.3s;aspect-ratio:16/9;object-fit:cover}
+.ai-gallery img:hover{opacity:.8;transform:scale(1.02)}
+
+.music-btns{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.mb{padding:12px;border-radius:10px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.85rem;border:1px solid;transition:.3s;text-align:center}
 .mb:hover{transform:translateY(-2px)}
 
-/* Trial Modal */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center}
-.modal-box{background:#080d20;border:1px solid rgba(41,121,255,.3);border-radius:24px;padding:40px;text-align:center;max-width:420px;margin:20px}
-.modal-icon{font-size:3.5rem;margin-bottom:15px}
-.modal-title{font-size:1.4rem;font-weight:900;margin-bottom:10px}
-.modal-sub{color:#556;font-size:.9rem;line-height:1.7;margin-bottom:25px}
-.modal-btn{padding:13px 30px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;margin:5px}
-.modal-close{padding:13px 30px;background:rgba(255,255,255,.05);color:#889;border:1px solid var(--border);border-radius:12px;font-size:.9rem;cursor:pointer;font-family:'Tajawal',sans-serif;margin:5px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;padding:15px}
+.modal-box{background:#080d20;border:1px solid rgba(41,121,255,.3);border-radius:20px;padding:30px;text-align:center;max-width:380px;width:100%}
+.modal-icon{font-size:3rem;margin-bottom:12px}
+.modal-title{font-size:1.3rem;font-weight:900;margin-bottom:8px}
+.modal-sub{color:#556;font-size:.85rem;line-height:1.6;margin-bottom:20px}
+.modal-btn{padding:11px 25px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;margin:4px}
+.modal-close{padding:11px 25px;background:rgba(255,255,255,.05);color:#889;border:1px solid var(--border);border-radius:10px;font-size:.85rem;cursor:pointer;font-family:'Tajawal',sans-serif;margin:4px}
 
-/* YouTube */
-.yt-banner{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.15);border-radius:14px;margin-bottom:20px;flex-wrap:wrap;gap:10px}
-.yt-text{color:#ff4444;font-size:.88rem;font-weight:700}
-.yt-btn{padding:8px 18px;background:#ff0000;color:#fff;border-radius:10px;text-decoration:none;font-size:.82rem;font-weight:700}
-
-/* Footer */
-footer{text-align:center;padding:30px 20px;border-top:1px solid var(--border);color:#334;font-size:.82rem;margin-top:20px}
-
-@media(max-width:650px){
-h1{font-size:2rem}
-.sg{grid-template-columns:repeat(2,1fr)}
-.vg{grid-template-columns:repeat(2,1fr)}
-.stats{gap:20px}
-}
+footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);color:#334;font-size:.8rem;margin-top:15px}
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKGTFH3P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div class="bg-img"></div>
+<div class="bg-img" id="bgImg"></div>
 <div class="bg-ov"></div>
 <div class="grid"></div>
-<svg class="wing" width="500" height="500" viewBox="0 0 200 200" fill="white">
-<path d="M100,10 C60,10 10,40 10,100 C10,140 40,170 100,190 C100,190 100,100 100,100 C100,100 160,80 190,50 C170,20 140,10 100,10 Z"/>
-<path d="M100,10 C80,30 70,60 70,100 C70,130 80,160 100,190 C100,190 100,100 100,100 C100,100 50,80 20,60 C30,25 60,10 100,10 Z" opacity=".5"/>
-</svg>
 
 <div class="wrap">
-
-<!-- NAV -->
 <nav>
   <div class="logo">
     <div class="logo-icon">🎙️</div>
     <div class="logo-text">أثير AI</div>
   </div>
   <div class="nav-right">
-    <div class="counter" id="counter">🎯 3/3 مجاني</div>
-    <button class="nav-btn">⭐ ترقية</button>
+    <div class="counter" id="counter">🎯 3/3</div>
+    <button class="nav-btn" onclick="document.getElementById('upgradeModal').style.display='flex'">⭐ ترقية</button>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-tag"><div class="dot"></div>منصة الذكاء الاصطناعي العربية</div>
   <h1>أدوات <span class="grad">ذكاء اصطناعي</span><br>للمحتوى العربي</h1>
   <p class="hero-sub">بودكاست • فيديو • صور • أصوات — كل ما تحتاجه مجاناً</p>
-  <div class="trial-badge">⚡ جرّب 5 ثوانٍ مجاناً — لا تسجيل مطلوب</div>
+  <div class="trial-badge">⚡ جرّب مجاناً — لا تسجيل مطلوب</div>
   <div class="stats">
     <div class="stat"><div class="stat-num">5+</div><div class="stat-label">أدوات AI</div></div>
     <div class="stat"><div class="stat-num">∞</div><div class="stat-label">إبداع</div></div>
@@ -189,13 +167,11 @@ h1{font-size:2rem}
   </div>
 </div>
 
-<!-- YT BANNER -->
 <div class="yt-banner">
-  <div class="yt-text">🎬 تابع قناتنا للمزيد من الأدوات والشروحات!</div>
+  <div class="yt-text">🎬 تابع قناتنا للمزيد!</div>
   <a href="https://youtube.com/@al-u6j4s" target="_blank" class="yt-btn">▶️ اشترك</a>
 </div>
 
-<!-- TOOLS NAV -->
 <div class="tools-nav">
   <button class="tool-tab active" onclick="showPanel('podcast',this)">🎙️ بودكاست</button>
   <button class="tool-tab" onclick="showPanel('video',this)">🎬 فيديو</button>
@@ -203,14 +179,14 @@ h1{font-size:2rem}
   <button class="tool-tab" onclick="showPanel('music',this)">🎵 موسيقى</button>
 </div>
 
-<!-- PODCAST PANEL -->
+<!-- PODCAST -->
 <div id="panel-podcast" class="panel active">
   <div class="card">
     <div class="card-head"><div class="live"></div><div class="card-title">🎙️ مولّد البودكاست</div></div>
     <div class="card-body">
       <div class="lbl">📝 موضوع الحلقة</div>
       <textarea id="script" maxlength="500" placeholder="مثال: تأثير الذكاء الاصطناعي على سوق العمل العربي..."></textarea>
-      <div class="lbl" style="margin-top:12px">🎨 الأسلوب</div>
+      <div class="lbl" style="margin-top:10px">🎨 الأسلوب</div>
       <div class="sg">
         <div class="sc s" onclick="sel(this,'.sc','style')"><div class="si">💻</div><div class="sn">تقني</div></div>
         <div class="sc" onclick="sel(this,'.sc','style')"><div class="si">🔥</div><div class="sn">تحفيزي</div></div>
@@ -242,19 +218,19 @@ h1{font-size:2rem}
         </div>
         <div class="res-box" id="resultText"></div>
         <audio id="audioPlayer" controls></audio>
-        <div style="margin-top:12px;padding:12px 16px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.12);border-radius:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-          <span style="color:#ff4444;font-size:.82rem">🎬 أعجبك؟ تابع قناتنا!</span>
-          <a href="https://youtube.com/@al-u6j4s" target="_blank" style="padding:6px 14px;background:#ff0000;color:#fff;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700">▶️ اشترك</a>
+        <div style="margin-top:10px;padding:10px 14px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.12);border-radius:9px;display:flex;align-items:center;justify-content:space-between;gap:8px">
+          <span style="color:#ff4444;font-size:.78rem">🎬 أعجبك؟ تابع قناتنا!</span>
+          <a href="https://youtube.com/@al-u6j4s" target="_blank" style="padding:5px 12px;background:#ff0000;color:#fff;border-radius:7px;text-decoration:none;font-size:.72rem;font-weight:700">▶️ اشترك</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- VIDEO PANEL -->
+<!-- VIDEO -->
 <div id="panel-video" class="panel">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--red);box-shadow:0 0 8px var(--red)"></div><div class="card-title">🎬 مولّد الفيديو AI</div></div>
+    <div class="card-head"><div class="live" style="background:var(--red);box-shadow:0 0 6px var(--red)"></div><div class="card-title">🎬 مولّد الفيديو AI</div></div>
     <div class="card-body">
       <div class="lbl">📝 وصف الفيديو</div>
       <textarea id="videoPrompt" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء، مقدم يتحدث بثقة..."></textarea>
@@ -262,27 +238,29 @@ h1{font-size:2rem}
         <button class="btn-main" style="background:linear-gradient(135deg,#c2185b,#ff4081)" onclick="generateVideo()" id="videoBtn">🎬 توليد الفيديو</button>
         <button class="btn-sm" onclick="document.getElementById('videoPrompt').value=''">🗑️</button>
       </div>
-      <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-bar" id="progressBar"><div class="progress-fill"></div></div>
       <div class="loader" id="videoLoader">
         <div class="bars"><div class="bar" style="background:var(--red)"></div><div class="bar" style="background:#ff6d00"></div><div class="bar" style="background:var(--red)"></div><div class="bar" style="background:#ff6d00"></div><div class="bar" style="background:var(--red)"></div></div>
-        <div class="loader-txt" id="videoLoaderTxt">🎬 جاري توليد الفيديو... قد يستغرق 2-3 دقائق</div>
+        <div class="loader-txt">🎬 جاري التوليد... قد يستغرق 2-3 دقائق</div>
       </div>
       <div class="vid-preview" id="vidPreview">
         <video id="generatedVideo" controls></video>
-        <div class="btn-row" style="margin-top:10px">
-          <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadVideo()">💾 تحميل الفيديو</button>
-          <button class="rbtn b" style="flex:1;padding:10px" onclick="generateVideo()">🔄 توليد جديد</button>
+        <div class="btn-row" style="margin-top:8px">
+          <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadVideo()">💾 تحميل</button>
+          <button class="rbtn b" style="flex:1;padding:10px" onclick="generateVideo()">🔄 جديد</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- IMAGE PANEL -->
+<!-- IMAGE -->
 <div id="panel-image" class="panel">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--purple);box-shadow:0 0 8px var(--purple)"></div><div class="card-title">🎨 مولّد الصور AI</div></div>
+    <div class="card-head"><div class="live" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div><div class="card-title">🎨 مولّد الصور AI</div></div>
     <div class="card-body">
+      <div class="lbl">🖼️ معرض إلهام — اضغط لاستخدام</div>
+      <div class="ai-gallery" id="aiGallery"></div>
       <div class="lbl">📝 وصف الصورة</div>
       <input type="text" id="imgPrompt" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء نيون...">
       <div class="img-styles">
@@ -299,9 +277,9 @@ h1{font-size:2rem}
         <div class="bars"><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div></div>
         <div class="loader-txt">جاري توليد الصورة...</div>
       </div>
-      <div style="margin-bottom:20px"><div class="lbl" style="margin-bottom:10px">🖼️ معرض صور AI — اضغط لاستخدامها</div><div id="aiGallery" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px"></div></div><div class="img-res" id="imgRes">
+      <div class="img-res" id="imgRes">
         <img id="generatedImg" alt="صورة">
-        <div class="btn-row" style="margin-top:10px">
+        <div class="btn-row" style="margin-top:8px">
           <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadImage()">💾 تحميل</button>
           <button class="rbtn p" style="flex:1;padding:10px" onclick="generateImage()">🔄 جديد</button>
         </div>
@@ -310,127 +288,136 @@ h1{font-size:2rem}
   </div>
 </div>
 
-<!-- MUSIC PANEL -->
+<!-- MUSIC -->
 <div id="panel-music" class="panel">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--cyan);box-shadow:0 0 8px var(--cyan)"></div><div class="card-title">🎵 موسيقى خلفية مجانية</div></div>
+    <div class="card-head"><div class="live" style="background:var(--cyan);box-shadow:0 0 6px var(--cyan)"></div><div class="card-title">🎵 موسيقى خلفية مجانية</div></div>
     <div class="card-body">
-      <div class="lbl" style="margin-bottom:15px">اختر نوع الموسيقى واستمع مباشرة</div>
+      <div class="lbl" style="margin-bottom:12px">اختر نوع الموسيقى واستمع مباشرة</div>
       <div class="music-btns">
         <button class="mb" style="background:rgba(41,121,255,.1);border-color:rgba(41,121,255,.3);color:var(--blue)" onclick="playMusic('calm')">🌊 هادئة للتركيز</button>
         <button class="mb" style="background:rgba(255,109,0,.1);border-color:rgba(255,109,0,.3);color:#ff6d00" onclick="playMusic('energetic')">🔥 حماسية تحفيزية</button>
         <button class="mb" style="background:rgba(0,229,255,.1);border-color:rgba(0,229,255,.3);color:var(--cyan)" onclick="playMusic('tech')">🎹 تقنية إلكترونية</button>
-        <button class="mb" style="background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.3);color:#ff4444" onclick="stopMusic()">⏹️ إيقاف</button>
+        <button class="mb" style="background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.3);color:#ff4444" onclick="stopMusic()">⏹️ إيقاف الموسيقى</button>
       </div>
-      <div id="musicStatus" style="margin-top:15px;display:none;padding:12px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:10px;color:var(--cyan);font-size:.88rem;text-align:center"></div>
+      <div id="musicStatus" style="display:none;margin-top:12px;padding:10px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:9px;color:var(--cyan);font-size:.85rem;text-align:center"></div>
     </div>
   </div>
 </div>
 
-<!-- UPGRADE MODAL -->
+<!-- MODAL -->
 <div class="modal" id="upgradeModal">
   <div class="modal-box">
     <div class="modal-icon">🚀</div>
     <div class="modal-title">انتهت توليداتك اليوم!</div>
-    <div class="modal-sub">استخدمت 3/3 توليدات مجانية. عد غداً للمزيد أو تابع قناتنا للحصول على مفاجآت!</div>
+    <div class="modal-sub">استخدمت 3/3 توليدات مجانية. عد غداً أو تابع قناتنا!</div>
     <a href="https://youtube.com/@al-u6j4s" target="_blank"><button class="modal-btn">▶️ تابع القناة</button></a>
     <button class="modal-close" onclick="document.getElementById('upgradeModal').style.display='none'">لاحقاً</button>
   </div>
 </div>
 
 <footer>
-  <div style="margin-bottom:15px">
-    <a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:12px;text-decoration:none;font-weight:700">▶️ تابعنا على يوتيوب</a>
+  <div style="margin-bottom:12px">
+    <a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:10px;text-decoration:none;font-weight:700;font-size:.82rem">▶️ تابعنا على يوتيوب</a>
   </div>
-  <span onclick="activateDev()" style="cursor:pointer;opacity:.1">⚙️</span> أثير AI © 2026 — منصة الذكاء الاصطناعي العربية
+  <span onclick="activateDev()" style="cursor:pointer;opacity:.05">⚙️</span> أثير AI © 2026
 </footer>
-
 </div>
 
 <script>
-// State
 const LIMIT=3;
-let styleVal='تقني',voiceVal='male-arabic',imgStyleVal='realistic';
-let curAudio=null;
+const DEV_CODE='athir2026';
+let styleVal='تقني',voiceVal='male-arabic',imgStyleVal='realistic',curAudio=null;
+
+// BG
+const studios=[
+'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80',
+'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80',
+'https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80',
+'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1920&q=80'
+];
+let bgI=0;
+function changeBg(){document.getElementById('bgImg').style.backgroundImage=`url(${studios[bgI]})`;bgI=(bgI+1)%studios.length;}
+changeBg();setInterval(changeBg,8000);
 
 // Panel
-function showPanel(name,el){
+function showPanel(n,el){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('panel-'+name).classList.add('active');
+  document.getElementById('panel-'+n).classList.add('active');
   el.classList.add('active');
 }
 
-// Selectors
+// Sel
 function sel(el,cls,type){
   document.querySelectorAll(cls).forEach(e=>e.classList.remove('s'));
   el.classList.add('s');
   if(type==='style')styleVal=el.querySelector('.sn').textContent;
-  if(type==='voice'){
-    const voices={'رجل':'male-arabic','امرأة':'female-arabic','شباب':'youth-energetic','رسمي':'professional'};
-    voiceVal=voices[el.querySelector('.vn').textContent]||'male-arabic';
-  }
+  if(type==='voice'){const v={'رجل':'male-arabic','امرأة':'female-arabic','شباب':'youth-energetic','رسمي':'professional'};voiceVal=v[el.querySelector('.vn').textContent]||'male-arabic';}
 }
-function selIs(el,style){document.querySelectorAll('.is').forEach(e=>e.classList.remove('s'));el.classList.add('s');imgStyleVal=style;}
+function selIs(el,s){document.querySelectorAll('.is').forEach(e=>e.classList.remove('s'));el.classList.add('s');imgStyleVal=s;}
 
 // Limit
 function checkLimit(){
-  const today=new Date().toDateString();
-  const d=JSON.parse(localStorage.getItem('athir')||'{}');
-  if(d.date!==today){localStorage.setItem('athir',JSON.stringify({date:today,count:0}));updateCounter();return true;}
+  if(localStorage.getItem('athir_dev')==='true')return true;
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
+  if(d.date!==t){localStorage.setItem('athir',JSON.stringify({date:t,count:0}));updateCounter();return true;}
   if(d.count>=LIMIT){document.getElementById('upgradeModal').style.display='flex';return false;}
   return true;
 }
 function incLimit(){
-  const today=new Date().toDateString();
-  const d=JSON.parse(localStorage.getItem('athir')||'{}');
-  const c=(d.date===today?d.count:0)+1;
-  localStorage.setItem('athir',JSON.stringify({date:today,count:c}));
-  updateCounter();
+  if(localStorage.getItem('athir_dev')==='true')return;
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
+  const c=(d.date===t?d.count:0)+1;
+  localStorage.setItem('athir',JSON.stringify({date:t,count:c}));updateCounter();
 }
 function updateCounter(){
-  const today=new Date().toDateString();
-  const d=JSON.parse(localStorage.getItem('athir')||'{}');
-  const c=d.date===today?d.count:0;
-  const r=LIMIT-c;
-  document.getElementById('counter').textContent=`🎯 ${r}/${LIMIT} مجاني`;
+  if(localStorage.getItem('athir_dev')==='true'){document.getElementById('counter').textContent='🔓 مطور';return;}
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
+  const c=d.date===t?d.count:0;
+  document.getElementById('counter').textContent=`🎯 ${LIMIT-c}/${LIMIT}`;
+}
+function activateDev(){
+  const c=prompt('كود المطور:');
+  if(c===DEV_CODE){localStorage.setItem('athir_dev','true');alert('✅ وضع المطور!');updateCounter();}
+  else alert('❌ خاطئ');
 }
 
-// Generate Script
+// Generate
 async function generate(){
   if(!checkLimit())return;
-  const script=document.getElementById('script').value;
-  if(!script.trim())return alert('اكتب الموضوع أولاً!');
+  const s=document.getElementById('script').value;
+  if(!s.trim())return alert('اكتب الموضوع أولاً!');
   document.getElementById('genBtn').disabled=true;
   document.getElementById('loader').style.display='block';
   document.getElementById('loaderTxt').textContent='الذكاء الاصطناعي يكتب سكريبتك...';
   document.getElementById('result').style.display='none';
   try{
-    const res=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:script+' (الأسلوب: '+styleVal+')'})});
-    const data=await res.json();
-    document.getElementById('resultText').textContent=data.result||data.error;
+    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:s+' (الأسلوب: '+styleVal+')'})});
+    const d=await r.json();
+    document.getElementById('resultText').textContent=d.result||d.error;
     document.getElementById('result').style.display='block';
     document.getElementById('audioPlayer').style.display='none';
     incLimit();
-  }catch(e){alert('خطأ في الاتصال!');}
+  }catch(e){alert('خطأ!');}
   finally{document.getElementById('loader').style.display='none';document.getElementById('genBtn').disabled=false;}
 }
 
 // Audio
 async function generateAudio(){
-  const text=document.getElementById('resultText').textContent;
-  if(!text)return;
+  const t=document.getElementById('resultText').textContent;
+  if(!t)return;
   const btn=document.getElementById('audioBtn');
   btn.disabled=true;
   document.getElementById('loader').style.display='block';
   document.getElementById('loaderTxt').textContent='🎙️ جاري توليد الصوت...';
   try{
-    const res=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.substring(0,500),voice:voiceVal})});
-    if(!res.ok){const e=await res.json();throw new Error(e.error);}
-    const blob=await res.blob();
-    const url=URL.createObjectURL(blob);
+    const r=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t.substring(0,500),voice:voiceVal})});
+    if(!r.ok){const e=await r.json();throw new Error(e.error);}
+    const b=await r.blob();
+    const u=URL.createObjectURL(b);
     const p=document.getElementById('audioPlayer');
-    p.src=url;p.style.display='block';p.play();
+    p.src=u;p.style.display='block';p.play();
     btn.textContent='🔄 إعادة';
   }catch(e){alert('خطأ: '+e.message);}
   finally{document.getElementById('loader').style.display='none';btn.disabled=false;}
@@ -438,31 +425,30 @@ async function generateAudio(){
 
 // Video
 async function generateVideo(){
-  const prompt=document.getElementById('videoPrompt').value;
-  if(!prompt.trim())return alert('اكتب وصف الفيديو!');
+  const p=document.getElementById('videoPrompt').value;
+  if(!p.trim())return alert('اكتب وصف الفيديو!');
   const btn=document.getElementById('videoBtn');
   btn.disabled=true;
   document.getElementById('videoLoader').style.display='block';
   document.getElementById('progressBar').style.display='block';
   document.getElementById('vidPreview').style.display='none';
   try{
-    const res=await fetch('/api/video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
-    const data=await res.json();
-    if(data.error)throw new Error(data.error);
-    const id=data.id;
-    const check=setInterval(async()=>{
-      const s=await fetch('/api/video-status?id='+id);
+    const r=await fetch('/api/video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})});
+    const d=await r.json();
+    if(d.error)throw new Error(d.error);
+    const chk=setInterval(async()=>{
+      const s=await fetch('/api/video-status?id='+d.id);
       const sd=await s.json();
       if(sd.status==='succeeded'){
-        clearInterval(check);
+        clearInterval(chk);
         document.getElementById('generatedVideo').src=Array.isArray(sd.output)?sd.output[0]:sd.output;
         document.getElementById('vidPreview').style.display='block';
         document.getElementById('videoLoader').style.display='none';
         document.getElementById('progressBar').style.display='none';
         btn.disabled=false;
       }else if(sd.status==='failed'){
-        clearInterval(check);
-        alert('فشل التوليد: '+sd.error);
+        clearInterval(chk);
+        alert('فشل: '+sd.error);
         document.getElementById('videoLoader').style.display='none';
         document.getElementById('progressBar').style.display='none';
         btn.disabled=false;
@@ -475,117 +461,68 @@ async function generateVideo(){
     btn.disabled=false;
   }
 }
-function downloadVideo(){const v=document.getElementById('generatedVideo');const a=document.createElement('a');a.href=v.src;a.download='athir-video.mp4';a.click();}
+function downloadVideo(){const a=document.createElement('a');a.href=document.getElementById('generatedVideo').src;a.download='athir.mp4';a.click();}
 
 // Image
+const gallery=['podcast studio professional blue neon','radio broadcast room modern dark','music recording studio cinematic','podcast microphone professional dark setup'];
+function loadGallery(){
+  const g=document.getElementById('aiGallery');
+  gallery.forEach((p,i)=>{
+    const img=document.createElement('img');
+    img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400&height=225&nologo=true&seed=${i*111}`;
+    img.loading='lazy';
+    img.onclick=()=>document.getElementById('imgPrompt').value=p;
+    g.appendChild(img);
+  });
+}
+loadGallery();
+
 async function generateImage(){
-  const prompt=document.getElementById('imgPrompt').value;
-  if(!prompt.trim())return alert('اكتب وصف الصورة!');
+  const p=document.getElementById('imgPrompt').value;
+  if(!p.trim())return alert('اكتب وصف الصورة!');
   const btn=document.getElementById('imgBtn');
   btn.textContent='⏳...';btn.disabled=true;
   document.getElementById('imgLoader').style.display='block';
   document.getElementById('imgRes').style.display='none';
-  const fullPrompt=encodeURIComponent(prompt+', '+imgStyleVal+', high quality');
   const img=document.getElementById('generatedImg');
   img.onload=()=>{document.getElementById('imgRes').style.display='block';document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
-  img.onerror=()=>{alert('خطأ في التوليد');document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
-  img.src=`https://image.pollinations.ai/prompt/${fullPrompt}?width=900&height=500&nologo=true&seed=${Date.now()}`;
+  img.onerror=()=>{alert('خطأ');document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
+  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p+', '+imgStyleVal)}?width=900&height=500&nologo=true&seed=${Date.now()}`;
 }
-// AI Image Gallery
-const aiGallery=[
-"podcast studio professional blue neon lighting",
-"radio broadcast room modern dark aesthetic",
-"music recording studio cinematic",
-"podcast microphone professional setup dark"
-];
-async function loadGallery(){
-const gallery=document.getElementById("aiGallery");
-if(!gallery)return;
-aiGallery.forEach((p,i)=>{
-const img=document.createElement("img");
-img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400function downloadImageheight=250function downloadImagenologo=truefunction downloadImageseed=${i*100}`;
-img.style.cssText="width:100%;border-radius:10px;cursor:pointer;transition:.3s";
-img.onclick=()=>{document.getElementById("imgPrompt").value=p;document.querySelector(".tool-tab:nth-child(3)").click();};
-img.onmouseover=()=>img.style.opacity=".8";
-img.onmouseout=()=>img.style.opacity="1";
-gallery.appendChild(img);
-});
-}
-loadGallery();
-function downloadImage(){const a=document.createElement('a');a.href=document.getElementById('generatedImg').src;a.download='athir-image.jpg';a.click();}
+function downloadImage(){const a=document.createElement('a');a.href=document.getElementById('generatedImg').src;a.download='athir.jpg';a.click();}
 
 // Music
-const tracks={calm:'https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3',energetic:'https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-738.mp3',tech:'https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3'};
-const musicNames={calm:'🌊 موسيقى هادئة',energetic:'🔥 موسيقى حماسية',tech:'🎹 موسيقى تقنية'};
-function playMusic(type){
-  if(curAudio){curAudio.pause();curAudio=null;}
-  curAudio=new Audio(tracks[type]);curAudio.loop=true;curAudio.volume=0.25;
+const tracks={
+  calm:['https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3','https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3'],
+  energetic:['https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-738.mp3'],
+  tech:['https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3']
+};
+let curType=null,curIdx=0;
+function playMusic(t){
+  if(curAudio){curAudio.pause();}
+  curType=t;curIdx=0;playTrack();
+}
+function playTrack(){
+  curAudio=new Audio(tracks[curType][curIdx]);
+  curAudio.volume=0.2;
   curAudio.play().then(()=>{
     const s=document.getElementById('musicStatus');
-    s.style.display='block';s.textContent=musicNames[type]+' تعزف الآن ▶️';
-  }).catch(()=>alert('خطأ في تشغيل الموسيقى'));
+    s.style.display='block';
+    s.textContent='🎵 الموسيقى تعزف ▶️';
+  }).catch(()=>{});
+  curAudio.onended=()=>{curIdx=(curIdx+1)%tracks[curType].length;playTrack();};
 }
-function stopMusic(){if(curAudio){curAudio.pause();curAudio=null;const s=document.getElementById('musicStatus');s.style.display='none';}}
+function stopMusic(){
+  if(curAudio){curAudio.pause();curAudio=null;}
+  document.getElementById('musicStatus').style.display='none';
+}
 
 // Utils
 function clearAll(){document.getElementById('script').value='';document.getElementById('result').style.display='none';}
 function copyResult(){navigator.clipboard.writeText(document.getElementById('resultText').textContent);alert('تم النسخ!');}
-function downloadResult(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('resultText').textContent);a.download='athir-script.txt';a.click();}
+function downloadResult(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('resultText').textContent);a.download='athir.txt';a.click();}
 
-// Error Monitoring
-window.onerror=function(msg,src,line,col,err){
-console.error("خطأ:",msg,src,line);
-fetch("/api/log-error",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({msg,src,line,time:new Date().toISOString()})}).catch(()=>{});
-return false;};
-// Dev Mode
-const DEV_CODE="athir2026";
-function activateDev(){
-const code=prompt("أدخل كود المطور:");
-if(code===DEV_CODE){
-localStorage.setItem("athir_dev","true");
-alert("✅ وضع المطور مفعل!");
-updateCounter();
-}else{alert("❌ كود خاطئ!");}
-}
-function checkLimit(){
-if(localStorage.getItem("athir_dev")==="true")return true;
-// Background Studios
-const studios=[
-"https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80",
-"https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80",
-"https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80",
-"https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1920&q=80"
-];
-let bgIndex=0;
-function changeBg(){
-const el=document.querySelector(".bg-img");
-el.style.backgroundImage=`url(${studios[bgIndex]})`;
-bgIndex=(bgIndex+1)%studios.length;
-}
-changeBg();
-setInterval(changeBg,8000);
-// Init
 updateCounter();
 </script>
 </body>
 </html>
-<style>
-@media(max-width:480px){
-.wrap{padding:10px!important}
-nav{padding:10px 14px!important;margin-bottom:25px!important}
-.logo-text{font-size:1rem!important}
-h1{font-size:1.7rem!important}
-.hero{padding:20px 10px 30px!important}
-.stats{gap:15px!important}
-.stat-num{font-size:1.4rem!important}
-.tools-nav{gap:5px!important}
-.tool-tab{padding:8px 12px!important;font-size:.78rem!important}
-.card-body{padding:15px!important}
-.sg{grid-template-columns:repeat(2,1fr)!important}
-.vg{grid-template-columns:repeat(2,1fr)!important}
-.btn-main{font-size:.88rem!important;padding:12px!important}
-textarea{height:120px!important}
-.hero-tag{font-size:.75rem!important}
-.trial-badge{font-size:.78rem!important}
-}
-</style>
