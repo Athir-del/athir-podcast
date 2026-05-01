@@ -511,6 +511,11 @@ function clearAll(){document.getElementById('script').value='';document.getEleme
 function copyResult(){navigator.clipboard.writeText(document.getElementById('resultText').textContent);alert('تم النسخ!');}
 function downloadResult(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('resultText').textContent);a.download='athir-script.txt';a.click();}
 
+// Error Monitoring
+window.onerror=function(msg,src,line,col,err){
+console.error("خطأ:",msg,src,line);
+fetch("/api/log-error",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({msg,src,line,time:new Date().toISOString()})}).catch(()=>{});
+return false;};
 // Init
 updateCounter();
 </script>
