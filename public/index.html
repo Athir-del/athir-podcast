@@ -3,147 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>أثير AI — منصة الذكاء الاصطناعي العربية</title>
+<title>أثير AI</title>
 <meta name="google-adsense-account" content="ca-pub-7535354659763641">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535354659763641" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KKGTFH3P');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#2979ff;--cyan:#00e5ff;--purple:#7c4dff;--green:#00e676;--red:#ff4081;--bg:#03040f;--border:rgba(255,255,255,.07)}
-body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden;direction:rtl}
-.bg-img{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.1;background-size:cover;background-position:center;transition:background-image 1s ease}
-.bg-ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(135deg,rgba(3,4,15,.97),rgba(5,10,30,.95))}
-.grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background-image:linear-gradient(rgba(41,121,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(41,121,255,.03) 1px,transparent 1px);background-size:60px 60px}
+body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.1;background-size:cover;background-position:center}
+.ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:rgba(3,4,15,.95)}
 .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:12px}
-
-/* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;margin-bottom:20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;margin-bottom:20px}
 .logo{display:flex;align-items:center;gap:8px}
-.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:var(--blue);border-radius:8px;font-size:.78rem;white-space:nowrap}
-.nav-btn{padding:7px 14px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;white-space:nowrap}
-
-/* HERO */
-.hero{text-align:center;padding:25px 15px 35px}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);color:var(--cyan);border-radius:30px;font-size:.78rem;margin-bottom:15px}
-.dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-size:2.2rem;font-weight:900;line-height:1.2;margin-bottom:12px}
-.grad{background:linear-gradient(135deg,var(--blue),var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:#556;font-size:.9rem;max-width:400px;margin:0 auto 15px;line-height:1.6}
-.trial-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:var(--green);border-radius:30px;font-size:.82rem;font-weight:700;margin-bottom:20px}
-.stats{display:flex;justify-content:center;gap:25px;margin-top:5px}
-.stat{text-align:center}
-.stat-num{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat-label{color:#445;font-size:.75rem}
-
-/* YT */
-.yt-banner{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.15);border-radius:12px;margin-bottom:15px;gap:10px}
-.yt-text{color:#ff4444;font-size:.82rem;font-weight:700}
-.yt-btn{padding:7px 14px;background:#ff0000;color:#fff;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700;white-space:nowrap}
-
-/* TOOLS NAV */
-.tools-nav{display:flex;gap:6px;margin-bottom:15px;overflow-x:auto;padding-bottom:3px}
-.tools-nav::-webkit-scrollbar{display:none}
-.tool-tab{padding:9px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:.82rem;color:#667;transition:.3s;white-space:nowrap;font-family:'Tajawal',sans-serif;flex-shrink:0}
-.tool-tab.active{background:rgba(41,121,255,.15);border-color:rgba(41,121,255,.3);color:var(--blue)}
-
-/* PANELS */
-.panel{display:none}
-.panel.active{display:block}
-.card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:15px}
-.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
-.live{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 6px var(--green);flex-shrink:0}
-.card-title{font-weight:700;font-size:.95rem}
-.card-body{padding:18px}
-.lbl{color:#556;font-size:.8rem;margin-bottom:7px}
-textarea,input[type=text]{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:12px;border-radius:10px;font-size:.9rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none;transition:.3s}
-textarea{height:130px;resize:none;line-height:1.7}
-textarea:focus,input[type=text]:focus{border-color:rgba(41,121,255,.4)}
+.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#2979ff,#00e5ff);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:8px}
+.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:#2979ff;border-radius:8px;font-size:.78rem}
+.nav-btn{padding:7px 14px;background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
+.hero{text-align:center;padding:25px 15px 30px}
+h1{font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:10px}
+.grad{background:linear-gradient(135deg,#2979ff,#00e5ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{color:#556;font-size:.88rem;margin-bottom:15px}
+.trial{display:inline-block;padding:7px 15px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:#00e676;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:20px}
+.stats{display:flex;justify-content:center;gap:30px}
+.snum{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.slbl{color:#445;font-size:.72rem}
+.yt{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.15);border-radius:10px;margin-bottom:15px;gap:8px}
+.yt-t{color:#ff4444;font-size:.8rem;font-weight:700}
+.yt-b{padding:6px 12px;background:#ff0000;color:#fff;border-radius:7px;text-decoration:none;font-size:.75rem;font-weight:700}
+.tabs{display:flex;gap:5px;margin-bottom:12px;overflow-x:auto;padding-bottom:3px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-size:.8rem;color:#667;white-space:nowrap;font-family:'Tajawal',sans-serif;flex-shrink:0}
+.tab.on{background:rgba(41,121,255,.15);border-color:rgba(41,121,255,.3);color:#2979ff}
+.pnl{display:none}
+.pnl.on{display:block}
+.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;margin-bottom:12px}
+.ch{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem}
+.dot{width:7px;height:7px;border-radius:50%;box-shadow:0 0 6px currentColor;flex-shrink:0}
+.cb{padding:16px}
+.lbl{color:#556;font-size:.78rem;margin-bottom:6px}
+textarea,input[type=text]{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:11px;border-radius:9px;font-size:.88rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none}
+textarea{height:120px;resize:none;line-height:1.7}
+textarea:focus,input:focus{border-color:rgba(41,121,255,.4)}
 textarea::placeholder,input::placeholder{color:#334}
-
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}
-.sc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:9px;padding:9px;cursor:pointer;transition:.3s;text-align:center}
-.sc:hover,.sc.s{border-color:rgba(41,121,255,.4);background:rgba(41,121,255,.08)}
-.si{font-size:1.2rem;margin-bottom:2px}
-.sn{font-size:.78rem;font-weight:700}
-
-.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0}
-.vc{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:9px;padding:9px;cursor:pointer;transition:.3s;text-align:center}
-.vc:hover,.vc.s{border-color:rgba(124,77,255,.4);background:rgba(124,77,255,.08)}
-.vi{font-size:1.1rem;margin-bottom:2px}
-.vn{font-size:.72rem;font-weight:700}
-
-.btn-row{display:flex;gap:8px;margin-top:12px}
-.btn-main{flex:1;padding:13px;background:linear-gradient(135deg,#1a44bb,#0099ff);color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
-.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,68,187,.4)}
-.btn-main:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.btn-sm{padding:13px 14px;background:rgba(255,255,255,.04);color:#889;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Tajawal',sans-serif}
-
-.loader{display:none;padding:25px;text-align:center}
-.bars{display:flex;justify-content:center;align-items:flex-end;gap:4px;height:28px;margin-bottom:8px}
-.bar{width:4px;background:var(--blue);border-radius:2px;animation:bar .7s ease-in-out infinite}
-.bar:nth-child(2){animation-delay:.1s;background:var(--cyan)}
-.bar:nth-child(3){animation-delay:.2s;background:var(--purple)}
-.bar:nth-child(4){animation-delay:.3s;background:var(--cyan)}
-.bar:nth-child(5){animation-delay:.4s;background:var(--blue)}
-@keyframes bar{0%,100%{height:6px}50%{height:28px}}
-.loader-txt{color:#556;font-size:.85rem}
-
-.result{display:none;margin-top:15px}
-.res-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px}
-.res-label{color:var(--green);font-weight:700;font-size:.85rem}
-.res-acts{display:flex;gap:5px;flex-wrap:wrap}
-.rbtn{padding:6px 11px;border-radius:7px;cursor:pointer;font-size:.75rem;font-family:'Tajawal',sans-serif;border:1px solid;transition:.3s}
-.rbtn:disabled{opacity:.4;cursor:not-allowed}
-.rbtn.g{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:var(--green)}
-.rbtn.b{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:var(--blue)}
-.rbtn.p{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:var(--purple)}
-.res-box{background:rgba(0,0,0,.5);border:1px solid rgba(0,230,118,.1);border-radius:10px;padding:15px;color:#bcd;line-height:1.9;font-size:.88rem;white-space:pre-wrap;max-height:280px;overflow-y:auto}
-audio{width:100%;margin-top:8px;border-radius:8px;display:none}
-
-.vid-preview{display:none;margin-top:12px}
-video{width:100%;border-radius:10px}
-.progress-bar{width:100%;height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin:12px 0;overflow:hidden;display:none}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0%;animation:prog 120s linear forwards}
-@keyframes prog{to{width:95%}}
-
-.img-styles{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.is{padding:5px 12px;background:rgba(0,0,0,.2);border:1px solid var(--border);color:#667;border-radius:20px;cursor:pointer;font-size:.75rem;transition:.3s}
-.is.s{background:rgba(124,77,255,.1);border-color:rgba(124,77,255,.3);color:var(--purple)}
-.img-res{display:none;margin-top:12px}
-.img-res img{width:100%;border-radius:10px}
-
-.ai-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
-.ai-gallery img{width:100%;border-radius:8px;cursor:pointer;transition:.3s;aspect-ratio:16/9;object-fit:cover}
-.ai-gallery img:hover{opacity:.8;transform:scale(1.02)}
-
-.music-btns{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.mb{padding:12px;border-radius:10px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.85rem;border:1px solid;transition:.3s;text-align:center}
-.mb:hover{transform:translateY(-2px)}
-
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.sc{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:8px;cursor:pointer;text-align:center}
+.sc.on{border-color:rgba(41,121,255,.4);background:rgba(41,121,255,.08)}
+.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}
+.vc{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:8px;cursor:pointer;text-align:center}
+.vc.on{border-color:rgba(124,77,255,.4);background:rgba(124,77,255,.08)}
+.br{display:flex;gap:7px;margin-top:10px}
+.bm{flex:1;padding:12px;background:linear-gradient(135deg,#1a44bb,#0099ff);color:#fff;border:none;border-radius:9px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
+.bm:disabled{opacity:.4;cursor:not-allowed}
+.bs{padding:12px 13px;background:rgba(255,255,255,.04);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif}
+.ld{display:none;padding:22px;text-align:center}
+.bars{display:flex;justify-content:center;align-items:flex-end;gap:3px;height:25px;margin-bottom:7px}
+.b{width:4px;border-radius:2px;animation:b .7s ease-in-out infinite}
+.b1{background:#2979ff;animation-delay:0s}
+.b2{background:#00e5ff;animation-delay:.1s}
+.b3{background:#7c4dff;animation-delay:.2s}
+.b4{background:#00e5ff;animation-delay:.3s}
+.b5{background:#2979ff;animation-delay:.4s}
+@keyframes b{0%,100%{height:5px}50%{height:25px}}
+.lt{color:#556;font-size:.82rem}
+.res{display:none;margin-top:12px}
+.rt{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;flex-wrap:wrap;gap:5px}
+.rl{color:#00e676;font-weight:700;font-size:.82rem}
+.ra{display:flex;gap:5px;flex-wrap:wrap}
+.rb{padding:5px 10px;border-radius:6px;cursor:pointer;font-size:.72rem;font-family:'Tajawal',sans-serif;border:1px solid}
+.rg{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:#00e676}
+.rb2{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:#2979ff}
+.rp{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:#7c4dff}
+.rb:disabled{opacity:.4}
+.rbox{background:rgba(0,0,0,.5);border:1px solid rgba(0,230,118,.1);border-radius:9px;padding:14px;color:#bcd;line-height:1.9;font-size:.85rem;white-space:pre-wrap;max-height:260px;overflow-y:auto}
+audio{width:100%;margin-top:8px;border-radius:7px;display:none}
+video{width:100%;border-radius:9px}
+.vp{display:none;margin-top:10px}
+.pb{width:100%;height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin:10px 0;overflow:hidden;display:none}
+.pf{height:100%;background:linear-gradient(90deg,#2979ff,#00e5ff);animation:pf 120s linear forwards}
+@keyframes pf{to{width:95%}}
+.pf{width:0%}
+.ig{display:none;margin-top:10px}
+.ig img{width:100%;border-radius:9px}
+.is2{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
+.ist{padding:5px 10px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);color:#667;border-radius:15px;cursor:pointer;font-size:.72rem}
+.ist.on{background:rgba(124,77,255,.1);border-color:rgba(124,77,255,.3);color:#7c4dff}
+.ag{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:10px}
+.ag img{width:100%;border-radius:7px;cursor:pointer;aspect-ratio:16/9;object-fit:cover}
+.mb2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.mbt{padding:11px;border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;border:1px solid;text-align:center}
+.ms{display:none;margin-top:10px;padding:9px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;color:#00e5ff;font-size:.82rem;text-align:center}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;text-align:center}
+.pc.pro{background:linear-gradient(135deg,rgba(41,121,255,.08),rgba(0,229,255,.04));border-color:rgba(41,121,255,.3)}
+.pp{font-size:1.8rem;font-weight:900;margin:8px 0}
+.pf2{color:#556;font-size:.72rem;line-height:1.8}
+.pb2{width:100%;padding:9px;border:none;border-radius:8px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.8rem;font-weight:700;margin-top:10px}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;padding:15px}
-.modal-box{background:#080d20;border:1px solid rgba(41,121,255,.3);border-radius:20px;padding:30px;text-align:center;max-width:380px;width:100%}
-.modal-icon{font-size:3rem;margin-bottom:12px}
-.modal-title{font-size:1.3rem;font-weight:900;margin-bottom:8px}
-.modal-sub{color:#556;font-size:.85rem;line-height:1.6;margin-bottom:20px}
-.modal-btn{padding:11px 25px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;margin:4px}
-.modal-close{padding:11px 25px;background:rgba(255,255,255,.05);color:#889;border:1px solid var(--border);border-radius:10px;font-size:.85rem;cursor:pointer;font-family:'Tajawal',sans-serif;margin:4px}
-
-footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);color:#334;font-size:.8rem;margin-top:15px}
+.mbox{background:#080d20;border:1px solid rgba(41,121,255,.3);border-radius:18px;padding:25px;text-align:center;max-width:360px;width:100%}
+footer{text-align:center;padding:20px;border-top:1px solid rgba(255,255,255,.07);color:#334;font-size:.75rem;margin-top:10px}
 </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKGTFH3P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div class="bg-img" id="bgImg"></div>
-<div class="bg-ov"></div>
-<div class="grid"></div>
-
+<div class="bg" id="bg"></div>
+<div class="ov"></div>
 <div class="wrap">
+
 <nav>
   <div class="logo">
     <div class="logo-icon">🎙️</div>
@@ -151,77 +116,73 @@ footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);co
   </div>
   <div class="nav-right">
     <div class="counter" id="counter">🎯 3/3</div>
-    <button class="nav-btn" onclick="document.getElementById('upgradeModal').style.display='flex'">⭐ ترقية</button>
+    <button class="nav-btn" onclick="showTab('pricing',this)">💎 الأسعار</button>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-tag"><div class="dot"></div>منصة الذكاء الاصطناعي العربية</div>
   <h1>أدوات <span class="grad">ذكاء اصطناعي</span><br>للمحتوى العربي</h1>
-  <p class="hero-sub">بودكاست • فيديو • صور • أصوات — كل ما تحتاجه مجاناً</p>
-  <div class="trial-badge">⚡ جرّب مجاناً — لا تسجيل مطلوب</div>
+  <p class="hero-sub">بودكاست • فيديو • صور • أصوات — مجاناً</p>
+  <div class="trial">⚡ جرّب مجاناً — لا تسجيل مطلوب</div>
   <div class="stats">
-    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">أدوات AI</div></div>
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">إبداع</div></div>
-    <div class="stat"><div class="stat-num">🆓</div><div class="stat-label">مجاني</div></div>
+    <div><div class="snum">5+</div><div class="slbl">أدوات AI</div></div>
+    <div><div class="snum">∞</div><div class="slbl">إبداع</div></div>
+    <div><div class="snum">🆓</div><div class="slbl">مجاني</div></div>
   </div>
 </div>
 
-<div class="yt-banner">
-  <div class="yt-text">🎬 تابع قناتنا للمزيد!</div>
-  <a href="https://youtube.com/@al-u6j4s" target="_blank" class="yt-btn">▶️ اشترك</a>
+<div class="yt">
+  <div class="yt-t">🎬 تابع قناتنا للمزيد!</div>
+  <a href="https://youtube.com/@al-u6j4s" target="_blank" class="yt-b">▶️ اشترك</a>
 </div>
 
-<div class="tools-nav">
-  <button class="tool-tab active" onclick="showPanel('podcast',this)">🎙️ بودكاست</button>
-  <button class="tool-tab" onclick="showPanel('video',this)">🎬 فيديو</button>
-  <button class="tool-tab" onclick="showPanel('image',this)">🎨 صور</button>
-  <button class="tool-tab" onclick="showPanel("music",this)">🎵 موسيقى</button>
-<button class="tool-tab" onclick="showPanel("pricing",this)">💎 الأسعار</button>
+<div class="tabs">
+  <button class="tab on" onclick="showTab('podcast',this)">🎙️ بودكاست</button>
+  <button class="tab" onclick="showTab('video',this)">🎬 فيديو</button>
+  <button class="tab" onclick="showTab('image',this)">🎨 صور</button>
+  <button class="tab" onclick="showTab('music',this)">🎵 موسيقى</button>
+  <button class="tab" onclick="showTab('pricing',this)">💎 الأسعار</button>
 </div>
 
 <!-- PODCAST -->
-<div id="panel-podcast" class="panel active">
+<div id="pnl-podcast" class="pnl on">
   <div class="card">
-    <div class="card-head"><div class="live"></div><div class="card-title">🎙️ مولّد البودكاست</div></div>
-    <div class="card-body">
-      <div class="lbl">📝 موضوع الحلقة</div>
-      <textarea id="script" maxlength="500" placeholder="مثال: تأثير الذكاء الاصطناعي على سوق العمل العربي..."></textarea>
+    <div class="ch"><div class="dot" style="color:#00e676;background:#00e676"></div>🎙️ مولّد البودكاست</div>
+    <div class="cb">
+      <div class="lbl">📝 الموضوع</div>
+      <textarea id="script" placeholder="مثال: تأثير الذكاء الاصطناعي على العالم العربي..."></textarea>
       <div class="lbl" style="margin-top:10px">🎨 الأسلوب</div>
       <div class="sg">
-        <div class="sc s" onclick="sel(this,'.sc','style')"><div class="si">💻</div><div class="sn">تقني</div></div>
-        <div class="sc" onclick="sel(this,'.sc','style')"><div class="si">🔥</div><div class="sn">تحفيزي</div></div>
-        <div class="sc" onclick="sel(this,'.sc','style')"><div class="si">📰</div><div class="sn">إخباري</div></div>
+        <div class="sc on" onclick="pick(this,'.sc','s')"><div>💻</div><div style="font-size:.72rem;font-weight:700">تقني</div></div>
+        <div class="sc" onclick="pick(this,'.sc','s')"><div>🔥</div><div style="font-size:.72rem;font-weight:700">تحفيزي</div></div>
+        <div class="sc" onclick="pick(this,'.sc','s')"><div>📰</div><div style="font-size:.72rem;font-weight:700">إخباري</div></div>
       </div>
       <div class="lbl">🎙️ الصوت</div>
       <div class="vg">
-        <div class="vc s" onclick="sel(this,'.vc','voice')"><div class="vi">👨</div><div class="vn">رجل</div></div>
-        <div class="vc" onclick="sel(this,'.vc','voice')"><div class="vi">👩</div><div class="vn">امرأة</div></div>
-        <div class="vc" onclick="sel(this,'.vc','voice')"><div class="vi">🔥</div><div class="vn">شباب</div></div>
-        <div class="vc" onclick="sel(this,'.vc','voice')"><div class="vi">🎩</div><div class="vn">رسمي</div></div>
+        <div class="vc on" onclick="pick(this,'.vc','v')"><div>👨</div><div style="font-size:.68rem;font-weight:700">رجل</div></div>
+        <div class="vc" onclick="pick(this,'.vc','v')"><div>👩</div><div style="font-size:.68rem;font-weight:700">امرأة</div></div>
+        <div class="vc" onclick="pick(this,'.vc','v')"><div>🔥</div><div style="font-size:.68rem;font-weight:700">شباب</div></div>
+        <div class="vc" onclick="pick(this,'.vc','v')"><div>🎩</div><div style="font-size:.68rem;font-weight:700">رسمي</div></div>
       </div>
-      <div class="btn-row">
-        <button class="btn-main" onclick="generate()" id="genBtn">⚡ توليد السكريبت</button>
-        <button class="btn-sm" onclick="clearAll()">🗑️</button>
+      <div class="br">
+        <button class="bm" onclick="gen()" id="genBtn">⚡ توليد السكريبت</button>
+        <button class="bs" onclick="document.getElementById('script').value='';document.getElementById('res').style.display='none'">🗑️</button>
       </div>
-      <div class="loader" id="loader">
-        <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-        <div class="loader-txt" id="loaderTxt">جاري التوليد...</div>
-      </div>
-      <div class="result" id="result">
-        <div class="res-top">
-          <div class="res-label">✅ السكريبت جاهز</div>
-          <div class="res-acts">
-            <button class="rbtn g" onclick="copyResult()">📋 نسخ</button>
-            <button class="rbtn b" onclick="downloadResult()">💾 تحميل</button>
-            <button class="rbtn p" onclick="generateAudio()" id="audioBtn">🎙️ صوت</button>
+      <div class="ld" id="ld"><div class="bars"><div class="b b1"></div><div class="b b2"></div><div class="b b3"></div><div class="b b4"></div><div class="b b5"></div></div><div class="lt" id="lt">جاري التوليد...</div></div>
+      <div class="res" id="res">
+        <div class="rt">
+          <div class="rl">✅ السكريبت جاهز</div>
+          <div class="ra">
+            <button class="rb rg" onclick="navigator.clipboard.writeText(document.getElementById('rtxt').textContent);alert('تم!')">📋</button>
+            <button class="rb rb2" onclick="dlTxt()">💾</button>
+            <button class="rb rp" onclick="genAudio()" id="aBtn">🎙️ صوت</button>
           </div>
         </div>
-        <div class="res-box" id="resultText"></div>
-        <audio id="audioPlayer" controls></audio>
-        <div style="margin-top:10px;padding:10px 14px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.12);border-radius:9px;display:flex;align-items:center;justify-content:space-between;gap:8px">
-          <span style="color:#ff4444;font-size:.78rem">🎬 أعجبك؟ تابع قناتنا!</span>
-          <a href="https://youtube.com/@al-u6j4s" target="_blank" style="padding:5px 12px;background:#ff0000;color:#fff;border-radius:7px;text-decoration:none;font-size:.72rem;font-weight:700">▶️ اشترك</a>
+        <div class="rbox" id="rtxt"></div>
+        <audio id="ap" controls></audio>
+        <div style="margin-top:8px;padding:9px 12px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.1);border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:6px">
+          <span style="color:#ff4444;font-size:.75rem">🎬 تابع قناتنا!</span>
+          <a href="https://youtube.com/@al-u6j4s" target="_blank" style="padding:4px 10px;background:#f00;color:#fff;border-radius:6px;text-decoration:none;font-size:.7rem;font-weight:700">▶️</a>
         </div>
       </div>
     </div>
@@ -229,26 +190,23 @@ footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);co
 </div>
 
 <!-- VIDEO -->
-<div id="panel-video" class="panel">
+<div id="pnl-video" class="pnl">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--red);box-shadow:0 0 6px var(--red)"></div><div class="card-title">🎬 مولّد الفيديو AI</div></div>
-    <div class="card-body">
+    <div class="ch"><div class="dot" style="color:#ff4081;background:#ff4081"></div>🎬 مولّد الفيديو AI</div>
+    <div class="cb">
       <div class="lbl">📝 وصف الفيديو</div>
-      <textarea id="videoPrompt" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء، مقدم يتحدث بثقة..."></textarea>
-      <div class="btn-row">
-        <button class="btn-main" style="background:linear-gradient(135deg,#c2185b,#ff4081)" onclick="generateVideo()" id="videoBtn">🎬 توليد الفيديو</button>
-        <button class="btn-sm" onclick="document.getElementById('videoPrompt').value=''">🗑️</button>
+      <textarea id="vp" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء..."></textarea>
+      <div class="br">
+        <button class="bm" style="background:linear-gradient(135deg,#c2185b,#ff4081)" onclick="genVid()" id="vBtn">🎬 توليد الفيديو</button>
+        <button class="bs" onclick="document.getElementById('vp').value=''">🗑️</button>
       </div>
-      <div class="progress-bar" id="progressBar"><div class="progress-fill"></div></div>
-      <div class="loader" id="videoLoader">
-        <div class="bars"><div class="bar" style="background:var(--red)"></div><div class="bar" style="background:#ff6d00"></div><div class="bar" style="background:var(--red)"></div><div class="bar" style="background:#ff6d00"></div><div class="bar" style="background:var(--red)"></div></div>
-        <div class="loader-txt">🎬 جاري التوليد... قد يستغرق 2-3 دقائق</div>
-      </div>
-      <div class="vid-preview" id="vidPreview">
-        <video id="generatedVideo" controls></video>
-        <div class="btn-row" style="margin-top:8px">
-          <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadVideo()">💾 تحميل</button>
-          <button class="rbtn b" style="flex:1;padding:10px" onclick="generateVideo()">🔄 جديد</button>
+      <div class="pb" id="pb"><div class="pf" id="pf"></div></div>
+      <div class="ld" id="vld"><div class="bars"><div class="b" style="background:#ff4081"></div><div class="b" style="background:#ff6d00"></div><div class="b" style="background:#ff4081"></div><div class="b" style="background:#ff6d00"></div><div class="b" style="background:#ff4081"></div></div><div class="lt">🎬 جاري التوليد... 2-3 دقائق</div></div>
+      <div class="vp" id="vpr">
+        <video id="gv" controls></video>
+        <div class="br" style="margin-top:8px">
+          <button class="rb rg" style="flex:1;padding:9px" onclick="const a=document.createElement('a');a.href=document.getElementById('gv').src;a.download='athir.mp4';a.click()">💾 تحميل</button>
+          <button class="rb rb2" style="flex:1;padding:9px" onclick="genVid()">🔄 جديد</button>
         </div>
       </div>
     </div>
@@ -256,303 +214,269 @@ footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);co
 </div>
 
 <!-- IMAGE -->
-<div id="panel-image" class="panel">
+<div id="pnl-image" class="pnl">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div><div class="card-title">🎨 مولّد الصور AI</div></div>
-    <div class="card-body">
-      <div class="lbl">🖼️ معرض إلهام — اضغط لاستخدام</div>
-      <div class="ai-gallery" id="aiGallery"></div>
+    <div class="ch"><div class="dot" style="color:#7c4dff;background:#7c4dff"></div>🎨 مولّد الصور AI</div>
+    <div class="cb">
+      <div class="lbl">🖼️ معرض إلهام</div>
+      <div class="ag" id="ag"></div>
       <div class="lbl">📝 وصف الصورة</div>
-      <input type="text" id="imgPrompt" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء نيون...">
-      <div class="img-styles">
-        <div class="is s" onclick="selIs(this,'realistic')">📷 واقعي</div>
-        <div class="is" onclick="selIs(this,'cinematic')">🎬 سينمائي</div>
-        <div class="is" onclick="selIs(this,'artistic')">🎨 فني</div>
-        <div class="is" onclick="selIs(this,'3d render')">🌐 ثلاثي</div>
-        <div class="is" onclick="selIs(this,'anime')">✨ أنمي</div>
+      <input type="text" id="ip" placeholder="مثال: استوديو بودكاست احترافي...">
+      <div class="is2">
+        <div class="ist on" onclick="pickIs(this,'realistic')">📷 واقعي</div>
+        <div class="ist" onclick="pickIs(this,'cinematic')">🎬 سينمائي</div>
+        <div class="ist" onclick="pickIs(this,'artistic')">🎨 فني</div>
+        <div class="ist" onclick="pickIs(this,'3d render')">🌐 ثلاثي</div>
+        <div class="ist" onclick="pickIs(this,'anime')">✨ أنمي</div>
       </div>
-      <div class="btn-row">
-        <button class="btn-main" style="background:linear-gradient(135deg,var(--purple),#5c35cc)" onclick="generateImage()" id="imgBtn">🎨 توليد الصورة</button>
+      <div class="br">
+        <button class="bm" style="background:linear-gradient(135deg,#7c4dff,#5c35cc)" onclick="genImg()" id="iBtn">🎨 توليد</button>
       </div>
-      <div class="loader" id="imgLoader">
-        <div class="bars"><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div></div>
-        <div class="loader-txt">جاري توليد الصورة...</div>
-      </div>
-      <div class="img-res" id="imgRes">
-        <img id="generatedImg" alt="صورة">
-        <div class="btn-row" style="margin-top:8px">
-          <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadImage()">💾 تحميل</button>
-          <button class="rbtn p" style="flex:1;padding:10px" onclick="generateImage()">🔄 جديد</button>
+      <div class="ld" id="ild"><div class="bars"><div class="b" style="background:#7c4dff"></div><div class="b" style="background:#9c27b0"></div><div class="b" style="background:#7c4dff"></div><div class="b" style="background:#9c27b0"></div><div class="b" style="background:#7c4dff"></div></div><div class="lt">جاري توليد الصورة...</div></div>
+      <div class="ig" id="ig">
+        <img id="gi" alt="صورة">
+        <div class="br" style="margin-top:8px">
+          <button class="rb rg" style="flex:1;padding:9px" onclick="const a=document.createElement('a');a.href=document.getElementById('gi').src;a.download='athir.jpg';a.click()">💾 تحميل</button>
+          <button class="rb rp" style="flex:1;padding:9px" onclick="genImg()">🔄 جديد</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PRICING -->
-<div id="panel-pricing" class="panel">
-<div class="card">
-<div class="card-head"><div class="live" style="background:#ffd700;box-shadow:0 0 6px #ffd700"></div><div class="card-title">💎 خطط الاشتراك</div></div>
-<div class="card-body">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
-<div style="font-size:1.5rem;margin-bottom:8px">🆓</div>
-<div style="font-weight:900;font-size:1.1rem;margin-bottom:5px">مجاني</div>
-<div style="font-size:2rem;font-weight:900;color:var(--green);margin-bottom:10px">$0</div>
-<div style="color:#556;font-size:.78rem;line-height:1.8">✅ 3 توليدات/يوم<br>✅ بودكاست<br>✅ صور AI<br>✅ موسيقى<br>❌ فيديو محدود<br>❌ بدون صوت</div>
-<button style="margin-top:15px;width:100%;padding:10px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:#fff;border-radius:10px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:.85rem">الخطة الحالية</button>
-</div>
-<div style="background:linear-gradient(135deg,rgba(41,121,255,.1),rgba(0,229,255,.05));border:1px solid rgba(41,121,255,.3);border-radius:14px;padding:20px;text-align:center;position:relative">
-<div style="position:absolute;top:-10px;right:50%;transform:translateX(50%);background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:700">الأشهر</div>
-<div style="font-size:1.5rem;margin-bottom:8px">⭐</div>
-<div style="font-weight:900;font-size:1.1rem;margin-bottom:5px">برو</div>
-<div style="font-size:2rem;font-weight:900;color:var(--cyan);margin-bottom:10px">$5<span style="font-size:.9rem;color:#556">/شهر</span></div>
-<div style="color:#aac;font-size:.78rem;line-height:1.8">✅ توليدات غير محدودة<br>✅ بودكاست احترافي<br>✅ صور HD<br>✅ فيديو Runway ML<br>✅ صوت ElevenLabs<br>✅ دعم أولوية</div>
-<a href="https://athirstore.lemonsqueezy.com" target="_blank"><button style="margin-top:15px;width:100%;padding:10px;background:linear-gradient(135deg,var(--blue),var(--cyan));border:none;color:#fff;border-radius:10px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:.85rem;font-weight:700">🚀 اشترك الآن</button></a>
-</div>
-</div>
-</div>
-</div>
-</div>
 <!-- MUSIC -->
-<div id="panel-music" class="panel">
+<div id="pnl-music" class="pnl">
   <div class="card">
-    <div class="card-head"><div class="live" style="background:var(--cyan);box-shadow:0 0 6px var(--cyan)"></div><div class="card-title">🎵 موسيقى خلفية مجانية</div></div>
-    <div class="card-body">
-      <div class="lbl" style="margin-bottom:12px">اختر نوع الموسيقى واستمع مباشرة</div>
-      <div class="music-btns">
-        <button class="mb" style="background:rgba(41,121,255,.1);border-color:rgba(41,121,255,.3);color:var(--blue)" onclick="playMusic('calm')">🌊 هادئة للتركيز</button>
-        <button class="mb" style="background:rgba(255,109,0,.1);border-color:rgba(255,109,0,.3);color:#ff6d00" onclick="playMusic('energetic')">🔥 حماسية تحفيزية</button>
-        <button class="mb" style="background:rgba(0,229,255,.1);border-color:rgba(0,229,255,.3);color:var(--cyan)" onclick="playMusic('tech')">🎹 تقنية إلكترونية</button>
-        <button class="mb" style="background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.3);color:#ff4444" onclick="stopMusic()">⏹️ إيقاف الموسيقى</button>
+    <div class="ch"><div class="dot" style="color:#00e5ff;background:#00e5ff"></div>🎵 موسيقى خلفية</div>
+    <div class="cb">
+      <div class="lbl" style="margin-bottom:10px">اختر وشغّل مباشرة</div>
+      <div class="mb2">
+        <button class="mbt" style="background:rgba(41,121,255,.1);border-color:rgba(41,121,255,.3);color:#2979ff" onclick="playM('calm')">🌊 هادئة</button>
+        <button class="mbt" style="background:rgba(255,109,0,.1);border-color:rgba(255,109,0,.3);color:#ff6d00" onclick="playM('energetic')">🔥 حماسية</button>
+        <button class="mbt" style="background:rgba(0,229,255,.1);border-color:rgba(0,229,255,.3);color:#00e5ff" onclick="playM('tech')">🎹 تقنية</button>
+        <button class="mbt" style="background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.3);color:#ff4444" onclick="stopM()">⏹️ إيقاف</button>
       </div>
-      <div id="musicStatus" style="display:none;margin-top:12px;padding:10px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:9px;color:var(--cyan);font-size:.85rem;text-align:center"></div>
+      <div class="ms" id="ms"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div id="pnl-pricing" class="pnl">
+  <div class="card">
+    <div class="ch"><div class="dot" style="color:#ffd700;background:#ffd700"></div>💎 خطط الاشتراك</div>
+    <div class="cb">
+      <div class="pg">
+        <div class="pc">
+          <div style="font-size:1.3rem">🆓</div>
+          <div style="font-weight:900;margin:5px 0">مجاني</div>
+          <div class="pp" style="color:#00e676">$0</div>
+          <div class="pf2">✅ 3 توليدات/يوم<br>✅ بودكاست<br>✅ صور AI<br>✅ موسيقى<br>❌ فيديو محدود<br>❌ بدون صوت احترافي</div>
+          <button class="pb2" style="background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.1)">الخطة الحالية</button>
+        </div>
+        <div class="pc pro">
+          <div style="position:relative"><span style="position:absolute;top:-20px;right:50%;transform:translateX(50%);background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;padding:2px 10px;border-radius:20px;font-size:.65rem;font-weight:700;white-space:nowrap">الأشهر ⭐</span></div>
+          <div style="font-size:1.3rem;margin-top:5px">⭐</div>
+          <div style="font-weight:900;margin:5px 0">برو</div>
+          <div class="pp" style="color:#00e5ff">$5<span style="font-size:.8rem;color:#556">/شهر</span></div>
+          <div class="pf2">✅ غير محدود<br>✅ بودكاست احترافي<br>✅ صور HD<br>✅ فيديو Runway ML<br>✅ صوت ElevenLabs<br>✅ دعم أولوية</div>
+          <a href="https://athirstore.lemonsqueezy.com" target="_blank">
+            <button class="pb2" style="background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff">🚀 اشترك الآن</button>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- MODAL -->
-<div class="modal" id="upgradeModal">
-  <div class="modal-box">
-    <div class="modal-icon">🚀</div>
-    <div class="modal-title">انتهت توليداتك اليوم!</div>
-    <div class="modal-sub">استخدمت 3/3 توليدات مجانية. عد غداً أو تابع قناتنا!</div>
-    <a href="https://youtube.com/@al-u6j4s" target="_blank"><button class="modal-btn">▶️ تابع القناة</button></a>
-    <button class="modal-close" onclick="document.getElementById('upgradeModal').style.display='none'">لاحقاً</button>
+<div class="modal" id="modal">
+  <div class="mbox">
+    <div style="font-size:2.5rem;margin-bottom:10px">🚀</div>
+    <div style="font-size:1.1rem;font-weight:900;margin-bottom:8px">انتهت توليداتك!</div>
+    <div style="color:#556;font-size:.82rem;margin-bottom:18px">استخدمت 3/3 توليدات مجانية. عد غداً أو اشترك!</div>
+    <a href="https://youtube.com/@al-u6j4s" target="_blank"><button style="padding:10px 20px;background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;border:none;border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.85rem;font-weight:700;margin:3px">▶️ تابع القناة</button></a>
+    <button style="padding:10px 20px;background:rgba(255,255,255,.05);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;margin:3px" onclick="document.getElementById('modal').style.display='none'">لاحقاً</button>
   </div>
 </div>
 
 <footer>
-  <div style="margin-bottom:12px">
-    <a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:10px;text-decoration:none;font-weight:700;font-size:.82rem">▶️ تابعنا على يوتيوب</a>
-  </div>
-  <span onclick="activateDev()" style="cursor:pointer;opacity:.05">⚙️</span> أثير AI © 2026
+  <div style="margin-bottom:10px"><a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:9px;text-decoration:none;font-weight:700;font-size:.78rem">▶️ يوتيوب</a></div>
+  <span onclick="devMode()" style="cursor:pointer;opacity:.04">⚙️</span> أثير AI © 2026
 </footer>
 </div>
 
 <script>
 const LIMIT=3;
-const DEV_CODE='athir2026';
-let styleVal='تقني',voiceVal='male-arabic',imgStyleVal='realistic',curAudio=null;
+let sv='تقني',vv='male-arabic',iv='realistic',ca=null,ct=null,ci=0;
 
 // BG
-const studios=[
-'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80',
-'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80',
-'https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80',
-'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1920&q=80'
-];
-let bgI=0;
-function changeBg(){document.getElementById('bgImg').style.backgroundImage=`url(${studios[bgI]})`;bgI=(bgI+1)%studios.length;}
-changeBg();setInterval(changeBg,8000);
+const bgs=['https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80','https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80','https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80'];
+let bi=0;
+function chBg(){document.getElementById('bg').style.backgroundImage=`url(${bgs[bi]})`;bi=(bi+1)%bgs.length;}
+chBg();setInterval(chBg,8000);
 
-// Panel
-function showPanel(n,el){
-  if(n==='pricing'){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active'));
-document.getElementById('panel-pricing').classList.add('active');
-el.classList.add('active');return;}
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('panel-'+n).classList.add('active');
-  el.classList.add('active');
+// Tabs
+function showTab(n,el){
+  document.querySelectorAll('.pnl').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('pnl-'+n).classList.add('on');
+  if(el)el.classList.add('on');
 }
 
-// Sel
-function sel(el,cls,type){
-  document.querySelectorAll(cls).forEach(e=>e.classList.remove('s'));
-  el.classList.add('s');
-  if(type==='style')styleVal=el.querySelector('.sn').textContent;
-  if(type==='voice'){const v={'رجل':'male-arabic','امرأة':'female-arabic','شباب':'youth-energetic','رسمي':'professional'};voiceVal=v[el.querySelector('.vn').textContent]||'male-arabic';}
+// Pick
+function pick(el,cls,t){
+  document.querySelectorAll(cls).forEach(e=>e.classList.remove('on'));
+  el.classList.add('on');
+  if(t==='s')sv=el.querySelectorAll('div')[1].textContent;
+  if(t==='v'){const m={'رجل':'male-arabic','امرأة':'female-arabic','شباب':'youth-energetic','رسمي':'professional'};vv=m[el.querySelectorAll('div')[1].textContent]||'male-arabic';}
 }
-function selIs(el,s){document.querySelectorAll('.is').forEach(e=>e.classList.remove('s'));el.classList.add('s');imgStyleVal=s;}
+function pickIs(el,s){document.querySelectorAll('.ist').forEach(e=>e.classList.remove('on'));el.classList.add('on');iv=s;}
 
 // Limit
-function checkLimit(){
-  if(localStorage.getItem('athir_dev')==='true')return true;
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
-  if(d.date!==t){localStorage.setItem('athir',JSON.stringify({date:t,count:0}));updateCounter();return true;}
-  if(d.count>=LIMIT){document.getElementById('upgradeModal').style.display='flex';return false;}
+function chkLmt(){
+  if(localStorage.getItem('dev')==='1')return true;
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
+  if(d.d!==t){localStorage.setItem('a',JSON.stringify({d:t,c:0}));updC();return true;}
+  if(d.c>=LIMIT){document.getElementById('modal').style.display='flex';return false;}
   return true;
 }
-function incLimit(){
-  if(localStorage.getItem('athir_dev')==='true')return;
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
-  const c=(d.date===t?d.count:0)+1;
-  localStorage.setItem('athir',JSON.stringify({date:t,count:c}));updateCounter();
+function incC(){
+  if(localStorage.getItem('dev')==='1')return;
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
+  const c=(d.d===t?d.c:0)+1;
+  localStorage.setItem('a',JSON.stringify({d:t,c}));updC();
 }
-function updateCounter(){
-  if(localStorage.getItem('athir_dev')==='true'){document.getElementById('counter').textContent='🔓 مطور';return;}
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('athir')||'{}');
-  const c=d.date===t?d.count:0;
+function updC(){
+  if(localStorage.getItem('dev')==='1'){document.getElementById('counter').textContent='🔓 مطور';return;}
+  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
+  const c=d.d===t?d.c:0;
   document.getElementById('counter').textContent=`🎯 ${LIMIT-c}/${LIMIT}`;
 }
-function activateDev(){
-  const c=prompt('كود المطور:');
-  if(c===DEV_CODE){localStorage.setItem('athir_dev','true');alert('✅ وضع المطور!');updateCounter();}
-  else alert('❌ خاطئ');
-}
+function devMode(){const c=prompt('كود:');if(c==='athir2026'){localStorage.setItem('dev','1');alert('✅');updC();}else alert('❌');}
 
-// Generate
-async function generate(){
-  if(!checkLimit())return;
+// Generate Script
+async function gen(){
+  if(!chkLmt())return;
   const s=document.getElementById('script').value;
-  if(!s.trim())return alert('اكتب الموضوع أولاً!');
+  if(!s.trim())return alert('اكتب الموضوع!');
   document.getElementById('genBtn').disabled=true;
-  document.getElementById('loader').style.display='block';
-  document.getElementById('loaderTxt').textContent='الذكاء الاصطناعي يكتب سكريبتك...';
-  document.getElementById('result').style.display='none';
+  document.getElementById('ld').style.display='block';
+  document.getElementById('lt').textContent='الذكاء الاصطناعي يكتب...';
+  document.getElementById('res').style.display='none';
   try{
-    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:s+' (الأسلوب: '+styleVal+')'})});
+    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:s+' ('+sv+')'})});
     const d=await r.json();
-    document.getElementById('resultText').textContent=d.result||d.error;
-    document.getElementById('result').style.display='block';
-    document.getElementById('audioPlayer').style.display='none';
-    incLimit();
+    document.getElementById('rtxt').textContent=d.result||d.error;
+    document.getElementById('res').style.display='block';
+    document.getElementById('ap').style.display='none';
+    incC();
   }catch(e){alert('خطأ!');}
-  finally{document.getElementById('loader').style.display='none';document.getElementById('genBtn').disabled=false;}
+  finally{document.getElementById('ld').style.display='none';document.getElementById('genBtn').disabled=false;}
 }
 
 // Audio
-async function generateAudio(){
-  const t=document.getElementById('resultText').textContent;
+async function genAudio(){
+  const t=document.getElementById('rtxt').textContent;
   if(!t)return;
-  const btn=document.getElementById('audioBtn');
+  const btn=document.getElementById('aBtn');
   btn.disabled=true;
-  document.getElementById('loader').style.display='block';
-  document.getElementById('loaderTxt').textContent='🎙️ جاري توليد الصوت...';
+  document.getElementById('ld').style.display='block';
+  document.getElementById('lt').textContent='🎙️ توليد الصوت...';
   try{
-    const r=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t.substring(0,500),voice:voiceVal})});
-    if(!r.ok){const e=await r.json();throw new Error(e.error);}
+    const r=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t.substring(0,500),voice:vv})});
+    if(!r.ok)throw new Error((await r.json()).error);
     const b=await r.blob();
-    const u=URL.createObjectURL(b);
-    const p=document.getElementById('audioPlayer');
-    p.src=u;p.style.display='block';p.play();
-    btn.textContent='🔄 إعادة';
+    const p=document.getElementById('ap');
+    p.src=URL.createObjectURL(b);
+    p.style.display='block';
+    p.play();
+    btn.textContent='🔄';
   }catch(e){alert('خطأ: '+e.message);}
-  finally{document.getElementById('loader').style.display='none';btn.disabled=false;}
+  finally{document.getElementById('ld').style.display='none';btn.disabled=false;}
 }
 
 // Video
-async function generateVideo(){
-  const p=document.getElementById('videoPrompt').value;
-  if(!p.trim())return alert('اكتب وصف الفيديو!');
-  const btn=document.getElementById('videoBtn');
+async function genVid(){
+  const p=document.getElementById('vp').value;
+  if(!p.trim())return alert('اكتب الوصف!');
+  const btn=document.getElementById('vBtn');
   btn.disabled=true;
-  document.getElementById('videoLoader').style.display='block';
-  document.getElementById('progressBar').style.display='block';
-  document.getElementById('vidPreview').style.display='none';
+  document.getElementById('vld').style.display='block';
+  document.getElementById('pb').style.display='block';
+  document.getElementById('pf').style.width='0%';
+  document.getElementById('vpr').style.display='none';
   try{
     const r=await fetch('/api/video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})});
     const d=await r.json();
     if(d.error)throw new Error(d.error);
     const chk=setInterval(async()=>{
-      const s=await fetch('/api/video-status?id='+d.id);
-      const sd=await s.json();
-      if(sd.status==='succeeded'){
-        clearInterval(chk);
-        document.getElementById('generatedVideo').src=Array.isArray(sd.output)?sd.output[0]:sd.output;
-        document.getElementById('vidPreview').style.display='block';
-        document.getElementById('videoLoader').style.display='none';
-        document.getElementById('progressBar').style.display='none';
-        btn.disabled=false;
-      }else if(sd.status==='failed'){
-        clearInterval(chk);
-        alert('فشل: '+sd.error);
-        document.getElementById('videoLoader').style.display='none';
-        document.getElementById('progressBar').style.display='none';
-        btn.disabled=false;
-      }
+      try{
+        const s=await fetch('/api/video-status?id='+d.id);
+        const sd=await s.json();
+        if(sd.status==='succeeded'||sd.status==='SUCCEEDED'){
+          clearInterval(chk);
+          const out=sd.output;
+          document.getElementById('gv').src=Array.isArray(out)?out[0]:out;
+          document.getElementById('vpr').style.display='block';
+          document.getElementById('vld').style.display='none';
+          document.getElementById('pb').style.display='none';
+          btn.disabled=false;
+        }else if(sd.status==='failed'||sd.status==='FAILED'){
+          clearInterval(chk);
+          alert('فشل: '+(sd.error||'خطأ'));
+          document.getElementById('vld').style.display='none';
+          document.getElementById('pb').style.display='none';
+          btn.disabled=false;
+        }
+      }catch(e){}
     },5000);
   }catch(e){
     alert('خطأ: '+e.message);
-    document.getElementById('videoLoader').style.display='none';
-    document.getElementById('progressBar').style.display='none';
+    document.getElementById('vld').style.display='none';
+    document.getElementById('pb').style.display='none';
     btn.disabled=false;
   }
 }
-function downloadVideo(){const a=document.createElement('a');a.href=document.getElementById('generatedVideo').src;a.download='athir.mp4';a.click();}
 
-// Image
-const gallery=['podcast studio professional blue neon','radio broadcast room modern dark','music recording studio cinematic','podcast microphone professional dark setup'];
-function loadGallery(){
-  const g=document.getElementById('aiGallery');
-  gallery.forEach((p,i)=>{
-    const img=document.createElement('img');
-    img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400&height=225&nologo=true&seed=${i*111}`;
-    img.loading='lazy';
-    img.onclick=()=>document.getElementById('imgPrompt').value=p;
-    g.appendChild(img);
-  });
-}
-loadGallery();
+// Image Gallery
+['podcast studio blue neon dark','recording studio microphone professional','broadcast room modern cinematic','music studio dark aesthetic'].forEach((p,i)=>{
+  const img=document.createElement('img');
+  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400&height=225&nologo=true&seed=${i*111}`;
+  img.loading='lazy';
+  img.onclick=()=>document.getElementById('ip').value=p;
+  document.getElementById('ag').appendChild(img);
+});
 
-async function generateImage(){
-  const p=document.getElementById('imgPrompt').value;
-  if(!p.trim())return alert('اكتب وصف الصورة!');
-  const btn=document.getElementById('imgBtn');
-  btn.textContent='⏳...';btn.disabled=true;
-  document.getElementById('imgLoader').style.display='block';
-  document.getElementById('imgRes').style.display='none';
-  const img=document.getElementById('generatedImg');
-  img.onload=()=>{document.getElementById('imgRes').style.display='block';document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
-  img.onerror=()=>{alert('خطأ');document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
-  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p+', '+imgStyleVal)}?width=900&height=500&nologo=true&seed=${Date.now()}`;
+// Generate Image
+async function genImg(){
+  const p=document.getElementById('ip').value;
+  if(!p.trim())return alert('اكتب الوصف!');
+  const btn=document.getElementById('iBtn');
+  btn.textContent='⏳';btn.disabled=true;
+  document.getElementById('ild').style.display='block';
+  document.getElementById('ig').style.display='none';
+  const img=document.getElementById('gi');
+  img.onload=()=>{document.getElementById('ig').style.display='block';document.getElementById('ild').style.display='none';btn.textContent='🎨 توليد';btn.disabled=false;};
+  img.onerror=()=>{alert('خطأ');document.getElementById('ild').style.display='none';btn.textContent='🎨 توليد';btn.disabled=false;};
+  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p+' '+iv)}?width=900&height=500&nologo=true&seed=${Date.now()}`;
 }
-function downloadImage(){const a=document.createElement('a');a.href=document.getElementById('generatedImg').src;a.download='athir.jpg';a.click();}
 
 // Music
-const tracks={
-  calm:['https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3','https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3'],
-  energetic:['https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-738.mp3'],
-  tech:['https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3']
-};
-let curType=null,curIdx=0;
-function playMusic(t){
-  if(curAudio){curAudio.pause();}
-  curType=t;curIdx=0;playTrack();
+const trx={calm:['https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3'],energetic:['https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-738.mp3'],tech:['https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3']};
+const mn={calm:'🌊 هادئة',energetic:'🔥 حماسية',tech:'🎹 تقنية'};
+function playM(t){
+  if(ca){ca.pause();}
+  ct=t;ci=0;
+  ca=new Audio(trx[t][0]);
+  ca.volume=0.2;
+  ca.play().then(()=>{const s=document.getElementById('ms');s.style.display='block';s.textContent=mn[t]+' تعزف ▶️';}).catch(()=>{});
 }
-function playTrack(){
-  curAudio=new Audio(tracks[curType][curIdx]);
-  curAudio.volume=0.2;
-  curAudio.play().then(()=>{
-    const s=document.getElementById('musicStatus');
-    s.style.display='block';
-    s.textContent='🎵 الموسيقى تعزف ▶️';
-  }).catch(()=>{});
-  curAudio.onended=()=>{curIdx=(curIdx+1)%tracks[curType].length;playTrack();};
-}
-function stopMusic(){
-  if(curAudio){curAudio.pause();curAudio=null;}
-  document.getElementById('musicStatus').style.display='none';
-}
+function stopM(){if(ca){ca.pause();ca=null;}document.getElementById('ms').style.display='none';}
 
-// Utils
-function clearAll(){document.getElementById('script').value='';document.getElementById('result').style.display='none';}
-function copyResult(){navigator.clipboard.writeText(document.getElementById('resultText').textContent);alert('تم النسخ!');}
-function downloadResult(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('resultText').textContent);a.download='athir.txt';a.click();}
+function dlTxt(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('rtxt').textContent);a.download='athir.txt';a.click();}
 
-updateCounter();
+updC();
 </script>
 </body>
 </html>
