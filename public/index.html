@@ -11,7 +11,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--blue:#2979ff;--cyan:#00e5ff;--purple:#7c4dff;--green:#00e676;--red:#ff4081;--bg:#03040f;--border:rgba(255,255,255,.07)}
 body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden}
-.bg-img{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80') center/cover;opacity:.08}
+.bg-img{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80' center/cover fixed') center/cover;opacity:.08}
 .bg-ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(135deg,rgba(3,4,15,.98),rgba(5,10,30,.96))}
 .grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background-image:linear-gradient(rgba(41,121,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(41,121,255,.03) 1px,transparent 1px);background-size:60px 60px}
 .wing{position:fixed;left:-80px;top:50%;transform:translateY(-50%);z-index:0;opacity:.04;pointer-events:none}
@@ -299,7 +299,7 @@ h1{font-size:2rem}
         <div class="bars"><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div><div class="bar" style="background:#9c27b0"></div><div class="bar" style="background:var(--purple)"></div></div>
         <div class="loader-txt">جاري توليد الصورة...</div>
       </div>
-      <div class="img-res" id="imgRes">
+      <div style="margin-bottom:20px"><div class="lbl" style="margin-bottom:10px">🖼️ معرض صور AI — اضغط لاستخدامها</div><div id="aiGallery" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px"></div></div><div class="img-res" id="imgRes">
         <img id="generatedImg" alt="صورة">
         <div class="btn-row" style="margin-top:10px">
           <button class="rbtn g" style="flex:1;padding:10px" onclick="downloadImage()">💾 تحميل</button>
@@ -491,6 +491,27 @@ async function generateImage(){
   img.onerror=()=>{alert('خطأ في التوليد');document.getElementById('imgLoader').style.display='none';btn.textContent='🎨 توليد الصورة';btn.disabled=false;};
   img.src=`https://image.pollinations.ai/prompt/${fullPrompt}?width=900&height=500&nologo=true&seed=${Date.now()}`;
 }
+// AI Image Gallery
+const aiGallery=[
+"podcast studio professional blue neon lighting",
+"radio broadcast room modern dark aesthetic",
+"music recording studio cinematic",
+"podcast microphone professional setup dark"
+];
+async function loadGallery(){
+const gallery=document.getElementById("aiGallery");
+if(!gallery)return;
+aiGallery.forEach((p,i)=>{
+const img=document.createElement("img");
+img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400function downloadImageheight=250function downloadImagenologo=truefunction downloadImageseed=${i*100}`;
+img.style.cssText="width:100%;border-radius:10px;cursor:pointer;transition:.3s";
+img.onclick=()=>{document.getElementById("imgPrompt").value=p;document.querySelector(".tool-tab:nth-child(3)").click();};
+img.onmouseover=()=>img.style.opacity=".8";
+img.onmouseout=()=>img.style.opacity="1";
+gallery.appendChild(img);
+});
+}
+loadGallery();
 function downloadImage(){const a=document.createElement('a');a.href=document.getElementById('generatedImg').src;a.download='athir-image.jpg';a.click();}
 
 // Music
@@ -528,6 +549,21 @@ updateCounter();
 }
 function checkLimit(){
 if(localStorage.getItem("athir_dev")==="true")return true;
+// Background Studios
+const studios=[
+"https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80",
+"https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80",
+"https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80",
+"https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1920&q=80"
+];
+let bgIndex=0;
+function changeBg(){
+const el=document.querySelector(".bg-img");
+el.style.backgroundImage=`url(${studios[bgIndex]})`;
+bgIndex=(bgIndex+1)%studios.length;
+}
+changeBg();
+setInterval(changeBg,8000);
 // Init
 updateCounter();
 </script>
