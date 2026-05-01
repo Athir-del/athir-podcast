@@ -342,7 +342,7 @@ h1{font-size:2rem}
   <div style="margin-bottom:15px">
     <a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:12px;text-decoration:none;font-weight:700">▶️ تابعنا على يوتيوب</a>
   </div>
-  أثير AI © 2026 — منصة الذكاء الاصطناعي العربية
+  <span onclick="activateDev()" style="cursor:pointer;opacity:.1">⚙️</span> أثير AI © 2026 — منصة الذكاء الاصطناعي العربية
 </footer>
 
 </div>
@@ -516,6 +516,18 @@ window.onerror=function(msg,src,line,col,err){
 console.error("خطأ:",msg,src,line);
 fetch("/api/log-error",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({msg,src,line,time:new Date().toISOString()})}).catch(()=>{});
 return false;};
+// Dev Mode
+const DEV_CODE="athir2026";
+function activateDev(){
+const code=prompt("أدخل كود المطور:");
+if(code===DEV_CODE){
+localStorage.setItem("athir_dev","true");
+alert("✅ وضع المطور مفعل!");
+updateCounter();
+}else{alert("❌ كود خاطئ!");}
+}
+function checkLimit(){
+if(localStorage.getItem("athir_dev")==="true")return true;
 // Init
 updateCounter();
 </script>
