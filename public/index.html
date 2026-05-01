@@ -176,7 +176,8 @@ footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);co
   <button class="tool-tab active" onclick="showPanel('podcast',this)">🎙️ بودكاست</button>
   <button class="tool-tab" onclick="showPanel('video',this)">🎬 فيديو</button>
   <button class="tool-tab" onclick="showPanel('image',this)">🎨 صور</button>
-  <button class="tool-tab" onclick="showPanel('music',this)">🎵 موسيقى</button>
+  <button class="tool-tab" onclick="showPanel("music",this)">🎵 موسيقى</button>
+<button class="tool-tab" onclick="showPanel("pricing",this)">💎 الأسعار</button>
 </div>
 
 <!-- PODCAST -->
@@ -288,6 +289,31 @@ footer{text-align:center;padding:25px 15px;border-top:1px solid var(--border);co
   </div>
 </div>
 
+<!-- PRICING -->
+<div id="panel-pricing" class="panel">
+<div class="card">
+<div class="card-head"><div class="live" style="background:#ffd700;box-shadow:0 0 6px #ffd700"></div><div class="card-title">💎 خطط الاشتراك</div></div>
+<div class="card-body">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+<div style="font-size:1.5rem;margin-bottom:8px">🆓</div>
+<div style="font-weight:900;font-size:1.1rem;margin-bottom:5px">مجاني</div>
+<div style="font-size:2rem;font-weight:900;color:var(--green);margin-bottom:10px">$0</div>
+<div style="color:#556;font-size:.78rem;line-height:1.8">✅ 3 توليدات/يوم<br>✅ بودكاست<br>✅ صور AI<br>✅ موسيقى<br>❌ فيديو محدود<br>❌ بدون صوت</div>
+<button style="margin-top:15px;width:100%;padding:10px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:#fff;border-radius:10px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:.85rem">الخطة الحالية</button>
+</div>
+<div style="background:linear-gradient(135deg,rgba(41,121,255,.1),rgba(0,229,255,.05));border:1px solid rgba(41,121,255,.3);border-radius:14px;padding:20px;text-align:center;position:relative">
+<div style="position:absolute;top:-10px;right:50%;transform:translateX(50%);background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:700">الأشهر</div>
+<div style="font-size:1.5rem;margin-bottom:8px">⭐</div>
+<div style="font-weight:900;font-size:1.1rem;margin-bottom:5px">برو</div>
+<div style="font-size:2rem;font-weight:900;color:var(--cyan);margin-bottom:10px">$5<span style="font-size:.9rem;color:#556">/شهر</span></div>
+<div style="color:#aac;font-size:.78rem;line-height:1.8">✅ توليدات غير محدودة<br>✅ بودكاست احترافي<br>✅ صور HD<br>✅ فيديو Runway ML<br>✅ صوت ElevenLabs<br>✅ دعم أولوية</div>
+<a href="https://athirstore.lemonsqueezy.com" target="_blank"><button style="margin-top:15px;width:100%;padding:10px;background:linear-gradient(135deg,var(--blue),var(--cyan));border:none;color:#fff;border-radius:10px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:.85rem;font-weight:700">🚀 اشترك الآن</button></a>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- MUSIC -->
 <div id="panel-music" class="panel">
   <div class="card">
@@ -342,6 +368,10 @@ changeBg();setInterval(changeBg,8000);
 
 // Panel
 function showPanel(n,el){
+  if(n==='pricing'){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active'));
+document.getElementById('panel-pricing').classList.add('active');
+el.classList.add('active');return;}
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('panel-'+n).classList.add('active');
