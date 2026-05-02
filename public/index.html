@@ -3,342 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>أثير AI</title>
+<title>أثير AI — وكيلك الذكي</title>
 <meta name="google-adsense-account" content="ca-pub-7535354659763641">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535354659763641" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl}
-.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.1;background-size:cover;background-position:center}
-.ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:rgba(3,4,15,.95)}
-.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:12px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;margin-bottom:20px}
+:root{--blue:#2979ff;--cyan:#00e5ff;--purple:#7c4dff;--green:#00e676;--bg:#03040f;--border:rgba(255,255,255,.07)}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#fff;min-height:100vh;direction:rtl;overflow-x:hidden}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.08;background-size:cover;background-position:center}
+.ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(135deg,rgba(3,4,15,.97),rgba(5,10,30,.95))}
+.wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:12px;min-height:100vh;display:flex;flex-direction:column}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;margin-bottom:15px}
 .logo{display:flex;align-items:center;gap:8px}
-.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#2979ff,#00e5ff);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-right{display:flex;align-items:center;gap:8px}
-.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:#2979ff;border-radius:8px;font-size:.78rem}
-.nav-btn{padding:7px 14px;background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
-.hero{text-align:center;padding:25px 15px 30px}
-h1{font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:10px}
-.grad{background:linear-gradient(135deg,#2979ff,#00e5ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:#556;font-size:.88rem;margin-bottom:15px}
-.trial{display:inline-block;padding:7px 15px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);color:#00e676;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:20px}
-.stats{display:flex;justify-content:center;gap:30px}
-.snum{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.slbl{color:#445;font-size:.72rem}
-.yt{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.15);border-radius:10px;margin-bottom:15px;gap:8px}
-.yt-t{color:#ff4444;font-size:.8rem;font-weight:700}
-.yt-b{padding:6px 12px;background:#ff0000;color:#fff;border-radius:7px;text-decoration:none;font-size:.75rem;font-weight:700}
-.tabs{display:flex;gap:5px;margin-bottom:12px;overflow-x:auto;padding-bottom:3px}
-.tabs::-webkit-scrollbar{display:none}
-.tab{padding:8px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-size:.8rem;color:#667;white-space:nowrap;font-family:'Tajawal',sans-serif;flex-shrink:0}
-.tab.on{background:rgba(41,121,255,.15);border-color:rgba(41,121,255,.3);color:#2979ff}
-.pnl{display:none}
-.pnl.on{display:block}
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;margin-bottom:12px}
-.ch{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem}
-.dot{width:7px;height:7px;border-radius:50%;box-shadow:0 0 6px currentColor;flex-shrink:0}
-.cb{padding:16px}
-.lbl{color:#556;font-size:.78rem;margin-bottom:6px}
-textarea,input[type=text]{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:11px;border-radius:9px;font-size:.88rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none}
-textarea{height:120px;resize:none;line-height:1.7}
-textarea:focus,input:focus{border-color:rgba(41,121,255,.4)}
-textarea::placeholder,input::placeholder{color:#334}
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
-.sc{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:8px;cursor:pointer;text-align:center}
-.sc.on{border-color:rgba(41,121,255,.4);background:rgba(41,121,255,.08)}
-.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}
-.vc{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:8px;cursor:pointer;text-align:center}
-.vc.on{border-color:rgba(124,77,255,.4);background:rgba(124,77,255,.08)}
-.br{display:flex;gap:7px;margin-top:10px}
-.bm{flex:1;padding:12px;background:linear-gradient(135deg,#1a44bb,#0099ff);color:#fff;border:none;border-radius:9px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
-.bm:disabled{opacity:.4;cursor:not-allowed}
-.bs{padding:12px 13px;background:rgba(255,255,255,.04);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif}
-.ld{display:none;padding:22px;text-align:center}
-.bars{display:flex;justify-content:center;align-items:flex-end;gap:3px;height:25px;margin-bottom:7px}
-.b{width:4px;border-radius:2px;animation:b .7s ease-in-out infinite}
-.b1{background:#2979ff;animation-delay:0s}
-.b2{background:#00e5ff;animation-delay:.1s}
-.b3{background:#7c4dff;animation-delay:.2s}
-.b4{background:#00e5ff;animation-delay:.3s}
-.b5{background:#2979ff;animation-delay:.4s}
-@keyframes b{0%,100%{height:5px}50%{height:25px}}
-.lt{color:#556;font-size:.82rem}
-.res{display:none;margin-top:12px}
-.rt{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;flex-wrap:wrap;gap:5px}
-.rl{color:#00e676;font-weight:700;font-size:.82rem}
-.ra{display:flex;gap:5px;flex-wrap:wrap}
-.rb{padding:5px 10px;border-radius:6px;cursor:pointer;font-size:.72rem;font-family:'Tajawal',sans-serif;border:1px solid}
-.rg{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:#00e676}
-.rb2{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:#2979ff}
-.rp{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:#7c4dff}
-.rb:disabled{opacity:.4}
-.rbox{background:rgba(0,0,0,.5);border:1px solid rgba(0,230,118,.1);border-radius:9px;padding:14px;color:#bcd;line-height:1.9;font-size:.85rem;white-space:pre-wrap;max-height:260px;overflow-y:auto}
-audio{width:100%;margin-top:8px;border-radius:7px;display:none}
-video{width:100%;border-radius:9px}
-.vp{display:none;margin-top:10px}
-.pb{width:100%;height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin:10px 0;overflow:hidden;display:none}
-.pf{height:100%;background:linear-gradient(90deg,#2979ff,#00e5ff);animation:pf 120s linear forwards}
-@keyframes pf{to{width:95%}}
-.pf{width:0%}
-.ig{display:none;margin-top:10px}
-.ig img{width:100%;border-radius:9px}
-.is2{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
-.ist{padding:5px 10px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);color:#667;border-radius:15px;cursor:pointer;font-size:.72rem}
-.ist.on{background:rgba(124,77,255,.1);border-color:rgba(124,77,255,.3);color:#7c4dff}
-.ag{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:10px}
-.ag img{width:100%;border-radius:7px;cursor:pointer;aspect-ratio:16/9;object-fit:cover}
-.mb2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.mbt{padding:11px;border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;border:1px solid;text-align:center}
-.ms{display:none;margin-top:10px;padding:9px;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;color:#00e5ff;font-size:.82rem;text-align:center}
-.pg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;text-align:center}
-.pc.pro{background:linear-gradient(135deg,rgba(41,121,255,.08),rgba(0,229,255,.04));border-color:rgba(41,121,255,.3)}
-.pp{font-size:1.8rem;font-weight:900;margin:8px 0}
-.pf2{color:#556;font-size:.72rem;line-height:1.8}
-.pb2{width:100%;padding:9px;border:none;border-radius:8px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.8rem;font-weight:700;margin-top:10px}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;padding:15px}
-.mbox{background:#080d20;border:1px solid rgba(41,121,255,.3);border-radius:18px;padding:25px;text-align:center;max-width:360px;width:100%}
-footer{text-align:center;padding:20px;border-top:1px solid rgba(255,255,255,.07);color:#334;font-size:.75rem;margin-top:10px}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;gap:8px;align-items:center}
+.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:var(--blue);border-radius:8px;font-size:.75rem}
+.upgrade-btn{padding:7px 14px;background:linear-gradient(135deg,#ffd700,#ff6d00);color:#000;border:none;border-radius:8px;font-size:.78rem;font-weight:900;cursor:pointer;font-family:'Tajawal',sans-serif}
+
+/* CHAT */
+.chat-box{flex:1;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;padding:15px;margin-bottom:12px;min-height:400px;max-height:500px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.chat-box::-webkit-scrollbar{width:4px}
+.chat-box::-webkit-scrollbar-thumb{background:rgba(41,121,255,.3);border-radius:2px}
+
+/* Messages */
+.msg{display:flex;gap:8px;align-items:flex-start;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.msg.bot{flex-direction:row}
+.msg.user{flex-direction:row-reverse}
+.avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.bot .avatar{background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.user .avatar{background:linear-gradient(135deg,var(--purple),#9c27b0)}
+.bubble{max-width:80%;padding:10px 14px;border-radius:14px;font-size:.88rem;line-height:1.7}
+.bot .bubble{background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);border-radius:14px 14px 14px 0}
+.user .bubble{background:rgba(124,77,255,.15);border:1px solid rgba(124,77,255,.25);border-radius:14px 14px 0 14px;text-align:right}
+
+/* Quick Actions */
+.quick-btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.qb{padding:7px 14px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:20px;cursor:pointer;font-size:.78rem;color:#aab;font-family:'Tajawal',sans-serif;transition:.3s;white-space:nowrap}
+.qb:hover{background:rgba(41,121,255,.1);border-color:rgba(41,121,255,.3);color:var(--blue)}
+
+/* Result Card */
+.result-card{background:rgba(0,0,0,.4);border:1px solid rgba(0,230,118,.15);border-radius:12px;padding:14px;margin-top:8px}
+.result-card audio,.result-card video{width:100%;border-radius:8px;margin-top:8px}
+.result-card img{width:100%;border-radius:8px;margin-top:8px}
+.result-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.ra{padding:7px 12px;border-radius:8px;cursor:pointer;font-size:.75rem;font-family:'Tajawal',sans-serif;border:1px solid;transition:.3s}
+.ra.g{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:var(--green)}
+.ra.b{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:var(--blue)}
+.ra.p{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:var(--purple)}
+
+/* Typing */
+.typing{display:flex;gap:4px;align-items:center;padding:10px 14px}
+.td{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:td .8s ease-in-out infinite}
+.td:nth-child(2){animation-delay:.15s}
+.td:nth-child(3){animation-delay:.3s}
+@keyframes td{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.4);opacity:1}}
+
+/* Input */
+.input-area{display:flex;gap:8px;align-items:flex-end}
+.input-wrap{flex:1;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:10px 14px;display:flex;align-items:flex-end;gap:8px}
+.input-wrap textarea{flex:1;background:transparent;border:none;color:#fff;font-size:.9rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none;resize:none;max-height:100px;line-height:1.6}
+.input-wrap textarea::placeholder{color:#334}
+.send-btn{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--cyan));border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;transition:.3s}
+.send-btn:hover{transform:scale(1.05)}
+.send-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* Upgrade Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:15px}
+.mbox{background:#080d20;border:1px solid rgba(255,215,0,.3);border-radius:20px;padding:25px;text-align:center;max-width:380px;width:100%}
+.mbox-icon{font-size:3rem;margin-bottom:10px}
+.mbox-title{font-size:1.2rem;font-weight:900;margin-bottom:8px}
+.mbox-sub{color:#556;font-size:.82rem;line-height:1.7;margin-bottom:20px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:15px}
+.plan{border-radius:12px;padding:14px;text-align:center;border:1px solid}
+.plan.free{background:rgba(255,255,255,.03);border-color:var(--border)}
+.plan.pro{background:linear-gradient(135deg,rgba(41,121,255,.1),rgba(0,229,255,.05));border-color:rgba(41,121,255,.3)}
+.plan-price{font-size:1.5rem;font-weight:900;margin:5px 0}
+.plan-features{font-size:.7rem;color:#667;line-height:1.8;text-align:right}
+.plan-btn{width:100%;padding:9px;border:none;border-radius:8px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;font-weight:700;margin-top:10px}
+.close-modal{padding:10px 20px;background:rgba(255,255,255,.05);color:#889;border:1px solid var(--border);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;width:100%}
+
+footer{text-align:center;padding:15px;color:#334;font-size:.72rem;border-top:1px solid var(--border);margin-top:10px}
 </style>
 </head>
 <body>
 <div class="bg" id="bg"></div>
 <div class="ov"></div>
-<div class="wrap">
 
+<div class="wrap">
 <nav>
   <div class="logo">
-    <div class="logo-icon">🎙️</div>
+    <div class="logo-icon">🤖</div>
     <div class="logo-text">أثير AI</div>
   </div>
   <div class="nav-right">
     <div class="counter" id="counter">🎯 3/3</div>
-    <button class="nav-btn" onclick="showTab('pricing',this)">💎 الأسعار</button>
+    <button class="upgrade-btn" onclick="showUpgrade()">💎 ترقية</button>
   </div>
 </nav>
 
-<div class="hero">
-  <h1>أدوات <span class="grad">ذكاء اصطناعي</span><br>للمحتوى العربي</h1>
-  <p class="hero-sub">بودكاست • فيديو • صور • أصوات — مجاناً</p>
-  <div class="trial">⚡ جرّب مجاناً — لا تسجيل مطلوب</div>
-  <div class="stats">
-    <div><div class="snum">5+</div><div class="slbl">أدوات AI</div></div>
-    <div><div class="snum">∞</div><div class="slbl">إبداع</div></div>
-    <div><div class="snum">🆓</div><div class="slbl">مجاني</div></div>
+<div class="chat-box" id="chatBox"></div>
+
+<div class="input-area">
+  <div class="input-wrap">
+    <textarea id="userInput" placeholder="اكتب موضوعك هنا..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
   </div>
+  <button class="send-btn" onclick="sendMsg()" id="sendBtn">➤</button>
 </div>
 
-<div class="yt">
-  <div class="yt-t">🎬 تابع قناتنا للمزيد!</div>
-  <a href="https://youtube.com/@al-u6j4s" target="_blank" class="yt-b">▶️ اشترك</a>
-</div>
-
-<div class="tabs">
-  <button class="tab on" onclick="showTab('podcast',this)">🎙️ بودكاست</button>
-  <button class="tab" onclick="showTab('video',this)">🎬 فيديو</button>
-  <button class="tab" onclick="showTab('image',this)">🎨 صور</button>
-  <button class="tab" onclick="showTab('music',this)">🎵 موسيقى</button>
-  <button class="tab" onclick="showTab('pricing',this)">💎 الأسعار</button>
-</div>
-
-<!-- PODCAST -->
-<div id="pnl-podcast" class="pnl on">
-  <div class="card">
-    <div class="ch"><div class="dot" style="color:#00e676;background:#00e676"></div>🎙️ مولّد البودكاست</div>
-    <div class="cb">
-      <div class="lbl">📝 الموضوع</div>
-      <textarea id="script" placeholder="مثال: تأثير الذكاء الاصطناعي على العالم العربي..."></textarea>
-      <div class="lbl" style="margin-top:10px">🎨 الأسلوب</div>
-      <div class="sg">
-        <div class="sc on" onclick="pick(this,'.sc','s')"><div>💻</div><div style="font-size:.72rem;font-weight:700">تقني</div></div>
-        <div class="sc" onclick="pick(this,'.sc','s')"><div>🔥</div><div style="font-size:.72rem;font-weight:700">تحفيزي</div></div>
-        <div class="sc" onclick="pick(this,'.sc','s')"><div>📰</div><div style="font-size:.72rem;font-weight:700">إخباري</div></div>
-      </div>
-      <div class="lbl">🎙️ الصوت</div>
-      <div class="vg">
-        <div class="vc on" onclick="pick(this,'.vc','v')"><div>👨</div><div style="font-size:.68rem;font-weight:700">رجل</div></div>
-        <div class="vc" onclick="pick(this,'.vc','v')"><div>👩</div><div style="font-size:.68rem;font-weight:700">امرأة</div></div>
-        <div class="vc" onclick="pick(this,'.vc','v')"><div>🔥</div><div style="font-size:.68rem;font-weight:700">شباب</div></div>
-        <div class="vc" onclick="pick(this,'.vc','v')"><div>🎩</div><div style="font-size:.68rem;font-weight:700">رسمي</div></div>
-      </div>
-      <div class="br">
-        <button class="bm" onclick="gen()" id="genBtn">⚡ توليد السكريبت</button>
-        <button class="bs" onclick="document.getElementById('script').value='';document.getElementById('res').style.display='none'">🗑️</button>
-      </div>
-      <div class="ld" id="ld"><div class="bars"><div class="b b1"></div><div class="b b2"></div><div class="b b3"></div><div class="b b4"></div><div class="b b5"></div></div><div class="lt" id="lt">جاري التوليد...</div></div>
-      <div class="res" id="res">
-        <div class="rt">
-          <div class="rl">✅ السكريبت جاهز</div>
-          <div class="ra">
-            <button class="rb rg" onclick="navigator.clipboard.writeText(document.getElementById('rtxt').textContent);alert('تم!')">📋</button>
-            <button class="rb rb2" onclick="dlTxt()">💾</button>
-            <button class="rb rp" onclick="genAudio()" id="aBtn">🎙️ صوت</button>
-          </div>
-        </div>
-        <div class="rbox" id="rtxt"></div>
-        <audio id="ap" controls></audio>
-        <div style="margin-top:8px;padding:9px 12px;background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.1);border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:6px">
-          <span style="color:#ff4444;font-size:.75rem">🎬 تابع قناتنا!</span>
-          <a href="https://youtube.com/@al-u6j4s" target="_blank" style="padding:4px 10px;background:#f00;color:#fff;border-radius:6px;text-decoration:none;font-size:.7rem;font-weight:700">▶️</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- VIDEO -->
-<div id="pnl-video" class="pnl">
-  <div class="card">
-    <div class="ch"><div class="dot" style="color:#ff4081;background:#ff4081"></div>🎬 مولّد الفيديو AI</div>
-    <div class="cb">
-      <div class="lbl">📝 وصف الفيديو</div>
-      <textarea id="vp" placeholder="مثال: استوديو بودكاست احترافي بإضاءة زرقاء..."></textarea>
-      <div class="br">
-        <button class="bm" style="background:linear-gradient(135deg,#c2185b,#ff4081)" onclick="genVid()" id="vBtn">🎬 توليد الفيديو</button>
-        <button class="bs" onclick="document.getElementById('vp').value=''">🗑️</button>
-      </div>
-      <div class="pb" id="pb"><div class="pf" id="pf"></div></div>
-      <div class="ld" id="vld"><div class="bars"><div class="b" style="background:#ff4081"></div><div class="b" style="background:#ff6d00"></div><div class="b" style="background:#ff4081"></div><div class="b" style="background:#ff6d00"></div><div class="b" style="background:#ff4081"></div></div><div class="lt">🎬 جاري التوليد... 2-3 دقائق</div></div>
-      <div class="vp" id="vpr">
-        <video id="gv" controls></video>
-        <div class="br" style="margin-top:8px">
-          <button class="rb rg" style="flex:1;padding:9px" onclick="const a=document.createElement('a');a.href=document.getElementById('gv').src;a.download='athir.mp4';a.click()">💾 تحميل</button>
-          <button class="rb rb2" style="flex:1;padding:9px" onclick="genVid()">🔄 جديد</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- IMAGE -->
-<div id="pnl-image" class="pnl">
-  <div class="card">
-    <div class="ch"><div class="dot" style="color:#7c4dff;background:#7c4dff"></div>🎨 مولّد الصور AI</div>
-    <div class="cb">
-      <div class="lbl">🖼️ معرض إلهام</div>
-      <div class="ag" id="ag"></div>
-      <div class="lbl">📝 وصف الصورة</div>
-      <input type="text" id="ip" placeholder="مثال: استوديو بودكاست احترافي...">
-      <div class="is2">
-        <div class="ist on" onclick="pickIs(this,'realistic')">📷 واقعي</div>
-        <div class="ist" onclick="pickIs(this,'cinematic')">🎬 سينمائي</div>
-        <div class="ist" onclick="pickIs(this,'artistic')">🎨 فني</div>
-        <div class="ist" onclick="pickIs(this,'3d render')">🌐 ثلاثي</div>
-        <div class="ist" onclick="pickIs(this,'anime')">✨ أنمي</div>
-      </div>
-      <div class="br">
-        <button class="bm" style="background:linear-gradient(135deg,#7c4dff,#5c35cc)" onclick="genImg()" id="iBtn">🎨 توليد</button>
-      </div>
-      <div class="ld" id="ild"><div class="bars"><div class="b" style="background:#7c4dff"></div><div class="b" style="background:#9c27b0"></div><div class="b" style="background:#7c4dff"></div><div class="b" style="background:#9c27b0"></div><div class="b" style="background:#7c4dff"></div></div><div class="lt">جاري توليد الصورة...</div></div>
-      <div class="ig" id="ig">
-        <img id="gi" alt="صورة">
-        <div class="br" style="margin-top:8px">
-          <button class="rb rg" style="flex:1;padding:9px" onclick="const a=document.createElement('a');a.href=document.getElementById('gi').src;a.download='athir.jpg';a.click()">💾 تحميل</button>
-          <button class="rb rp" style="flex:1;padding:9px" onclick="genImg()">🔄 جديد</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MUSIC -->
-<div id="pnl-music" class="pnl">
-  <div class="card">
-    <div class="ch"><div class="dot" style="color:#00e5ff;background:#00e5ff"></div>🎵 موسيقى خلفية</div>
-    <div class="cb">
-      <div class="lbl" style="margin-bottom:10px">اختر وشغّل مباشرة</div>
-      <div class="mb2">
-        <button class="mbt" style="background:rgba(41,121,255,.1);border-color:rgba(41,121,255,.3);color:#2979ff" onclick="playM('calm')">🌊 هادئة</button>
-        <button class="mbt" style="background:rgba(255,109,0,.1);border-color:rgba(255,109,0,.3);color:#ff6d00" onclick="playM('energetic')">🔥 حماسية</button>
-        <button class="mbt" style="background:rgba(0,229,255,.1);border-color:rgba(0,229,255,.3);color:#00e5ff" onclick="playM('tech')">🎹 تقنية</button>
-        <button class="mbt" style="background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.3);color:#ff4444" onclick="stopM()">⏹️ إيقاف</button>
-      </div>
-      <div class="ms" id="ms"></div>
-    </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<div id="pnl-pricing" class="pnl">
-  <div class="card">
-    <div class="ch"><div class="dot" style="color:#ffd700;background:#ffd700"></div>💎 خطط الاشتراك</div>
-    <div class="cb">
-      <div class="pg">
-        <div class="pc">
-          <div style="font-size:1.3rem">🆓</div>
-          <div style="font-weight:900;margin:5px 0">مجاني</div>
-          <div class="pp" style="color:#00e676">$0</div>
-          <div class="pf2">✅ 3 توليدات/يوم<br>✅ بودكاست<br>✅ صور AI<br>✅ موسيقى<br>❌ فيديو محدود<br>❌ بدون صوت احترافي</div>
-          <button class="pb2" style="background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.1)">الخطة الحالية</button>
-        </div>
-        <div class="pc pro">
-          <div style="position:relative"><span style="position:absolute;top:-20px;right:50%;transform:translateX(50%);background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;padding:2px 10px;border-radius:20px;font-size:.65rem;font-weight:700;white-space:nowrap">الأشهر ⭐</span></div>
-          <div style="font-size:1.3rem;margin-top:5px">⭐</div>
-          <div style="font-weight:900;margin:5px 0">برو</div>
-          <div class="pp" style="color:#00e5ff">$5<span style="font-size:.8rem;color:#556">/شهر</span></div>
-          <div class="pf2">✅ غير محدود<br>✅ بودكاست احترافي<br>✅ صور HD<br>✅ فيديو Runway ML<br>✅ صوت ElevenLabs<br>✅ دعم أولوية</div>
-          <a href="https://athirstore.lemonsqueezy.com" target="_blank">
-            <button class="pb2" style="background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff">🚀 اشترك الآن</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
+<!-- UPGRADE MODAL -->
+<div class="modal" id="upgradeModal">
   <div class="mbox">
-    <div style="font-size:2.5rem;margin-bottom:10px">🚀</div>
-    <div style="font-size:1.1rem;font-weight:900;margin-bottom:8px">انتهت توليداتك!</div>
-    <div style="color:#556;font-size:.82rem;margin-bottom:18px">استخدمت 3/3 توليدات مجانية. عد غداً أو اشترك!</div>
-    <a href="https://youtube.com/@al-u6j4s" target="_blank"><button style="padding:10px 20px;background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;border:none;border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.85rem;font-weight:700;margin:3px">▶️ تابع القناة</button></a>
-    <button style="padding:10px 20px;background:rgba(255,255,255,.05);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.82rem;margin:3px" onclick="document.getElementById('modal').style.display='none'">لاحقاً</button>
+    <div class="mbox-icon">💎</div>
+    <div class="mbox-title">ترقّ للخطة Pro</div>
+    <div class="mbox-sub">احصل على توليدات غير محدودة وميزات احترافية!</div>
+    <div class="plans">
+      <div class="plan free">
+        <div style="font-size:1.2rem">🆓</div>
+        <div style="font-weight:700;margin:4px 0">مجاني</div>
+        <div class="plan-price" style="color:var(--green);font-size:1.2rem">$0</div>
+        <div class="plan-features">✅ 3 يومياً<br>✅ بودكاست<br>✅ صور<br>❌ فيديو<br>❌ صوت</div>
+        <button class="plan-btn" style="background:rgba(255,255,255,.05);color:#fff" onclick="document.getElementById('upgradeModal').style.display='none'">الخطة الحالية</button>
+      </div>
+      <div class="plan pro">
+        <div style="font-size:1.2rem">⭐</div>
+        <div style="font-weight:700;margin:4px 0">Pro</div>
+        <div class="plan-price" style="color:var(--cyan)">$5<span style="font-size:.75rem;color:#556">/شهر</span></div>
+        <div class="plan-features">✅ غير محدود<br>✅ فيديو AI<br>✅ صوت احترافي<br>✅ صور HD<br>✅ أولوية</div>
+        <a href="https://athirstore.lemonsqueezy.com" target="_blank"><button class="plan-btn" style="background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff">🚀 اشترك</button></a>
+      </div>
+    </div>
+    <button class="close-modal" onclick="document.getElementById('upgradeModal').style.display='none'">لاحقاً</button>
   </div>
 </div>
 
 <footer>
-  <div style="margin-bottom:10px"><a href="https://youtube.com/@al-u6j4s" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;border-radius:9px;text-decoration:none;font-weight:700;font-size:.78rem">▶️ يوتيوب</a></div>
-  <span onclick="devMode()" style="cursor:pointer;opacity:.04">⚙️</span> أثير AI © 2026
+  <a href="https://youtube.com/@al-u6j4s" target="_blank" style="color:#ff4444;text-decoration:none;margin-left:10px">▶️ يوتيوب</a>
+  <a href="https://athir-fun.vercel.app" target="_blank" style="color:#ff4081;text-decoration:none">😂 أثير Fun</a>
+  &nbsp;|&nbsp; أثير AI © 2026
 </footer>
 </div>
 
 <script>
 const LIMIT=3;
-let sv='تقني',vv='male-arabic',iv='realistic',ca=null,ct=null,ci=0;
+let step='start';
+let pendingText='';
+let voiceVal='male-arabic';
+let styleVal='تقني';
 
 // BG
-const bgs=['https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80','https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80','https://images.unsplash.com/photo-1593697821028-7cc59cfd7399?w=1920&q=80'];
+const bgs=['https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&q=80','https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80'];
 let bi=0;
 function chBg(){document.getElementById('bg').style.backgroundImage=`url(${bgs[bi]})`;bi=(bi+1)%bgs.length;}
-chBg();setInterval(chBg,8000);
-
-// Tabs
-function showTab(n,el){
-  document.querySelectorAll('.pnl').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  document.getElementById('pnl-'+n).classList.add('on');
-  if(el)el.classList.add('on');
-}
-
-// Pick
-function pick(el,cls,t){
-  document.querySelectorAll(cls).forEach(e=>e.classList.remove('on'));
-  el.classList.add('on');
-  if(t==='s')sv=el.querySelectorAll('div')[1].textContent;
-  if(t==='v'){const m={'رجل':'male-arabic','امرأة':'female-arabic','شباب':'youth-energetic','رسمي':'professional'};vv=m[el.querySelectorAll('div')[1].textContent]||'male-arabic';}
-}
-function pickIs(el,s){document.querySelectorAll('.ist').forEach(e=>e.classList.remove('on'));el.classList.add('on');iv=s;}
+chBg();setInterval(chBg,10000);
 
 // Limit
 function chkLmt(){
   if(localStorage.getItem('dev')==='1')return true;
   const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
   if(d.d!==t){localStorage.setItem('a',JSON.stringify({d:t,c:0}));updC();return true;}
-  if(d.c>=LIMIT){document.getElementById('modal').style.display='flex';return false;}
+  if(d.c>=LIMIT){showUpgrade();return false;}
   return true;
 }
 function incC(){
@@ -350,133 +178,327 @@ function incC(){
 function updC(){
   if(localStorage.getItem('dev')==='1'){document.getElementById('counter').textContent='🔓 مطور';return;}
   const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
-  const c=d.d===t?d.c:0;
-  document.getElementById('counter').textContent=`🎯 ${LIMIT-c}/${LIMIT}`;
+  const r=LIMIT-(d.d===t?d.c:0);
+  document.getElementById('counter').textContent=`🎯 ${r}/${LIMIT}`;
 }
+function showUpgrade(){document.getElementById('upgradeModal').style.display='flex';}
 function devMode(){const c=prompt('كود:');if(c==='athir2026'){localStorage.setItem('dev','1');alert('✅');updC();}else alert('❌');}
 
-// Generate Script
-async function gen(){
-  if(!chkLmt())return;
-  const s=document.getElementById('script').value;
-  if(!s.trim())return alert('اكتب الموضوع!');
-  document.getElementById('genBtn').disabled=true;
-  document.getElementById('ld').style.display='block';
-  document.getElementById('lt').textContent='الذكاء الاصطناعي يكتب...';
-  document.getElementById('res').style.display='none';
-  try{
-    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:s+' ('+sv+')'})});
-    const d=await r.json();
-    document.getElementById('rtxt').textContent=d.result||d.error;
-    document.getElementById('res').style.display='block';
-    document.getElementById('ap').style.display='none';
-    incC();
-  }catch(e){alert('خطأ!');}
-  finally{document.getElementById('ld').style.display='none';document.getElementById('genBtn').disabled=false;}
+// Chat
+function addMsg(text,type,extra){
+  const box=document.getElementById('chatBox');
+  const msg=document.createElement('div');
+  msg.className='msg '+type;
+  const icon=type==='bot'?'🤖':'👤';
+  msg.innerHTML=`
+    <div class="avatar">${icon}</div>
+    <div>
+      <div class="bubble">${text}</div>
+      ${extra||''}
+    </div>`;
+  box.appendChild(msg);
+  box.scrollTop=box.scrollHeight;
 }
 
-// Audio
-async function genAudio(){
-  const t=document.getElementById('rtxt').textContent;
-  if(!t)return;
-  const btn=document.getElementById('aBtn');
-  btn.disabled=true;
-  document.getElementById('ld').style.display='block';
-  document.getElementById('lt').textContent='🎙️ توليد الصوت...';
-  try{
-    const r=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t.substring(0,500),voice:vv})});
-    if(!r.ok)throw new Error((await r.json()).error);
-    const b=await r.blob();
-    const p=document.getElementById('ap');
-    p.src=URL.createObjectURL(b);
-    p.style.display='block';
-    p.play();
-    btn.textContent='🔄';
-  }catch(e){alert('خطأ: '+e.message);}
-  finally{document.getElementById('ld').style.display='none';btn.disabled=false;}
+function addTyping(){
+  const box=document.getElementById('chatBox');
+  const div=document.createElement('div');
+  div.className='msg bot';
+  div.id='typing';
+  div.innerHTML=`<div class="avatar">🤖</div><div class="bubble typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>`;
+  box.appendChild(div);
+  box.scrollTop=box.scrollHeight;
 }
 
-// Video
-async function genVid(){
-  const p=document.getElementById('vp').value;
-  if(!p.trim())return alert('اكتب الوصف!');
-  const btn=document.getElementById('vBtn');
-  btn.disabled=true;
-  document.getElementById('vld').style.display='block';
-  document.getElementById('pb').style.display='block';
-  document.getElementById('pf').style.width='0%';
-  document.getElementById('vpr').style.display='none';
-  try{
-    const r=await fetch('/api/video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})});
-    const d=await r.json();
-    if(d.error)throw new Error(d.error);
-    const chk=setInterval(async()=>{
-      try{
-        const s=await fetch('/api/video-status?id='+d.id);
-        const sd=await s.json();
-        if(sd.status==='succeeded'||sd.status==='SUCCEEDED'){
-          clearInterval(chk);
-          const out=sd.output;
-          document.getElementById('gv').src=Array.isArray(out)?out[0]:out;
-          document.getElementById('vpr').style.display='block';
-          document.getElementById('vld').style.display='none';
-          document.getElementById('pb').style.display='none';
-          btn.disabled=false;
-        }else if(sd.status==='failed'||sd.status==='FAILED'){
-          clearInterval(chk);
-          alert('فشل: '+(sd.error||'خطأ'));
-          document.getElementById('vld').style.display='none';
-          document.getElementById('pb').style.display='none';
-          btn.disabled=false;
-        }
-      }catch(e){}
-    },5000);
-  }catch(e){
-    alert('خطأ: '+e.message);
-    document.getElementById('vld').style.display='none';
-    document.getElementById('pb').style.display='none';
-    btn.disabled=false;
+function removeTyping(){
+  const t=document.getElementById('typing');
+  if(t)t.remove();
+}
+
+function addQuickBtns(btns){
+  const box=document.getElementById('chatBox');
+  const div=document.createElement('div');
+  div.className='msg bot';
+  div.id='quickBtns';
+  const btnHtml=btns.map(b=>`<button class="qb" onclick="${b.action}">${b.label}</button>`).join('');
+  div.innerHTML=`<div class="avatar">🤖</div><div><div class="quick-btns">${btnHtml}</div></div>`;
+  box.appendChild(div);
+  box.scrollTop=box.scrollHeight;
+}
+
+function removeQuickBtns(){
+  const q=document.getElementById('quickBtns');
+  if(q)q.remove();
+}
+
+// Send Message
+async function sendMsg(){
+  const input=document.getElementById('userInput');
+  const text=input.value.trim();
+  if(!text)return;
+  input.value='';
+  input.style.height='auto';
+  
+  addMsg(text,'user');
+  removeQuickBtns();
+  
+  if(step==='start'){
+    pendingText=text;
+    step='choose_type';
+    addTyping();
+    await delay(1000);
+    removeTyping();
+    addMsg('ممتاز! 🎉 ماذا تريد أن أصنع من هذا الموضوع؟','bot');
+    addQuickBtns([
+      {label:'🎙️ بودكاست',action:'chooseType("podcast")'},
+      {label:'🎬 فيديو',action:'chooseType("video")'},
+      {label:'🎨 صورة',action:'chooseType("image")'},
+      {label:'📝 سكريبت فقط',action:'chooseType("script")'}
+    ]);
   }
 }
 
-// Image Gallery
-['podcast studio blue neon dark','recording studio microphone professional','broadcast room modern cinematic','music studio dark aesthetic'].forEach((p,i)=>{
-  const img=document.createElement('img');
-  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=400&height=225&nologo=true&seed=${i*111}`;
-  img.loading='lazy';
-  img.onclick=()=>document.getElementById('ip').value=p;
-  document.getElementById('ag').appendChild(img);
-});
+async function chooseType(type){
+  if(!chkLmt())return;
+  removeQuickBtns();
+  
+  const labels={podcast:'🎙️ بودكاست',video:'🎬 فيديو',image:'🎨 صورة',script:'📝 سكريبت'};
+  addMsg(labels[type],'user');
+  
+  if(type==='podcast'){
+    addTyping();
+    await delay(800);
+    removeTyping();
+    addMsg('اختر الصوت المناسب 🎙️','bot');
+    addQuickBtns([
+      {label:'👨 رجل عربي',action:'chooseVoice("male-arabic")'},
+      {label:'👩 امرأة عربية',action:'chooseVoice("female-arabic")'},
+      {label:'🔥 شباب حماسي',action:'chooseVoice("youth-energetic")'},
+      {label:'🎩 رسمي',action:'chooseVoice("professional")'}
+    ]);
+  } else if(type==='video'){
+    addTyping();
+    await delay(800);
+    removeTyping();
+    addMsg('سأولّد فيديو احترافي الآن... 🎬','bot');
+    await genVideo();
+  } else if(type==='image'){
+    addTyping();
+    await delay(800);
+    removeTyping();
+    addMsg('سأولّد صورة احترافية الآن... 🎨','bot');
+    await genImage();
+  } else if(type==='script'){
+    await genScript();
+  }
+}
+
+async function chooseVoice(voice){
+  voiceVal=voice;
+  removeQuickBtns();
+  const vl={'male-arabic':'👨 رجل عربي','female-arabic':'👩 امرأة عربية','youth-energetic':'🔥 شباب حماسي','professional':'🎩 رسمي'};
+  addMsg(vl[voice],'user');
+  await genPodcast();
+}
+
+// Generate Script
+async function genScript(){
+  if(!chkLmt())return;
+  addTyping();
+  try{
+    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:pendingText+' (تقني)'})});
+    const d=await r.json();
+    removeTyping();
+    const txt=d.result||d.error;
+    addMsg('✅ السكريبت جاهز!','bot',`
+      <div class="result-card">
+        <div style="color:#bcd;font-size:.82rem;line-height:1.9;white-space:pre-wrap;max-height:200px;overflow-y:auto">${txt}</div>
+        <div class="result-actions">
+          <button class="ra g" onclick="navigator.clipboard.writeText(\`${txt.replace(/`/g,'')}\`);alert('تم!')">📋 نسخ</button>
+          <button class="ra b" onclick="dlTxt(\`${txt.replace(/`/g,'')}\`)">💾 تحميل</button>
+        </div>
+      </div>`);
+    incC();
+    step='start';
+    await delay(1000);
+    addMsg('هل تريد شيئاً آخر؟ 😊','bot');
+    addQuickBtns([
+      {label:'🎙️ بودكاست جديد',action:'resetChat()'},
+      {label:'🎨 صورة',action:'resetToImage()'},
+      {label:'😂 أثير Fun',action:'window.open(\"https://athir-fun.vercel.app\")'}
+    ]);
+  }catch(e){removeTyping();addMsg('حدث خطأ! حاول مجدداً 😕','bot');}
+}
+
+// Generate Podcast
+async function genPodcast(){
+  if(!chkLmt())return;
+  addTyping();
+  try{
+    const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script:pendingText})});
+    const d=await r.json();
+    const txt=d.result||d.error;
+    removeTyping();
+    addMsg('✅ السكريبت جاهز! جاري توليد الصوت... 🎙️','bot');
+    addTyping();
+    
+    const ar=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:txt.substring(0,500),voice:voiceVal})});
+    removeTyping();
+    
+    if(ar.ok){
+      const blob=await ar.blob();
+      const url=URL.createObjectURL(blob);
+      addMsg('🎙️ البودكاست جاهز!','bot',`
+        <div class="result-card">
+          <audio controls src="${url}"></audio>
+          <div style="color:#bcd;font-size:.78rem;margin-top:8px;max-height:150px;overflow-y:auto;white-space:pre-wrap">${txt.substring(0,200)}...</div>
+          <div class="result-actions">
+            <button class="ra g" onclick="navigator.clipboard.writeText(\`${txt.replace(/`/g,'')}\`);alert('تم!')">📋 نسخ</button>
+            <button class="ra b" onclick="dlTxt(\`${txt.replace(/`/g,'')}\`)">💾 نص</button>
+          </div>
+        </div>`);
+    } else {
+      addMsg('✅ السكريبت جاهز! (الصوت يحتاج اشتراك Pro)','bot',`
+        <div class="result-card">
+          <div style="color:#bcd;font-size:.82rem;line-height:1.9;white-space:pre-wrap;max-height:200px;overflow-y:auto">${txt}</div>
+          <div class="result-actions">
+            <button class="ra g" onclick="navigator.clipboard.writeText(\`${txt.replace(/`/g,'')}\`);alert('تم!')">📋 نسخ</button>
+            <button class="ra p" onclick="showUpgrade()">⭐ Pro للصوت</button>
+          </div>
+        </div>`);
+    }
+    incC();
+    step='start';
+    await delay(1000);
+    addMsg('رائع! هل تريد شيئاً آخر؟ 🚀','bot');
+    addQuickBtns([
+      {label:'🔄 موضوع جديد',action:'resetChat()'},
+      {label:'🎨 صورة',action:'resetToImage()'},
+      {label:'💎 ترقية',action:'showUpgrade()'}
+    ]);
+  }catch(e){removeTyping();addMsg('حدث خطأ! حاول مجدداً 😕','bot');}
+}
+
+// Generate Video
+async function genVideo(){
+  addTyping();
+  try{
+    const r=await fetch('/api/video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:pendingText})});
+    const d=await r.json();
+    if(d.error)throw new Error(d.error);
+    removeTyping();
+    addMsg('⏳ جاري توليد الفيديو... سيستغرق 2-3 دقائق 🎬','bot');
+    
+    const chk=setInterval(async()=>{
+      const s=await fetch('/api/video-status?id='+d.id);
+      const sd=await s.json();
+      if(sd.status==='succeeded'||sd.status==='SUCCEEDED'){
+        clearInterval(chk);
+        const out=Array.isArray(sd.output)?sd.output[0]:sd.output;
+        addMsg('🎬 الفيديو جاهز!','bot',`
+          <div class="result-card">
+            <video controls src="${out}"></video>
+            <div class="result-actions">
+              <button class="ra g" onclick="const a=document.createElement('a');a.href='${out}';a.download='athir.mp4';a.click()">💾 تحميل</button>
+              <button class="ra b" onclick="resetChat()">🔄 جديد</button>
+            </div>
+          </div>`);
+        incC();
+        step='start';
+      }else if(sd.status==='failed'||sd.status==='FAILED'){
+        clearInterval(chk);
+        addMsg('فشل التوليد 😕 حاول مجدداً','bot');
+        step='start';
+      }
+    },5000);
+  }catch(e){
+    removeTyping();
+    addMsg('الفيديو يحتاج اشتراك Pro 💎','bot',`
+      <div class="result-card">
+        <div style="color:#556;font-size:.82rem;margin-bottom:10px">اشترك للحصول على فيديوهات AI احترافية بـ Runway ML</div>
+        <button class="ra p" onclick="showUpgrade()" style="width:100%;padding:10px;text-align:center">⭐ اشترك بـ $5/شهر</button>
+      </div>`);
+  }
+}
 
 // Generate Image
-async function genImg(){
-  const p=document.getElementById('ip').value;
-  if(!p.trim())return alert('اكتب الوصف!');
-  const btn=document.getElementById('iBtn');
-  btn.textContent='⏳';btn.disabled=true;
-  document.getElementById('ild').style.display='block';
-  document.getElementById('ig').style.display='none';
-  const img=document.getElementById('gi');
-  img.onload=()=>{document.getElementById('ig').style.display='block';document.getElementById('ild').style.display='none';btn.textContent='🎨 توليد';btn.disabled=false;};
-  img.onerror=()=>{alert('خطأ');document.getElementById('ild').style.display='none';btn.textContent='🎨 توليد';btn.disabled=false;};
-  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(p+' '+iv)}?width=900&height=500&nologo=true&seed=${Date.now()}`;
+async function genImage(){
+  addTyping();
+  const img=new Image();
+  const prompt=encodeURIComponent(pendingText+', professional, high quality');
+  img.onload=()=>{
+    removeTyping();
+    addMsg('🎨 الصورة جاهزة!','bot',`
+      <div class="result-card">
+        <img src="${img.src}" style="width:100%;border-radius:8px">
+        <div class="result-actions">
+          <button class="ra g" onclick="const a=document.createElement('a');a.href='${img.src}';a.download='athir.jpg';a.click()">💾 تحميل</button>
+          <button class="ra b" onclick="genImage()">🔄 جديد</button>
+        </div>
+      </div>`);
+    incC();
+    step='start';
+  };
+  img.onerror=()=>{removeTyping();addMsg('خطأ في التوليد 😕','bot');};
+  img.src=`https://image.pollinations.ai/prompt/${prompt}?width=800&height=450&nologo=true&seed=${Date.now()}`;
 }
 
-// Music
-const trx={calm:['https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3'],energetic:['https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-738.mp3'],tech:['https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3']};
-const mn={calm:'🌊 هادئة',energetic:'🔥 حماسية',tech:'🎹 تقنية'};
-function playM(t){
-  if(ca){ca.pause();}
-  ct=t;ci=0;
-  ca=new Audio(trx[t][0]);
-  ca.volume=0.2;
-  ca.play().then(()=>{const s=document.getElementById('ms');s.style.display='block';s.textContent=mn[t]+' تعزف ▶️';}).catch(()=>{});
+// Utils
+function resetChat(){
+  step='start';
+  pendingText='';
+  addMsg('أهلاً من جديد! 😊 أخبرني بموضوعك وسأساعدك فوراً','bot');
 }
-function stopM(){if(ca){ca.pause();ca=null;}document.getElementById('ms').style.display='none';}
 
-function dlTxt(){const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(document.getElementById('rtxt').textContent);a.download='athir.txt';a.click();}
+function resetToImage(){
+  step='start';
+  addMsg('اكتب وصف الصورة التي تريدها 🎨','bot');
+  step='image_direct';
+}
 
-updC();
+function dlTxt(txt){
+  const a=document.createElement('a');
+  a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(txt);
+  a.download='athir.txt';
+  a.click();
+}
+
+function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+
+// Welcome
+window.onload=async()=>{
+  updC();
+  chBg();
+  await delay(300);
+  addMsg('مرحباً! 👋 أنا أثير، وكيلك الذكي للمحتوى العربي','bot');
+  await delay(800);
+  addMsg('يمكنني مساعدتك في إنشاء: 🎙️ بودكاست • 🎬 فيديو • 🎨 صور • 📝 سكريبتات','bot');
+  await delay(600);
+  addMsg('أخبرني بموضوعك وسأتولى الباقي! ✨','bot');
+  addQuickBtns([
+    {label:'🎙️ بودكاست عن AI',action:'quickStart("الذكاء الاصطناعي وتأثيره على العالم العربي")'},
+    {label:'💪 محتوى تحفيزي',action:'quickStart("النجاح والمثابرة وتحقيق الأحلام")'},
+    {label:'📱 تقنية يومية',action:'quickStart("أفضل تطبيقات الهاتف للإنتاجية")'},
+    {label:'😂 أثير Fun',action:'window.open(\"https://athir-fun.vercel.app\")'}
+  ]);
+};
+
+async function quickStart(text){
+  removeQuickBtns();
+  addMsg(text,'user');
+  pendingText=text;
+  step='choose_type';
+  addTyping();
+  await delay(800);
+  removeTyping();
+  addMsg('موضوع رائع! 🎉 ماذا تريد أن أصنع؟','bot');
+  addQuickBtns([
+    {label:'🎙️ بودكاست',action:'chooseType("podcast")'},
+    {label:'🎬 فيديو',action:'chooseType("video")'},
+    {label:'🎨 صورة',action:'chooseType("image")'},
+    {label:'📝 سكريبت',action:'chooseType("script")'}
+  ]);
+}
 </script>
 </body>
 </html>
