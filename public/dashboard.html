@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أثير AI — لوحة التحكم الذكية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl;padding:15px}
+.wrap{max-width:800px;margin:0 auto}
+h1{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px}
+.card h3{font-size:.85rem;color:#556;margin-bottom:8px}
+.card .val{font-size:2rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btn{width:100%;padding:12px;background:linear-gradient(135deg,#2979ff,#00e5ff);color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;margin-bottom:10px}
+.analysis-box{background:rgba(0,0,0,.4);border:1px solid rgba(41,121,255,.2);border-radius:12px;padding:15px;color:#bcd;line-height:1.8;font-size:.85rem;white-space:pre-wrap;display:none;margin-top:10px}
+.ld{display:none;text-align:center;padding:15px;color:#556}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🤖 لوحة التحكم الذكية</h1>
+
+<div class="grid">
+  <div class="card"><h3>إجمالي التوليدات</h3><div class="val" id="total">0</div></div>
+  <div class="card"><h3>آخر تحسين</h3><div class="val" style="font-size:1rem" id="lastImproved">-</div></div>
+  <div class="card"><h3>المواضيع الشائعة</h3><div id="topics" style="font-size:.8rem;color:#aab;line-height:1.8">جاري التحميل...</div></div>
+  <div class="card"><h3>الأساليب المفضلة</h3><div id="styles" style="font-size:.8rem;color:#aab;line-height:1.8">جاري التحميل...</div></div>
+</div>
+
+<button class="btn" onclick="analyze()">🤖 تحليل ذكي وتحسين التطبيق</button>
+<div class="ld" id="ld">⏳ الذكاء الاصطناعي يحلل البيانات...</div>
+<div class="analysis-box" id="analysis"></div>
+
+<button class="btn" style="background:linear-gradient(135deg,#7c4dff,#9c27b0);margin-top:10px" onclick="window.location='/'">🔙 العودة للتطبيق</button>
+</div>
+
+<script>
+async function loadStats(){
+  try{
+    const r=await fetch('/api/self-improve');
+    const d=await r.json();
+    document.getElementById('total').textContent=d.stats.totalGenerations;
+    document.getElementById('lastImproved').textContent=new Date(d.stats.lastImproved).toLocaleDateString('ar');
+    const topics=Object.entries(d.stats.popularTopics).slice(0,3).map(([t,c])=>`${t}: ${c}`).join('\n')||'لا توجد بيانات بعد';
+    const styles=Object.entries(d.stats.popularStyles).slice(0,3).map(([s,c])=>`${s}: ${c}`).join('\n')||'لا توجد بيانات بعد';
+    document.getElementById('topics').textContent=topics;
+    document.getElementById('styles').textContent=styles;
+  }catch(e){}
+}
+
+async function analyze(){
+  document.getElementById('ld').style.display='block';
+  document.getElementById('analysis').style.display='none';
+  try{
+    const r=await fetch('/api/self-improve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'analyze'})});
+    const d=await r.json();
+    document.getElementById('analysis').textContent=d.suggestion;
+    document.getElementById('analysis').style.display='block';
+  }catch(e){alert('خطأ!');}
+  finally{document.getElementById('ld').style.display='none';}
+}
+
+loadStats();
+</script>
+</body>
+</html>
