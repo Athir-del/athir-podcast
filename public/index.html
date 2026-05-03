@@ -3,120 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>أثير Motion — تحريك الصور بالذكاء الاصطناعي</title>
+<title>أثير Motion 🎬</title>
 <meta name="google-adsense-account" content="ca-pub-7535354659763641">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535354659763641" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#2979ff;--cyan:#00e5ff;--purple:#7c4dff;--green:#00e676;--red:#ff4081;--gold:#ffd700;--bg:#03040f;--border:rgba(255,255,255,.07)}
-body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#fff;min-height:100vh;direction:rtl;overflow-x:hidden}
+body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl;overflow-x:hidden}
 .bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:radial-gradient(ellipse at 20% 50%,rgba(41,121,255,.08),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(124,77,255,.06),transparent 60%)}
 .wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:12px}
 
-nav{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:13px;margin-bottom:16px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:13px;margin-bottom:16px}
 .logo{display:flex;align-items:center;gap:8px}
-.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-right{display:flex;gap:7px;align-items:center}
-.counter{padding:5px 10px;background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:var(--blue);border-radius:8px;font-size:.75rem}
-.nav-btn{padding:7px 13px;background:linear-gradient(135deg,var(--gold),#ff6d00);color:#000;border:none;border-radius:8px;font-size:.75rem;font-weight:900;cursor:pointer;font-family:'Tajawal',sans-serif}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,#2979ff,#7c4dff);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-.hero{text-align:center;padding:18px 10px 22px}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;background:rgba(124,77,255,.08);border:1px solid rgba(124,77,255,.2);color:var(--purple);border-radius:20px;font-size:.72rem;margin-bottom:12px}
-.dp{width:6px;height:6px;background:var(--red);border-radius:50%;animation:dp 1.5s infinite}
-@keyframes dp{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:8px}
-.grad{background:linear-gradient(135deg,var(--blue),var(--purple),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:#556;font-size:.82rem;margin-bottom:12px;line-height:1.6}
-.badges{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
-.badge{padding:4px 10px;border-radius:12px;font-size:.68rem;font-weight:700;border:1px solid}
+.hero{text-align:center;padding:15px 10px 20px}
+h1{font-size:1.9rem;font-weight:900;margin-bottom:8px}
+.grad{background:linear-gradient(135deg,#2979ff,#7c4dff,#ff4081);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{color:#556;font-size:.82rem;margin-bottom:12px}
 
-.card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:15px;overflow:hidden;margin-bottom:12px}
-.ch{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem}
+.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:15px;overflow:hidden;margin-bottom:12px}
+.ch{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem}
 .cdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .cb{padding:15px}
 .lbl{color:#556;font-size:.74rem;margin-bottom:6px;margin-top:10px}
 .lbl:first-child{margin-top:0}
 
 /* Upload */
-.upload-area{width:100%;min-height:150px;border:2px dashed rgba(41,121,255,.25);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s;background:rgba(41,121,255,.02);padding:15px;margin-bottom:10px;position:relative}
-.upload-area:hover{border-color:rgba(41,121,255,.5);background:rgba(41,121,255,.05)}
-.upload-area img{max-height:200px;border-radius:8px;display:none;width:100%;object-fit:cover}
+.upload-area{width:100%;min-height:160px;border:2px dashed rgba(41,121,255,.25);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s;background:rgba(41,121,255,.02);padding:15px;margin-bottom:10px;overflow:hidden;position:relative}
+.upload-area:hover{border-color:rgba(41,121,255,.5)}
+#previewImg{width:100%;max-height:200px;object-fit:contain;display:none;border-radius:8px}
+#uploadPlaceholder{text-align:center}
 .upload-icon{font-size:2.5rem;margin-bottom:8px}
-.upload-txt{color:#556;font-size:.78rem;text-align:center}
+.upload-txt{color:#556;font-size:.78rem}
 input[type=file]{display:none}
 
-/* OR divider */
-.or{text-align:center;color:#334;font-size:.72rem;margin:8px 0;position:relative}
-.or::before,.or::after{content:'';position:absolute;top:50%;width:40%;height:1px;background:rgba(255,255,255,.05)}
-.or::before{right:0}.or::after{left:0}
+/* Animation Canvas */
+#animCanvas{width:100%;border-radius:12px;display:none;background:#000;margin-bottom:10px}
 
-input[type=text],textarea{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);color:#fff;padding:11px;border-radius:9px;font-size:.86rem;direction:rtl;font-family:'Tajawal',sans-serif;outline:none;transition:.3s;margin-bottom:8px}
-textarea{height:70px;resize:none;line-height:1.7}
-input:focus,textarea:focus{border-color:rgba(41,121,255,.4)}
-input::placeholder,textarea::placeholder{color:#334}
+/* Effects Grid */
+.fx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0}
+.fx-card{background:rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.06);border-radius:11px;padding:10px 6px;cursor:pointer;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.fx-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c);opacity:0;transition:.3s}
+.fx-card.on{border-color:var(--c);background:rgba(255,255,255,.04)}
+.fx-card.on::before{opacity:1}
+.fxi{font-size:1.5rem;margin-bottom:3px}
+.fxn{font-size:.7rem;font-weight:700}
+.fxd{font-size:.6rem;color:#556;margin-top:1px}
 
-/* Motion Types */
-.motion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0}
-.motion-card{background:rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.06);border-radius:11px;padding:10px 6px;cursor:pointer;text-align:center;transition:.3s}
-.motion-card.on{border-color:var(--blue);background:rgba(41,121,255,.08);box-shadow:0 0 12px rgba(41,121,255,.1)}
-.mi{font-size:1.5rem;margin-bottom:3px}
-.mn{font-size:.7rem;font-weight:700}
-.md{font-size:.6rem;color:#556;margin-top:1px}
+/* Speed */
+.speed-btns{display:flex;gap:6px;margin:8px 0}
+.speed-btn{flex:1;padding:9px 4px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:8px;cursor:pointer;text-align:center;transition:.3s}
+.speed-btn.on{border-color:#2979ff;background:rgba(41,121,255,.08)}
+.sbn{font-size:.75rem;font-weight:700}
+.sbd{font-size:.6rem;color:#556}
 
-/* Character Types */
-.char-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}
-.char-card{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:8px 4px;cursor:pointer;text-align:center;transition:.3s}
-.char-card.on{border-color:var(--purple);background:rgba(124,77,255,.08)}
-.ci{font-size:1.2rem;margin-bottom:2px}
-.cn{font-size:.65rem;font-weight:700}
-
-/* Duration */
-.dur-btns{display:flex;gap:6px;margin:8px 0}
-.dur-btn{flex:1;padding:9px 4px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:8px;cursor:pointer;text-align:center;transition:.3s}
-.dur-btn.on{border-color:var(--cyan);background:rgba(0,229,255,.06)}
-.dn{font-size:.75rem;font-weight:700}
-.dd{font-size:.6rem;color:#556}
+/* Style tabs */
+.style-tabs{display:flex;gap:5px;margin:8px 0;overflow-x:auto}
+.style-tabs::-webkit-scrollbar{display:none}
+.stab{padding:7px 13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;cursor:pointer;font-size:.74rem;color:#667;white-space:nowrap;font-family:'Tajawal',sans-serif;transition:.3s;flex-shrink:0}
+.stab.on{background:rgba(41,121,255,.12);border-color:rgba(41,121,255,.3);color:#2979ff}
 
 /* Buttons */
 .br{display:flex;gap:7px;margin-top:11px}
 .bm{flex:1;padding:13px;border:none;border-radius:9px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
-.bm:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.bm:hover{transform:translateY(-2px)}
 .bm:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.bs{padding:13px 14px;background:rgba(255,255,255,.04);color:#889;border:1px solid var(--border);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif}
+.bs{padding:13px 14px;background:rgba(255,255,255,.04);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer}
 
-.ld{display:none;padding:25px;text-align:center}
-.bars{display:flex;justify-content:center;align-items:flex-end;gap:4px;height:30px;margin-bottom:8px}
-.b{width:4px;border-radius:2px;animation:bx .7s ease-in-out infinite}
-@keyframes bx{0%,100%{height:5px}50%{height:30px}}
-.lt{color:#556;font-size:.8rem}
-.pb{width:100%;height:3px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:10px;overflow:hidden;display:none}
-.pf{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));animation:pf 120s linear forwards;width:0%}
-@keyframes pf{to{width:92%}}
+/* Preview Area */
+#previewArea{display:none;margin-top:12px;position:relative;border-radius:12px;overflow:hidden;background:#000;min-height:200px}
+#animatedImg{width:100%;display:block}
+.overlay-fx{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
 
-.res{display:none;margin-top:12px}
-.res video{width:100%;border-radius:10px;margin-bottom:10px;border:1px solid rgba(41,121,255,.2)}
-.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.ab{padding:8px 12px;border-radius:7px;cursor:pointer;font-size:.74rem;font-family:'Tajawal',sans-serif;border:1px solid;transition:.3s}
-.ab:hover{opacity:.8}
-.rg{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:var(--green)}
-.rb{background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:var(--blue)}
-.rp{background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:var(--purple)}
-.ro{background:rgba(255,64,129,.08);border-color:rgba(255,64,129,.2);color:var(--red)}
+/* Download btn */
+.dl-btn{width:100%;padding:12px;background:linear-gradient(135deg,#00c853,#00e676);color:#000;border:none;border-radius:9px;font-weight:900;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.9rem;margin-top:8px;transition:.3s}
+.dl-btn:hover{transform:translateY(-2px)}
 
 /* Examples */
-.examples{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:8px 0}
-.example{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px;cursor:pointer;transition:.3s}
-.example:hover{border-color:rgba(41,121,255,.3);background:rgba(41,121,255,.05)}
-.ex-icon{font-size:1.3rem;margin-bottom:5px}
-.ex-title{font-size:.78rem;font-weight:700;margin-bottom:3px}
-.ex-desc{font-size:.65rem;color:#556;line-height:1.5}
+.ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.ex-card{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:10px}
+.ex-card:hover{border-color:rgba(41,121,255,.3);background:rgba(41,121,255,.05)}
+.ex-icon{font-size:1.8rem;flex-shrink:0}
+.ex-info .et{font-size:.78rem;font-weight:700;margin-bottom:2px}
+.ex-info .ed{font-size:.65rem;color:#556}
 
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;padding:15px}
-.mbox{background:#080d20;border:1px solid rgba(255,215,0,.3);border-radius:18px;padding:25px;text-align:center;max-width:360px;width:100%}
+/* CSS Animations */
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-15px) scale(1.02)}}
+@keyframes shake{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes pulse-scale{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes slide-lr{0%,100%{transform:translateX(0)}50%{transform:translateX(20px)}}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-25px)}60%{transform:translateY(-12px)}}
+@keyframes swing{0%,100%{transform:rotate(0deg) translateX(0)}25%{transform:rotate(5deg) translateX(10px)}75%{transform:rotate(-5deg) translateX(-10px)}}
+@keyframes zoom-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes glitch{0%,100%{transform:translate(0)}20%{transform:translate(-3px,2px)}40%{transform:translate(3px,-2px)}60%{transform:translate(-2px,-3px)}80%{transform:translate(2px,3px)}}
+@keyframes neon-glow{0%,100%{filter:brightness(1) drop-shadow(0 0 5px #2979ff)}50%{filter:brightness(1.3) drop-shadow(0 0 20px #2979ff) drop-shadow(0 0 40px #7c4dff)}}
+@keyframes fire{0%,100%{filter:hue-rotate(0deg) brightness(1)}50%{filter:hue-rotate(30deg) brightness(1.3)}}
+@keyframes rainbow{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
 
-footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px solid var(--border);margin-top:10px}
+.anim-float{animation:float var(--spd,3s) ease-in-out infinite}
+.anim-shake{animation:shake var(--spd,0.5s) ease-in-out infinite}
+.anim-pulse{animation:pulse-scale var(--spd,2s) ease-in-out infinite}
+.anim-slide{animation:slide-lr var(--spd,2s) ease-in-out infinite}
+.anim-spin{animation:spin-slow var(--spd,4s) linear infinite}
+.anim-bounce{animation:bounce var(--spd,1s) ease-in-out infinite}
+.anim-swing{animation:swing var(--spd,2s) ease-in-out infinite}
+.anim-zoom{animation:zoom-pulse var(--spd,2s) ease-in-out infinite}
+.anim-glitch{animation:glitch var(--spd,0.3s) steps(1) infinite}
+.anim-neon{animation:neon-glow var(--spd,2s) ease-in-out infinite}
+.anim-fire{animation:fire var(--spd,1s) ease-in-out infinite}
+.anim-rainbow{animation:rainbow var(--spd,3s) linear infinite}
+
+footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px solid rgba(255,255,255,.07);margin-top:10px}
 </style>
 </head>
 <body>
@@ -128,33 +128,23 @@ footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px 
     <div class="logo-icon">🎬</div>
     <div class="logo-text">أثير Motion</div>
   </div>
-  <div class="nav-right">
-    <div class="counter" id="counter">🎯 3/3</div>
-    <button class="nav-btn" onclick="document.getElementById('upgradeModal').style.display='flex'">💎 Pro</button>
+  <div style="display:flex;gap:6px">
+    <a href="https://athir-fun.vercel.app" style="padding:6px 10px;background:rgba(255,64,129,.1);border:1px solid rgba(255,64,129,.2);color:#ff4081;border-radius:7px;text-decoration:none;font-size:.72rem">😂 Fun</a>
+    <a href="https://athir-live.vercel.app" style="padding:6px 10px;background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.2);color:#7c4dff;border-radius:7px;text-decoration:none;font-size:.72rem">📡 Live</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-tag"><div class="dp"></div>تحريك بالذكاء الاصطناعي</div>
-  <h1>حرّك <span class="grad">صورتك</span> الآن</h1>
-  <p class="hero-sub">حوّل أي صورة إلى فيديو متحرك احترافي<br>شخصيات • طبيعة • بورتريه — في دقائق</p>
-  <div class="badges">
-    <div class="badge" style="background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.2);color:var(--green)">✅ مجاني</div>
-    <div class="badge" style="background:rgba(41,121,255,.08);border-color:rgba(41,121,255,.2);color:var(--blue)">🎬 Runway ML</div>
-    <div class="badge" style="background:rgba(124,77,255,.08);border-color:rgba(124,77,255,.2);color:var(--purple)">⚡ دقائق</div>
-  </div>
+  <h1>حرّك <span class="grad">صورتك</span> 🎬</h1>
+  <p class="hero-sub">أضف تأثيرات حركة احترافية لأي صورة — مجاناً 100%</p>
 </div>
 
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7535354659763641" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 
-<!-- MAIN CARD -->
 <div class="card">
-  <div class="ch"><div class="cdot" style="background:var(--blue);box-shadow:0 0 6px var(--blue)"></div>🎬 محرّك الصور</div>
+  <div class="ch"><div class="cdot" style="background:#2979ff;box-shadow:0 0 6px #2979ff"></div>📸 ارفع صورتك</div>
   <div class="cb">
-
-    <!-- Upload -->
-    <div class="lbl">📸 ارفع الصورة</div>
     <div class="upload-area" id="uploadArea" onclick="document.getElementById('imgFile').click()">
       <img id="previewImg" alt="معاينة">
       <div id="uploadPlaceholder">
@@ -163,100 +153,63 @@ footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px 
       </div>
     </div>
     <input type="file" id="imgFile" accept="image/*" onchange="handleImg(this)">
-
-    <div class="or">أو استخدم رابط صورة</div>
-    <input type="text" id="imgUrl" placeholder="https://example.com/image.jpg">
-
-    <!-- Motion Type -->
-    <div class="lbl">✨ نوع الحركة</div>
-    <div class="motion-grid">
-      <div class="motion-card on" onclick="pickMotion(this,'smooth natural motion, breathing, subtle movement')"><div class="mi">🌊</div><div class="mn">طبيعي</div><div class="md">حركة ناعمة</div></div>
-      <div class="motion-card" onclick="pickMotion(this,'walking movement, character animation, dynamic')"><div class="mi">🚶</div><div class="mn">مشي</div><div class="md">شخصية تمشي</div></div>
-      <div class="motion-card" onclick="pickMotion(this,'talking speaking mouth movement, head nodding')"><div class="mi">🗣️</div><div class="mn">يتحدث</div><div class="md">حركة الفم</div></div>
-      <div class="motion-card" onclick="pickMotion(this,'dancing movement, rhythmic, energetic animation')"><div class="mi">💃</div><div class="mn">رقص</div><div class="md">حركة إيقاعية</div></div>
-      <div class="motion-card" onclick="pickMotion(this,'wind blowing, hair moving, fabric flowing, environmental')"><div class="mi">💨</div><div class="mn">ريح</div><div class="md">شعر وملابس</div></div>
-      <div class="motion-card" onclick="pickMotion(this,'zoom in slowly, cinematic pan, camera movement')"><div class="mi">🎥</div><div class="mn">كاميرا</div><div class="md">حركة سينمائية</div></div>
-    </div>
-
-    <!-- Character Type -->
-    <div class="lbl">🎭 نوع الشخصية</div>
-    <div class="char-grid">
-      <div class="char-card on" onclick="pickChar(this,'')"><div class="ci">🤷</div><div class="cn">عام</div></div>
-      <div class="char-card" onclick="pickChar(this,'anime character, ')"><div class="ci">✨</div><div class="cn">أنمي</div></div>
-      <div class="char-card" onclick="pickChar(this,'realistic person, ')"><div class="ci">👤</div><div class="cn">واقعي</div></div>
-      <div class="char-card" onclick="pickChar(this,'cartoon character, ')"><div class="ci">🎨</div><div class="cn">كرتون</div></div>
-      <div class="char-card" onclick="pickChar(this,'fantasy character, ')"><div class="ci">🧙</div><div class="cn">خيالي</div></div>
-      <div class="char-card" onclick="pickChar(this,'robot AI character, ')"><div class="ci">🤖</div><div class="cn">روبوت</div></div>
-      <div class="char-card" onclick="pickChar(this,'nature landscape, ')"><div class="ci">🌿</div><div class="cn">طبيعة</div></div>
-      <div class="char-card" onclick="pickChar(this,'portrait face, ')"><div class="ci">🖼️</div><div class="cn">بورتريه</div></div>
-    </div>
-
-    <!-- Duration -->
-    <div class="lbl">⏱️ المدة</div>
-    <div class="dur-btns">
-      <div class="dur-btn on" onclick="pickDur(this,5)"><div class="dn">5 ثوانٍ</div><div class="dd">مجاني</div></div>
-      <div class="dur-btn" onclick="pickDur(this,10)"><div class="dn">10 ثوانٍ</div><div class="dd">Pro</div></div>
-    </div>
-
-    <!-- Custom Prompt -->
-    <div class="lbl">✍️ تعليمات إضافية (اختياري)</div>
-    <textarea id="customPrompt" placeholder="مثال: يرفع يده ويبتسم، الخلفية ضبابية، إضاءة دافئة..."></textarea>
-
-    <div class="br">
-      <button class="bm" style="background:linear-gradient(135deg,#1a44bb,var(--purple))" onclick="animateImg()" id="animBtn">🎬 تحريك الصورة</button>
-      <button class="bs" onclick="resetAll()">🗑️</button>
-    </div>
-
-    <div class="ld" id="ld">
-      <div class="bars">
-        <div class="b" style="background:var(--blue)"></div>
-        <div class="b" style="background:var(--purple);animation-delay:.1s"></div>
-        <div class="b" style="background:var(--red);animation-delay:.2s"></div>
-        <div class="b" style="background:var(--purple);animation-delay:.3s"></div>
-        <div class="b" style="background:var(--blue);animation-delay:.4s"></div>
-      </div>
-      <div class="lt" id="ldTxt">🎬 Runway ML يحرّك صورتك... 2-3 دقائق</div>
-      <div class="pb" id="pb"><div class="pf"></div></div>
-    </div>
-
-    <div class="res" id="res">
-      <div style="color:var(--green);font-size:.82rem;font-weight:700;margin-bottom:8px">✅ الفيديو جاهز!</div>
-      <video id="resultVid" controls loop autoplay muted></video>
-      <div class="acts">
-        <button class="ab rg" onclick="dlVid()">💾 تحميل</button>
-        <button class="ab rb" onclick="shareVid()">📤 مشاركة</button>
-        <button class="ab rp" onclick="animateImg()">🔄 مجدداً</button>
-        <button class="ab ro" onclick="resetAll()">🆕 صورة جديدة</button>
-      </div>
-    </div>
   </div>
 </div>
 
-<!-- EXAMPLES -->
-<div class="card">
-  <div class="ch"><div class="cdot" style="background:var(--gold);box-shadow:0 0 6px var(--gold)"></div>💡 أمثلة جاهزة</div>
+<div class="card" id="effectsCard" style="display:none">
+  <div class="ch"><div class="cdot" style="background:#7c4dff;box-shadow:0 0 6px #7c4dff"></div>✨ اختر التأثير</div>
   <div class="cb">
-    <div class="lbl">اضغط لتجربة مباشرة</div>
-    <div class="examples">
-      <div class="example" onclick="tryExample('https://image.pollinations.ai/prompt/anime%20girl%20portrait%20beautiful?width=512&height=512&nologo=true&seed=100','talking speaking mouth movement, head nodding','anime character, ')">
+
+    <div class="lbl">🎨 النوع</div>
+    <div class="style-tabs">
+      <button class="stab on" onclick="loadEffects('motion')">🏃 حركة</button>
+      <button class="stab" onclick="loadEffects('kids')">🧒 أطفال</button>
+      <button class="stab" onclick="loadEffects('special')">⚡ خاص</button>
+      <button class="stab" onclick="loadEffects('cinematic')">🎬 سينمائي</button>
+    </div>
+
+    <div class="fx-grid" id="fxGrid"></div>
+
+    <div class="lbl">⚡ السرعة</div>
+    <div class="speed-btns">
+      <div class="speed-btn" onclick="pickSpeed(this,4)"><div class="sbn">🐢 بطيء</div><div class="sbd">4 ثانية</div></div>
+      <div class="speed-btn on" onclick="pickSpeed(this,2)"><div class="sbn">⚡ عادي</div><div class="sbd">2 ثانية</div></div>
+      <div class="speed-btn" onclick="pickSpeed(this,0.8)"><div class="sbn">🚀 سريع</div><div class="sbd">0.8 ثانية</div></div>
+    </div>
+
+    <div class="br">
+      <button class="bm" style="background:linear-gradient(135deg,#1a44bb,#7c4dff)" onclick="applyEffect()" id="applyBtn">✨ تطبيق التأثير</button>
+      <button class="bs" onclick="resetEffect()">↩️</button>
+    </div>
+
+    <div id="previewArea">
+      <img id="animatedImg" alt="متحرك">
+      <button class="dl-btn" onclick="captureAndDownload()">📥 تحميل كـ GIF/صورة</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Examples -->
+<div class="card">
+  <div class="ch"><div class="cdot" style="background:#ffd700;box-shadow:0 0 6px #ffd700"></div>💡 جرب بصور جاهزة</div>
+  <div class="cb">
+    <div class="ex-grid">
+      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cute%20anime%20girl%20portrait?width=400&height=400&nologo=true&seed=1')">
         <div class="ex-icon">✨</div>
-        <div class="ex-title">فتاة أنمي تتحدث</div>
-        <div class="ex-desc">شخصية أنمي مع حركة الفم</div>
+        <div class="ex-info"><div class="et">أنمي</div><div class="ed">فتاة أنمي</div></div>
       </div>
-      <div class="example" onclick="tryExample('https://image.pollinations.ai/prompt/warrior%20fantasy%20portrait?width=512&height=512&nologo=true&seed=200','walking movement, character animation, dynamic','fantasy character, ')">
-        <div class="ex-icon">⚔️</div>
-        <div class="ex-title">محارب يمشي</div>
-        <div class="ex-desc">شخصية خيالية بحركة طبيعية</div>
+      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cartoon%20superhero%20child?width=400&height=400&nologo=true&seed=2')">
+        <div class="ex-icon">🦸</div>
+        <div class="ex-info"><div class="et">بطل أطفال</div><div class="ed">شخصية كرتونية</div></div>
       </div>
-      <div class="example" onclick="tryExample('https://image.pollinations.ai/prompt/beautiful%20nature%20landscape%20forest?width=512&height=512&nologo=true&seed=300','wind blowing, trees moving, nature environmental','nature landscape, ')">
-        <div class="ex-icon">🌿</div>
-        <div class="ex-title">طبيعة تتحرك</div>
-        <div class="ex-desc">أشجار تتمايل مع النسيم</div>
-      </div>
-      <div class="example" onclick="tryExample('https://image.pollinations.ai/prompt/robot%20character%20futuristic?width=512&height=512&nologo=true&seed=400','robot movement, mechanical animation, AI character','robot AI character, ')">
+      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cute%20robot%20character?width=400&height=400&nologo=true&seed=3')">
         <div class="ex-icon">🤖</div>
-        <div class="ex-title">روبوت يتحرك</div>
-        <div class="ex-desc">شخصية روبوت بحركة آلية</div>
+        <div class="ex-info"><div class="et">روبوت</div><div class="ed">شخصية آلية</div></div>
+      </div>
+      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/fantasy%20warrior%20portrait?width=400&height=400&nologo=true&seed=4')">
+        <div class="ex-icon">⚔️</div>
+        <div class="ex-info"><div class="et">محارب</div><div class="ed">شخصية خيالية</div></div>
       </div>
     </div>
   </div>
@@ -265,206 +218,140 @@ footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px 
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7535354659763641" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 
-<!-- MODAL -->
-<div class="modal" id="upgradeModal">
-  <div class="mbox">
-    <div style="font-size:2.5rem;margin-bottom:10px">🎬</div>
-    <div style="font-size:1.1rem;font-weight:900;margin-bottom:8px">ترقّ للخطة Pro</div>
-    <div style="color:#556;font-size:.8rem;margin-bottom:15px;line-height:1.7">احصل على تحريك غير محدود<br>مدة 10 ثوانٍ + جودة 4K</div>
-    <a href="https://athirstore.lemonsqueezy.com" target="_blank"><button style="padding:10px 20px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.85rem;font-weight:700;margin:3px;width:100%">🚀 اشترك بـ $5/شهر</button></a>
-    <button style="padding:10px 20px;background:rgba(255,255,255,.05);color:#889;border:1px solid var(--border);border-radius:9px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.8rem;margin-top:8px;width:100%" onclick="document.getElementById('upgradeModal').style.display='none'">لاحقاً</button>
-  </div>
-</div>
-
 <div style="text-align:center;padding:12px;background:rgba(255,0,0,.04);border:1px solid rgba(255,0,0,.1);border-radius:10px;margin:12px 0">
   <span style="color:#ff4444;font-size:.8rem;font-weight:700">🎬 تابع قناتنا!</span>
   <a href="https://youtube.com/@al-u6j4s" target="_blank" style="margin-right:10px;padding:6px 12px;background:#f00;color:#fff;border-radius:7px;text-decoration:none;font-size:.72rem;font-weight:700">▶️ اشترك</a>
 </div>
 
-<footer>
-  <span onclick="devMode()" style="cursor:pointer;opacity:.04">⚙️</span>
-  أثير Motion © 2026 |
-  <a href="https://athir-fun.vercel.app" style="color:var(--red);text-decoration:none">😂 Fun</a> |
-  <a href="https://athir-live.vercel.app" style="color:var(--purple);text-decoration:none">📡 Live</a>
-</footer>
+<footer>أثير Motion © 2026</footer>
 </div>
 
 <script>
-const LIMIT=3;
-let motionPrompt='smooth natural motion, breathing, subtle movement';
-let charType='';
-let duration=5;
-let uploadedImgBase64=null;
-let uploadedImgUrl=null;
+const effects = {
+  motion: [
+    {icon:'🌊',name:'طفو',desc:'يطفو لأعلى',cls:'anim-float',c:'#2979ff'},
+    {icon:'🤸',name:'ارتداد',desc:'يقفز',cls:'anim-bounce',c:'#ff6d00'},
+    {icon:'💫',name:'تأرجح',desc:'يتأرجح',cls:'anim-swing',c:'#7c4dff'},
+    {icon:'↔️',name:'انزلاق',desc:'يتحرك جانباً',cls:'anim-slide',c:'#00e5ff'},
+    {icon:'🔄',name:'دوران',desc:'يدور ببطء',cls:'anim-spin',c:'#00e676'},
+    {icon:'💗',name:'نبضة',desc:'يكبر وينكمش',cls:'anim-pulse',c:'#ff4081'},
+  ],
+  kids: [
+    {icon:'🎈',name:'بالون',desc:'طفو مرح',cls:'anim-float',c:'#ff4081'},
+    {icon:'⭐',name:'نجمة',desc:'تلمع وتكبر',cls:'anim-zoom',c:'#ffd700'},
+    {icon:'🌈',name:'قوس قزح',desc:'ألوان متغيرة',cls:'anim-rainbow',c:'#ff6d00'},
+    {icon:'🐰',name:'أرنب',desc:'يقفز مرح',cls:'anim-bounce',c:'#ff4081'},
+    {icon:'🎠',name:'دوامة',desc:'دوران مرح',cls:'anim-spin',c:'#7c4dff'},
+    {icon:'🤣',name:'ارتعاش',desc:'يهتز بمرح',cls:'anim-shake',c:'#ff6d00'},
+  ],
+  special: [
+    {icon:'⚡',name:'غليتش',desc:'تأثير خلل',cls:'anim-glitch',c:'#ff4081'},
+    {icon:'💡',name:'نيون',desc:'يضيء بنيون',cls:'anim-neon',c:'#2979ff'},
+    {icon:'🔥',name:'ناري',desc:'ألوان نارية',cls:'anim-fire',c:'#ff6d00'},
+    {icon:'🌈',name:'راديوس',desc:'ألوان قوس',cls:'anim-rainbow',c:'#7c4dff'},
+    {icon:'🔍',name:'تكبير',desc:'يكبر وينكمش',cls:'anim-zoom',c:'#00e5ff'},
+    {icon:'💥',name:'صدمة',desc:'اهتزاز سريع',cls:'anim-shake',c:'#ff4081'},
+  ],
+  cinematic: [
+    {icon:'🎬',name:'سينما',desc:'طفو سينمائي',cls:'anim-float',c:'#ffd700'},
+    {icon:'🌊',name:'موجة',desc:'حركة ناعمة',cls:'anim-swing',c:'#2979ff'},
+    {icon:'✨',name:'توهج',desc:'ضوء نيون',cls:'anim-neon',c:'#7c4dff'},
+    {icon:'🎭',name:'درامي',desc:'تأرجح درامي',cls:'anim-pulse',c:'#ff4081'},
+    {icon:'🌀',name:'دوامة',desc:'دوران بطيء',cls:'anim-spin',c:'#00e676'},
+    {icon:'💫',name:'نجمة',desc:'تألق متكرر',cls:'anim-zoom',c:'#ffd700'},
+  ]
+};
 
-// Limit
-function chkLmt(){
-  if(localStorage.getItem('dev')==='1')return true;
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
-  if(d.d!==t){localStorage.setItem('a',JSON.stringify({d:t,c:0}));updC();return true;}
-  if(d.c>=LIMIT){document.getElementById('upgradeModal').style.display='flex';return false;}
-  return true;
-}
-function incC(){
-  if(localStorage.getItem('dev')==='1')return;
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
-  const c=(d.d===t?d.c:0)+1;
-  localStorage.setItem('a',JSON.stringify({d:t,c}));updC();
-}
-function updC(){
-  if(localStorage.getItem('dev')==='1'){document.getElementById('counter').textContent='🔓';return;}
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem('a')||'{}');
-  document.getElementById('counter').textContent=`🎯 ${LIMIT-(d.d===t?d.c:0)}/${LIMIT}`;
-}
-function devMode(){const c=prompt('كود:');if(c==='athir2026'){localStorage.setItem('dev','1');alert('✅');updC();}else alert('❌');}
+let selEffect=effects.motion[0];
+let speed=2;
+let imgSrc=null;
 
-// Image Upload
+function loadEffects(pack){
+  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));
+  event.target.classList.add('on');
+  const grid=document.getElementById('fxGrid');
+  grid.innerHTML='';
+  effects[pack].forEach((e,i)=>{
+    const div=document.createElement('div');
+    div.className='fx-card'+(i===0?' on':'');
+    div.style.setProperty('--c',e.c);
+    div.innerHTML=`<div class="fxi">${e.icon}</div><div class="fxn">${e.name}</div><div class="fxd">${e.desc}</div>`;
+    div.onclick=()=>{
+      document.querySelectorAll('.fx-card').forEach(x=>x.classList.remove('on'));
+      div.classList.add('on');
+      selEffect=e;
+    };
+    grid.appendChild(div);
+  });
+  selEffect=effects[pack][0];
+}
+
+function pickSpeed(el,s){
+  document.querySelectorAll('.speed-btn').forEach(e=>e.classList.remove('on'));
+  el.classList.add('on');
+  speed=s;
+}
+
 function handleImg(input){
   const file=input.files[0];
   if(!file)return;
   const reader=new FileReader();
   reader.onload=e=>{
-    uploadedImgBase64=e.target.result;
-    uploadedImgUrl=null;
-    const img=document.getElementById('previewImg');
-    img.src=e.target.result;
-    img.style.display='block';
-    document.getElementById('uploadPlaceholder').style.display='none';
+    imgSrc=e.target.result;
+    showPreview(imgSrc);
   };
   reader.readAsDataURL(file);
 }
 
-function pickMotion(el,prompt){
-  document.querySelectorAll('.motion-card').forEach(e=>e.classList.remove('on'));
-  el.classList.add('on');
-  motionPrompt=prompt;
+function showPreview(src){
+  imgSrc=src;
+  const img=document.getElementById('previewImg');
+  img.src=src;
+  img.style.display='block';
+  document.getElementById('uploadPlaceholder').style.display='none';
+  document.getElementById('effectsCard').style.display='block';
+  loadEffects('motion');
+  document.getElementById('effectsCard').scrollIntoView({behavior:'smooth'});
 }
 
-function pickChar(el,type){
-  document.querySelectorAll('.char-card').forEach(e=>e.classList.remove('on'));
-  el.classList.add('on');
-  charType=type;
+function applyEffect(){
+  if(!imgSrc){alert('ارفع صورة أولاً!');return;}
+  const area=document.getElementById('previewArea');
+  const aImg=document.getElementById('animatedImg');
+  aImg.src=imgSrc;
+  aImg.className=selEffect.cls;
+  aImg.style.setProperty('--spd',speed+'s');
+  area.style.display='block';
+  area.scrollIntoView({behavior:'smooth'});
 }
 
-function pickDur(el,dur){
-  document.querySelectorAll('.dur-btn').forEach(e=>e.classList.remove('on'));
-  el.classList.add('on');
-  duration=dur;
+function resetEffect(){
+  const aImg=document.getElementById('animatedImg');
+  aImg.className='';
+  document.getElementById('previewArea').style.display='none';
 }
 
-// Animate
-async function animateImg(){
-  if(!chkLmt())return;
-
-  const urlInput=document.getElementById('imgUrl').value.trim();
-  const imgToUse=uploadedImgBase64||urlInput;
-
-  if(!imgToUse){
-    alert('ارفع صورة أو أدخل رابط صورة!');
-    return;
-  }
-
-  const btn=document.getElementById('animBtn');
-  btn.disabled=true;
-  document.getElementById('ld').style.display='block';
-  document.getElementById('pb').style.display='block';
-  document.getElementById('ldTxt').textContent='🎬 Runway ML يحرّك صورتك... 2-3 دقائق';
-  document.getElementById('res').style.display='none';
-
-  const custom=document.getElementById('customPrompt').value;
-  const fullPrompt=charType+motionPrompt+(custom?', '+custom:'');
-
-  try{
-    const r=await fetch('/api/animate',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        imageUrl:imgToUse,
-        prompt:fullPrompt,
-        duration:duration
-      })
-    });
-    const d=await r.json();
-    if(d.error)throw new Error(d.error);
-
-    const chk=setInterval(async()=>{
-      try{
-        const s=await fetch('/api/video-status?id='+d.id);
-        const sd=await s.json();
-        if(sd.status==='succeeded'||sd.status==='SUCCEEDED'){
-          clearInterval(chk);
-          const out=Array.isArray(sd.output)?sd.output[0]:sd.output;
-          document.getElementById('resultVid').src=out;
-          document.getElementById('res').style.display='block';
-          document.getElementById('ld').style.display='none';
-          document.getElementById('pb').style.display='none';
-          btn.disabled=false;
-          incC();
-        }else if(sd.status==='failed'||sd.status==='FAILED'){
-          clearInterval(chk);
-          alert('فشل التحريك: '+(sd.error||'خطأ غير معروف'));
-          document.getElementById('ld').style.display='none';
-          document.getElementById('pb').style.display='none';
-          btn.disabled=false;
-        }
-      }catch(e){}
-    },5000);
-
-  }catch(e){
-    alert('خطأ: '+e.message);
-    document.getElementById('ld').style.display='none';
-    document.getElementById('pb').style.display='none';
-    btn.disabled=false;
-  }
-}
-
-// Examples
-function tryExample(url,motion,char){
-  document.getElementById('imgUrl').value=url;
-  uploadedImgUrl=url;
-  uploadedImgBase64=null;
+function useExample(url){
   const img=document.getElementById('previewImg');
   img.src=url;
   img.style.display='block';
+  imgSrc=url;
   document.getElementById('uploadPlaceholder').style.display='none';
-  motionPrompt=motion;
-  charType=char;
-  document.querySelectorAll('.motion-card').forEach(e=>e.classList.remove('on'));
-  document.querySelectorAll('.char-card').forEach(e=>e.classList.remove('on'));
-  window.scrollTo(0,0);
-  alert('✅ تم اختيار المثال! اضغط "تحريك الصورة"');
+  document.getElementById('effectsCard').style.display='block';
+  loadEffects('motion');
+  document.getElementById('effectsCard').scrollIntoView({behavior:'smooth'});
 }
 
-function resetAll(){
-  document.getElementById('imgUrl').value='';
-  document.getElementById('customPrompt').value='';
-  uploadedImgBase64=null;
-  uploadedImgUrl=null;
-  const img=document.getElementById('previewImg');
-  img.src='';
-  img.style.display='none';
-  document.getElementById('uploadPlaceholder').style.display='block';
-  document.getElementById('res').style.display='none';
-  document.getElementById('imgFile').value='';
-}
-
-function dlVid(){
+async function captureAndDownload(){
+  const img=document.getElementById('animatedImg');
   const a=document.createElement('a');
-  a.href=document.getElementById('resultVid').src;
-  a.download='athir-motion.mp4';
+  a.href=img.src;
+  a.download='athir-motion.jpg';
   a.click();
+  alert('💡 لتحميل كـ GIF استخدم تطبيق Screen Recorder على هاتفك!');
 }
 
-function shareVid(){
-  if(navigator.share){
-    navigator.share({title:'أثير Motion 🎬',text:'شوف هالتحريك الرائع!',url:window.location.href});
-  }else{
-    navigator.clipboard.writeText(window.location.href);
-    alert('تم نسخ الرابط!');
-  }
-}
-
-updC();
+loadEffects('motion');
 </script>
 </body>
 </html>
