@@ -3,118 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>أثير Motion 🎬</title>
+<title>⚽ كورة لايف — نتائج مباشرة</title>
 <meta name="google-adsense-account" content="ca-pub-7535354659763641">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535354659763641" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl;overflow-x:hidden}
-.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:radial-gradient(ellipse at 20% 50%,rgba(41,121,255,.08),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(124,77,255,.06),transparent 60%)}
+body{font-family:'Tajawal',sans-serif;background:#03040f;color:#fff;min-height:100vh;direction:rtl}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,200,83,.06),transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(41,121,255,.05),transparent 60%)}
 .wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:12px}
 
 nav{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:13px;margin-bottom:16px}
 .logo{display:flex;align-items:center;gap:8px}
-.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,#2979ff,#7c4dff);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#2979ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,#00c853,#2979ff);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.logo-text{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#00c853,#2979ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.live-badge{display:flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);border-radius:20px;font-size:.72rem;color:#ff4444;font-weight:700}
+.live-dot{width:6px;height:6px;background:#ff4444;border-radius:50%;animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-.hero{text-align:center;padding:15px 10px 20px}
-h1{font-size:1.9rem;font-weight:900;margin-bottom:8px}
-.grad{background:linear-gradient(135deg,#2979ff,#7c4dff,#ff4081);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:#556;font-size:.82rem;margin-bottom:12px}
+.tabs{display:flex;gap:5px;margin-bottom:14px;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:9px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;cursor:pointer;font-size:.8rem;color:#667;white-space:nowrap;font-family:'Tajawal',sans-serif;transition:.3s;flex-shrink:0}
+.tab.on{background:rgba(0,200,83,.12);border-color:rgba(0,200,83,.3);color:#00c853;font-weight:700}
 
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:15px;overflow:hidden;margin-bottom:12px}
-.ch{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem}
-.cdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.cb{padding:15px}
-.lbl{color:#556;font-size:.74rem;margin-bottom:6px;margin-top:10px}
-.lbl:first-child{margin-top:0}
+.pnl{display:none}
+.pnl.on{display:block}
 
-/* Upload */
-.upload-area{width:100%;min-height:160px;border:2px dashed rgba(41,121,255,.25);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s;background:rgba(41,121,255,.02);padding:15px;margin-bottom:10px;overflow:hidden;position:relative}
-.upload-area:hover{border-color:rgba(41,121,255,.5)}
-#previewImg{width:100%;max-height:200px;object-fit:contain;display:none;border-radius:8px}
-#uploadPlaceholder{text-align:center}
-.upload-icon{font-size:2.5rem;margin-bottom:8px}
-.upload-txt{color:#556;font-size:.78rem}
-input[type=file]{display:none}
+.league-header{display:flex;align-items:center;gap:10px;padding:12px 15px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;margin-bottom:8px}
+.league-flag{font-size:1.5rem}
+.league-name{font-weight:700;font-size:.9rem}
+.league-count{margin-right:auto;font-size:.72rem;color:#556;background:rgba(255,255,255,.05);padding:3px 8px;border-radius:10px}
 
-/* Animation Canvas */
-#animCanvas{width:100%;border-radius:12px;display:none;background:#000;margin-bottom:10px}
+.match-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px;margin-bottom:8px;transition:.3s}
+.match-card:hover{background:rgba(255,255,255,.04);border-color:rgba(0,200,83,.2)}
+.match-time{font-size:.68rem;color:#556;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.match-live{background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);color:#ff4444;padding:2px 7px;border-radius:10px;font-size:.65rem;font-weight:700}
+.match-finished{background:rgba(255,255,255,.05);color:#667;padding:2px 7px;border-radius:10px;font-size:.65rem}
+.match-scheduled{background:rgba(41,121,255,.1);border:1px solid rgba(41,121,255,.2);color:#2979ff;padding:2px 7px;border-radius:10px;font-size:.65rem}
+.match-teams{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.team{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1}
+.team-name{font-size:.78rem;font-weight:700;text-align:center;line-height:1.3}
+.team-logo{font-size:1.8rem}
+.score{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.score-num{font-size:1.8rem;font-weight:900;min-width:28px;text-align:center}
+.score-sep{color:#334;font-size:1.2rem}
+.score-vs{font-size:.85rem;color:#556;padding:0 8px}
 
-/* Effects Grid */
-.fx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0}
-.fx-card{background:rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.06);border-radius:11px;padding:10px 6px;cursor:pointer;text-align:center;transition:.3s;position:relative;overflow:hidden}
-.fx-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c);opacity:0;transition:.3s}
-.fx-card.on{border-color:var(--c);background:rgba(255,255,255,.04)}
-.fx-card.on::before{opacity:1}
-.fxi{font-size:1.5rem;margin-bottom:3px}
-.fxn{font-size:.7rem;font-weight:700}
-.fxd{font-size:.6rem;color:#556;margin-top:1px}
+.standings-table{width:100%;border-collapse:collapse}
+.standings-table th{color:#556;font-size:.7rem;padding:8px 5px;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
+.standings-table th:first-child{text-align:right}
+.standings-table td{padding:10px 5px;text-align:center;font-size:.78rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.standings-table td:first-child{text-align:right;display:flex;align-items:center;gap:8px}
+.pos{width:20px;color:#556;font-size:.7rem}
+.team-row-name{font-weight:700}
+.pts{font-weight:900;color:#00c853}
+.zone-cl{background:rgba(41,121,255,.08)}
+.zone-rel{background:rgba(255,64,129,.08)}
 
-/* Speed */
-.speed-btns{display:flex;gap:6px;margin:8px 0}
-.speed-btn{flex:1;padding:9px 4px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:8px;cursor:pointer;text-align:center;transition:.3s}
-.speed-btn.on{border-color:#2979ff;background:rgba(41,121,255,.08)}
-.sbn{font-size:.75rem;font-weight:700}
-.sbd{font-size:.6rem;color:#556}
+.loader{text-align:center;padding:40px;color:#556}
+.spin{display:inline-block;width:30px;height:30px;border:3px solid rgba(0,200,83,.2);border-top-color:#00c853;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* Style tabs */
-.style-tabs{display:flex;gap:5px;margin:8px 0;overflow-x:auto}
-.style-tabs::-webkit-scrollbar{display:none}
-.stab{padding:7px 13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;cursor:pointer;font-size:.74rem;color:#667;white-space:nowrap;font-family:'Tajawal',sans-serif;transition:.3s;flex-shrink:0}
-.stab.on{background:rgba(41,121,255,.12);border-color:rgba(41,121,255,.3);color:#2979ff}
-
-/* Buttons */
-.br{display:flex;gap:7px;margin-top:11px}
-.bm{flex:1;padding:13px;border:none;border-radius:9px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:.3s}
-.bm:hover{transform:translateY(-2px)}
-.bm:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.bs{padding:13px 14px;background:rgba(255,255,255,.04);color:#889;border:1px solid rgba(255,255,255,.07);border-radius:9px;cursor:pointer}
-
-/* Preview Area */
-#previewArea{display:none;margin-top:12px;position:relative;border-radius:12px;overflow:hidden;background:#000;min-height:200px}
-#animatedImg{width:100%;display:block}
-.overlay-fx{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
-
-/* Download btn */
-.dl-btn{width:100%;padding:12px;background:linear-gradient(135deg,#00c853,#00e676);color:#000;border:none;border-radius:9px;font-weight:900;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:.9rem;margin-top:8px;transition:.3s}
-.dl-btn:hover{transform:translateY(-2px)}
-
-/* Examples */
-.ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.ex-card{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:10px}
-.ex-card:hover{border-color:rgba(41,121,255,.3);background:rgba(41,121,255,.05)}
-.ex-icon{font-size:1.8rem;flex-shrink:0}
-.ex-info .et{font-size:.78rem;font-weight:700;margin-bottom:2px}
-.ex-info .ed{font-size:.65rem;color:#556}
-
-/* CSS Animations */
-@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-15px) scale(1.02)}}
-@keyframes shake{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
-@keyframes pulse-scale{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-@keyframes slide-lr{0%,100%{transform:translateX(0)}50%{transform:translateX(20px)}}
-@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-25px)}60%{transform:translateY(-12px)}}
-@keyframes swing{0%,100%{transform:rotate(0deg) translateX(0)}25%{transform:rotate(5deg) translateX(10px)}75%{transform:rotate(-5deg) translateX(-10px)}}
-@keyframes zoom-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-@keyframes glitch{0%,100%{transform:translate(0)}20%{transform:translate(-3px,2px)}40%{transform:translate(3px,-2px)}60%{transform:translate(-2px,-3px)}80%{transform:translate(2px,3px)}}
-@keyframes neon-glow{0%,100%{filter:brightness(1) drop-shadow(0 0 5px #2979ff)}50%{filter:brightness(1.3) drop-shadow(0 0 20px #2979ff) drop-shadow(0 0 40px #7c4dff)}}
-@keyframes fire{0%,100%{filter:hue-rotate(0deg) brightness(1)}50%{filter:hue-rotate(30deg) brightness(1.3)}}
-@keyframes rainbow{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
-
-.anim-float{animation:float var(--spd,3s) ease-in-out infinite}
-.anim-shake{animation:shake var(--spd,0.5s) ease-in-out infinite}
-.anim-pulse{animation:pulse-scale var(--spd,2s) ease-in-out infinite}
-.anim-slide{animation:slide-lr var(--spd,2s) ease-in-out infinite}
-.anim-spin{animation:spin-slow var(--spd,4s) linear infinite}
-.anim-bounce{animation:bounce var(--spd,1s) ease-in-out infinite}
-.anim-swing{animation:swing var(--spd,2s) ease-in-out infinite}
-.anim-zoom{animation:zoom-pulse var(--spd,2s) ease-in-out infinite}
-.anim-glitch{animation:glitch var(--spd,0.3s) steps(1) infinite}
-.anim-neon{animation:neon-glow var(--spd,2s) ease-in-out infinite}
-.anim-fire{animation:fire var(--spd,1s) ease-in-out infinite}
-.anim-rainbow{animation:rainbow var(--spd,3s) linear infinite}
+.error-box{text-align:center;padding:30px;color:#556}
 
 footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px solid rgba(255,255,255,.07);margin-top:10px}
 </style>
@@ -125,233 +75,160 @@ footer{text-align:center;padding:16px;color:#334;font-size:.7rem;border-top:1px 
 
 <nav>
   <div class="logo">
-    <div class="logo-icon">🎬</div>
-    <div class="logo-text">أثير Motion</div>
+    <div class="logo-icon">⚽</div>
+    <div class="logo-text">كورة لايف</div>
   </div>
-  <div style="display:flex;gap:6px">
-    <a href="https://athir-fun.vercel.app" style="padding:6px 10px;background:rgba(255,64,129,.1);border:1px solid rgba(255,64,129,.2);color:#ff4081;border-radius:7px;text-decoration:none;font-size:.72rem">😂 Fun</a>
-    <a href="https://athir-live.vercel.app" style="padding:6px 10px;background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.2);color:#7c4dff;border-radius:7px;text-decoration:none;font-size:.72rem">📡 Live</a>
-  </div>
+  <div class="live-badge"><div class="live-dot"></div>مباشر</div>
 </nav>
 
-<div class="hero">
-  <h1>حرّك <span class="grad">صورتك</span> 🎬</h1>
-  <p class="hero-sub">أضف تأثيرات حركة احترافية لأي صورة — مجاناً 100%</p>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7535354659763641" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<div class="tabs">
+  <button class="tab on" onclick="showTab('today',this)">📅 اليوم</button>
+  <button class="tab" onclick="showTab('live',this)">🔴 مباشر</button>
+  <button class="tab" onclick="showTab('pl',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 بريميرليغ</button>
+  <button class="tab" onclick="showTab('laliga',this)">🇪🇸 لاليغا</button>
+  <button class="tab" onclick="showTab('ucl',this)">🏆 أبطال أوروبا</button>
+  <button class="tab" onclick="showTab('bundesliga',this)">🇩🇪 بوندسليغا</button>
 </div>
+
+<div id="pnl-today" class="pnl on"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
+<div id="pnl-live" class="pnl"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
+<div id="pnl-pl" class="pnl"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
+<div id="pnl-laliga" class="pnl"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
+<div id="pnl-ucl" class="pnl"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
+<div id="pnl-bundesliga" class="pnl"><div class="loader"><div class="spin"></div><br>جاري التحميل...</div></div>
 
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7535354659763641" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 
-<div class="card">
-  <div class="ch"><div class="cdot" style="background:#2979ff;box-shadow:0 0 6px #2979ff"></div>📸 ارفع صورتك</div>
-  <div class="cb">
-    <div class="upload-area" id="uploadArea" onclick="document.getElementById('imgFile').click()">
-      <img id="previewImg" alt="معاينة">
-      <div id="uploadPlaceholder">
-        <div class="upload-icon">📷</div>
-        <div class="upload-txt">اضغط لرفع صورة<br><span style="font-size:.62rem;color:#334">JPG • PNG • WEBP</span></div>
-      </div>
-    </div>
-    <input type="file" id="imgFile" accept="image/*" onchange="handleImg(this)">
-  </div>
-</div>
-
-<div class="card" id="effectsCard" style="display:none">
-  <div class="ch"><div class="cdot" style="background:#7c4dff;box-shadow:0 0 6px #7c4dff"></div>✨ اختر التأثير</div>
-  <div class="cb">
-
-    <div class="lbl">🎨 النوع</div>
-    <div class="style-tabs">
-      <button class="stab on" onclick="loadEffects('motion')">🏃 حركة</button>
-      <button class="stab" onclick="loadEffects('kids')">🧒 أطفال</button>
-      <button class="stab" onclick="loadEffects('special')">⚡ خاص</button>
-      <button class="stab" onclick="loadEffects('cinematic')">🎬 سينمائي</button>
-    </div>
-
-    <div class="fx-grid" id="fxGrid"></div>
-
-    <div class="lbl">⚡ السرعة</div>
-    <div class="speed-btns">
-      <div class="speed-btn" onclick="pickSpeed(this,4)"><div class="sbn">🐢 بطيء</div><div class="sbd">4 ثانية</div></div>
-      <div class="speed-btn on" onclick="pickSpeed(this,2)"><div class="sbn">⚡ عادي</div><div class="sbd">2 ثانية</div></div>
-      <div class="speed-btn" onclick="pickSpeed(this,0.8)"><div class="sbn">🚀 سريع</div><div class="sbd">0.8 ثانية</div></div>
-    </div>
-
-    <div class="br">
-      <button class="bm" style="background:linear-gradient(135deg,#1a44bb,#7c4dff)" onclick="applyEffect()" id="applyBtn">✨ تطبيق التأثير</button>
-      <button class="bs" onclick="resetEffect()">↩️</button>
-    </div>
-
-    <div id="previewArea">
-      <img id="animatedImg" alt="متحرك">
-      <button class="dl-btn" onclick="captureAndDownload()">📥 تحميل كـ GIF/صورة</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- Examples -->
-<div class="card">
-  <div class="ch"><div class="cdot" style="background:#ffd700;box-shadow:0 0 6px #ffd700"></div>💡 جرب بصور جاهزة</div>
-  <div class="cb">
-    <div class="ex-grid">
-      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cute%20anime%20girl%20portrait?width=400&height=400&nologo=true&seed=1')">
-        <div class="ex-icon">✨</div>
-        <div class="ex-info"><div class="et">أنمي</div><div class="ed">فتاة أنمي</div></div>
-      </div>
-      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cartoon%20superhero%20child?width=400&height=400&nologo=true&seed=2')">
-        <div class="ex-icon">🦸</div>
-        <div class="ex-info"><div class="et">بطل أطفال</div><div class="ed">شخصية كرتونية</div></div>
-      </div>
-      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/cute%20robot%20character?width=400&height=400&nologo=true&seed=3')">
-        <div class="ex-icon">🤖</div>
-        <div class="ex-info"><div class="et">روبوت</div><div class="ed">شخصية آلية</div></div>
-      </div>
-      <div class="ex-card" onclick="useExample('https://image.pollinations.ai/prompt/fantasy%20warrior%20portrait?width=400&height=400&nologo=true&seed=4')">
-        <div class="ex-icon">⚔️</div>
-        <div class="ex-info"><div class="et">محارب</div><div class="ed">شخصية خيالية</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7535354659763641" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-
-<div style="text-align:center;padding:12px;background:rgba(255,0,0,.04);border:1px solid rgba(255,0,0,.1);border-radius:10px;margin:12px 0">
-  <span style="color:#ff4444;font-size:.8rem;font-weight:700">🎬 تابع قناتنا!</span>
-  <a href="https://youtube.com/@al-u6j4s" target="_blank" style="margin-right:10px;padding:6px 12px;background:#f00;color:#fff;border-radius:7px;text-decoration:none;font-size:.72rem;font-weight:700">▶️ اشترك</a>
-</div>
-
-<footer>أثير Motion © 2026</footer>
+<footer>⚽ كورة لايف © 2026 — نتائج مباشرة</footer>
 </div>
 
 <script>
-const effects = {
-  motion: [
-    {icon:'🌊',name:'طفو',desc:'يطفو لأعلى',cls:'anim-float',c:'#2979ff'},
-    {icon:'🤸',name:'ارتداد',desc:'يقفز',cls:'anim-bounce',c:'#ff6d00'},
-    {icon:'💫',name:'تأرجح',desc:'يتأرجح',cls:'anim-swing',c:'#7c4dff'},
-    {icon:'↔️',name:'انزلاق',desc:'يتحرك جانباً',cls:'anim-slide',c:'#00e5ff'},
-    {icon:'🔄',name:'دوران',desc:'يدور ببطء',cls:'anim-spin',c:'#00e676'},
-    {icon:'💗',name:'نبضة',desc:'يكبر وينكمش',cls:'anim-pulse',c:'#ff4081'},
-  ],
-  kids: [
-    {icon:'🎈',name:'بالون',desc:'طفو مرح',cls:'anim-float',c:'#ff4081'},
-    {icon:'⭐',name:'نجمة',desc:'تلمع وتكبر',cls:'anim-zoom',c:'#ffd700'},
-    {icon:'🌈',name:'قوس قزح',desc:'ألوان متغيرة',cls:'anim-rainbow',c:'#ff6d00'},
-    {icon:'🐰',name:'أرنب',desc:'يقفز مرح',cls:'anim-bounce',c:'#ff4081'},
-    {icon:'🎠',name:'دوامة',desc:'دوران مرح',cls:'anim-spin',c:'#7c4dff'},
-    {icon:'🤣',name:'ارتعاش',desc:'يهتز بمرح',cls:'anim-shake',c:'#ff6d00'},
-  ],
-  special: [
-    {icon:'⚡',name:'غليتش',desc:'تأثير خلل',cls:'anim-glitch',c:'#ff4081'},
-    {icon:'💡',name:'نيون',desc:'يضيء بنيون',cls:'anim-neon',c:'#2979ff'},
-    {icon:'🔥',name:'ناري',desc:'ألوان نارية',cls:'anim-fire',c:'#ff6d00'},
-    {icon:'🌈',name:'راديوس',desc:'ألوان قوس',cls:'anim-rainbow',c:'#7c4dff'},
-    {icon:'🔍',name:'تكبير',desc:'يكبر وينكمش',cls:'anim-zoom',c:'#00e5ff'},
-    {icon:'💥',name:'صدمة',desc:'اهتزاز سريع',cls:'anim-shake',c:'#ff4081'},
-  ],
-  cinematic: [
-    {icon:'🎬',name:'سينما',desc:'طفو سينمائي',cls:'anim-float',c:'#ffd700'},
-    {icon:'🌊',name:'موجة',desc:'حركة ناعمة',cls:'anim-swing',c:'#2979ff'},
-    {icon:'✨',name:'توهج',desc:'ضوء نيون',cls:'anim-neon',c:'#7c4dff'},
-    {icon:'🎭',name:'درامي',desc:'تأرجح درامي',cls:'anim-pulse',c:'#ff4081'},
-    {icon:'🌀',name:'دوامة',desc:'دوران بطيء',cls:'anim-spin',c:'#00e676'},
-    {icon:'💫',name:'نجمة',desc:'تألق متكرر',cls:'anim-zoom',c:'#ffd700'},
-  ]
+const leagues={
+  pl:{id:2021,name:'بريميرليغ',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  laliga:{id:2014,name:'لاليغا',flag:'🇪🇸'},
+  ucl:{id:2001,name:'أبطال أوروبا',flag:'🏆'},
+  bundesliga:{id:2002,name:'بوندسليغا',flag:'🇩🇪'},
+  seriea:{id:2019,name:'سيريا A',flag:'🇮🇹'},
+  ligue1:{id:2015,name:'ليغ 1',flag:'🇫🇷'}
 };
 
-let selEffect=effects.motion[0];
-let speed=2;
-let imgSrc=null;
+const loaded={};
 
-function loadEffects(pack){
-  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));
-  event.target.classList.add('on');
-  const grid=document.getElementById('fxGrid');
-  grid.innerHTML='';
-  effects[pack].forEach((e,i)=>{
-    const div=document.createElement('div');
-    div.className='fx-card'+(i===0?' on':'');
-    div.style.setProperty('--c',e.c);
-    div.innerHTML=`<div class="fxi">${e.icon}</div><div class="fxn">${e.name}</div><div class="fxd">${e.desc}</div>`;
-    div.onclick=()=>{
-      document.querySelectorAll('.fx-card').forEach(x=>x.classList.remove('on'));
-      div.classList.add('on');
-      selEffect=e;
-    };
-    grid.appendChild(div);
-  });
-  selEffect=effects[pack][0];
-}
-
-function pickSpeed(el,s){
-  document.querySelectorAll('.speed-btn').forEach(e=>e.classList.remove('on'));
+function showTab(n,el){
+  document.querySelectorAll('.pnl').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('pnl-'+n).classList.add('on');
   el.classList.add('on');
-  speed=s;
+  if(!loaded[n])loadData(n);
 }
 
-function handleImg(input){
-  const file=input.files[0];
-  if(!file)return;
-  const reader=new FileReader();
-  reader.onload=e=>{
-    imgSrc=e.target.result;
-    showPreview(imgSrc);
-  };
-  reader.readAsDataURL(file);
+async function loadData(tab){
+  loaded[tab]=true;
+  const pnl=document.getElementById('pnl-'+tab);
+
+  try{
+    let data;
+    if(tab==='today'){
+      const today=new Date().toISOString().split('T')[0];
+      const r=await fetch(`/api/football?endpoint=matches?dateFrom=${today}&dateTo=${today}`);
+      data=await r.json();
+      pnl.innerHTML=renderMatches(data.matches||[]);
+    }else if(tab==='live'){
+      const r=await fetch('/api/football?endpoint=matches?status=IN_PLAY,PAUSED');
+      data=await r.json();
+      const matches=data.matches||[];
+      if(matches.length===0){
+        pnl.innerHTML='<div class="error-box">⚽ لا توجد مباريات مباشرة الآن</div>';
+      }else{
+        pnl.innerHTML=renderMatches(matches);
+      }
+    }else{
+      const lid=leagues[tab]?.id;
+      if(!lid)return;
+      const r=await fetch(`/api/football?endpoint=competitions/${lid}/matches?status=SCHEDULED,IN_PLAY,FINISHED&limit=20`);
+      data=await r.json();
+      pnl.innerHTML=renderMatches(data.matches||[]);
+    }
+  }catch(e){
+    pnl.innerHTML=`<div class="error-box">❌ خطأ في التحميل<br><small>${e.message}</small></div>`;
+  }
 }
 
-function showPreview(src){
-  imgSrc=src;
-  const img=document.getElementById('previewImg');
-  img.src=src;
-  img.style.display='block';
-  document.getElementById('uploadPlaceholder').style.display='none';
-  document.getElementById('effectsCard').style.display='block';
-  loadEffects('motion');
-  document.getElementById('effectsCard').scrollIntoView({behavior:'smooth'});
+function renderMatches(matches){
+  if(!matches||matches.length===0) return '<div class="error-box">⚽ لا توجد مباريات</div>';
+
+  const grouped={};
+  matches.forEach(m=>{
+    const comp=m.competition?.name||'دوري';
+    if(!grouped[comp])grouped[comp]=[];
+    grouped[comp].push(m);
+  });
+
+  let html='';
+  for(const [comp,ms] of Object.entries(grouped)){
+    html+=`<div class="league-header"><div class="league-flag">⚽</div><div class="league-name">${comp}</div><div class="league-count">${ms.length} مباراة</div></div>`;
+    ms.forEach(m=>{
+      const status=getStatus(m);
+      const home=m.homeTeam?.shortName||m.homeTeam?.name||'الفريق المحلي';
+      const away=m.awayTeam?.shortName||m.awayTeam?.name||'الفريق الضيف';
+      const hScore=m.score?.fullTime?.home??m.score?.halfTime?.home??'-';
+      const aScore=m.score?.fullTime?.away??m.score?.halfTime?.away??'-';
+      const time=new Date(m.utcDate).toLocaleTimeString('ar',{hour:'2-digit',minute:'2-digit'});
+
+      html+=`
+      <div class="match-card">
+        <div class="match-time">
+          🕐 ${time}
+          <span class="${status.cls}">${status.txt}</span>
+        </div>
+        <div class="match-teams">
+          <div class="team">
+            <div class="team-logo">🏠</div>
+            <div class="team-name">${home}</div>
+          </div>
+          <div class="score">
+            ${m.status==='SCHEDULED'?
+              '<div class="score-vs">vs</div>':
+              `<div class="score-num">${hScore}</div><div class="score-sep">-</div><div class="score-num">${aScore}</div>`
+            }
+          </div>
+          <div class="team">
+            <div class="team-logo">✈️</div>
+            <div class="team-name">${away}</div>
+          </div>
+        </div>
+      </div>`;
+    });
+  }
+  return html;
 }
 
-function applyEffect(){
-  if(!imgSrc){alert('ارفع صورة أولاً!');return;}
-  const area=document.getElementById('previewArea');
-  const aImg=document.getElementById('animatedImg');
-  aImg.src=imgSrc;
-  aImg.className=selEffect.cls;
-  aImg.style.setProperty('--spd',speed+'s');
-  area.style.display='block';
-  area.scrollIntoView({behavior:'smooth'});
+function getStatus(m){
+  switch(m.status){
+    case 'IN_PLAY':return{cls:'match-live',txt:'🔴 مباشر'};
+    case 'PAUSED':return{cls:'match-live',txt:'⏸️ استراحة'};
+    case 'FINISHED':return{cls:'match-finished',txt:'✅ انتهت'};
+    case 'SCHEDULED':return{cls:'match-scheduled',txt:'🕐 قادمة'};
+    default:return{cls:'match-finished',txt:m.status};
+  }
 }
 
-function resetEffect(){
-  const aImg=document.getElementById('animatedImg');
-  aImg.className='';
-  document.getElementById('previewArea').style.display='none';
-}
+// Load today on start
+loadData('today');
 
-function useExample(url){
-  const img=document.getElementById('previewImg');
-  img.src=url;
-  img.style.display='block';
-  imgSrc=url;
-  document.getElementById('uploadPlaceholder').style.display='none';
-  document.getElementById('effectsCard').style.display='block';
-  loadEffects('motion');
-  document.getElementById('effectsCard').scrollIntoView({behavior:'smooth'});
-}
-
-async function captureAndDownload(){
-  const img=document.getElementById('animatedImg');
-  const a=document.createElement('a');
-  a.href=img.src;
-  a.download='athir-motion.jpg';
-  a.click();
-  alert('💡 لتحميل كـ GIF استخدم تطبيق Screen Recorder على هاتفك!');
-}
-
-loadEffects('motion');
+// Auto refresh every 60 seconds
+setInterval(()=>{
+  const active=document.querySelector('.tab.on');
+  const tab=active?.onclick?.toString().match(/'(\w+)'/)?.[1];
+  if(tab){
+    loaded[tab]=false;
+    loadData(tab);
+  }
+},60000);
 </script>
 </body>
 </html>
