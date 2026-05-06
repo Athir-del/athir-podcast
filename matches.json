@@ -297,26 +297,26 @@
                 "currentMatchday": 4,
                 "winner": null
             },
-            "id": 557090,
+            "id": 557114,
             "utcDate": "2026-05-06T22:00:00Z",
             "status": "TIMED",
             "matchday": 4,
             "stage": "GROUP_STAGE",
-            "group": "GROUP_A",
-            "lastUpdated": "2026-04-30T01:32:03Z",
+            "group": "GROUP_C",
+            "lastUpdated": "2026-03-23T03:59:21Z",
             "homeTeam": {
-                "id": 5683,
-                "name": "Cusco FC",
-                "shortName": "Cusco",
-                "tla": "CUS",
-                "crest": "https://crests.football-data.org/5683.png"
+                "id": 5170,
+                "name": "Deportivo La Guaira FC",
+                "shortName": "La Guaira",
+                "tla": "DLG",
+                "crest": "https://crests.football-data.org/5170.png"
             },
             "awayTeam": {
-                "id": 2051,
-                "name": "Estudiantes de La Plata",
-                "shortName": "Estudiantes LP",
-                "tla": "EST",
-                "crest": "https://crests.football-data.org/2051.png"
+                "id": 4261,
+                "name": "Club Bolívar",
+                "shortName": "Club Bolívar",
+                "tla": "BOL",
+                "crest": "https://crests.football-data.org/4261.png"
             },
             "score": {
                 "winner": null,
@@ -356,26 +356,26 @@
                 "currentMatchday": 4,
                 "winner": null
             },
-            "id": 557114,
+            "id": 557090,
             "utcDate": "2026-05-06T22:00:00Z",
             "status": "TIMED",
             "matchday": 4,
             "stage": "GROUP_STAGE",
-            "group": "GROUP_C",
-            "lastUpdated": "2026-03-23T03:59:21Z",
+            "group": "GROUP_A",
+            "lastUpdated": "2026-04-30T01:32:03Z",
             "homeTeam": {
-                "id": 5170,
-                "name": "Deportivo La Guaira FC",
-                "shortName": "La Guaira",
-                "tla": "DLG",
-                "crest": "https://crests.football-data.org/5170.png"
+                "id": 5683,
+                "name": "Cusco FC",
+                "shortName": "Cusco",
+                "tla": "CUS",
+                "crest": "https://crests.football-data.org/5683.png"
             },
             "awayTeam": {
-                "id": 4261,
-                "name": "Club Bolívar",
-                "shortName": "Club Bolívar",
-                "tla": "BOL",
-                "crest": "https://crests.football-data.org/4261.png"
+                "id": 2051,
+                "name": "Estudiantes de La Plata",
+                "shortName": "Estudiantes LP",
+                "tla": "EST",
+                "crest": "https://crests.football-data.org/2051.png"
             },
             "score": {
                 "winner": null,
