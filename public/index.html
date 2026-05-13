@@ -13,10 +13,8 @@
     </div>
 
     <div class="video-card">
-        <!-- مربع كتابة السكربت -->
         <textarea id="script-text" placeholder="اكتب السكربت هنا..." rows="4" style="width:90%; padding:10px; border-radius:10px; border:none; margin-bottom:10px;"></textarea>
         
-        <!-- قائمة اختيار الصوت -->
         <select id="voice-select" style="width:95%; padding:10px; border-radius:10px; margin-bottom:15px; background:#1a1a3a; color:white;">
             <option value="ar-SA-HamedNeural">حامد (رجل - فخم)</option>
             <option value="ar-EG-SalmaNeural">سلمى (أنثى - ناعم)</option>
@@ -24,22 +22,19 @@
             <option value="ar-SY-AmanyNeural">أماني (أنثى - هادئ)</option>
         </select>
 
-        <button class="btn-tool" style="width:100%; background:#4facfe;" onclick="sendToTermux()">🚀 تحديث وإنتاج الفيديو</button>
-    </div>
-
-    <div class="video-card" style="margin-top:20px;">
-        <h3>المعاينة الحالية:</h3>
-        <video controls width="100%">
-            <source src="agia_final_video.mp4" type="video/mp4">
-        </video>
+        <button class="btn-tool" style="width:100%; background:#4facfe;" onclick="updateTask()">🚀 تحديث وإنتاج الفيديو</button>
+        <p id="status" style="color: #4facfe; margin-top: 10px;"></p>
     </div>
 
     <script>
-        function sendToTermux() {
+        function updateTask() {
             const text = document.getElementById('script-text').value;
             const voice = document.getElementById('voice-select').value;
-            alert("تم إرسال السكربت بنجاح! يرجى تشغيل أمر 'agia' في Termux لمعالجة الطلب.");
-            console.log("Text:", text, "Voice:", voice);
+            document.getElementById('status').innerText = "تم حفظ الإعدادات! بانتظار تشغيل 'agia' في Termux...";
+            
+            // هنا سيتم طباعة القيم في Console، في المرحلة الاحترافية سنربطها بـ API
+            console.log("Task Saved:", { text, voice });
+            alert("تم تحديث السكربت محلياً. يرجى كتابة 'agia' في هاتفك الآن.");
         }
     </script>
 </body>
