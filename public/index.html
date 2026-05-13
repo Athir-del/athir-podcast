@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أثير AI | AGia</title>
+    <title>لوحة تحكم AGia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header-container">
-        <img src="Ag.png" class="logo-img" alt="AGia Logo" onerror="this.src='https://via.placeholder.com/100'">
-        <h1>أنشئ فيديوهاتك بالذكاء الاصطناعي</h1>
+        <img src="Ag.png" class="logo-img" alt="AGia Logo">
+        <h1>لوحة تحكم AGia الذكية</h1>
     </div>
 
     <div class="video-card">
-        <h3 style="margin-top:0;">🎬 أحدث إنتاجات AGia:</h3>
-        <video id="main-video" controls playsinline preload="auto" width="100%" poster="Ag.png">
+        <!-- مربع كتابة السكربت -->
+        <textarea id="script-text" placeholder="اكتب السكربت هنا..." rows="4" style="width:90%; padding:10px; border-radius:10px; border:none; margin-bottom:10px;"></textarea>
+        
+        <!-- قائمة اختيار الصوت -->
+        <select id="voice-select" style="width:95%; padding:10px; border-radius:10px; margin-bottom:15px; background:#1a1a3a; color:white;">
+            <option value="ar-SA-HamedNeural">حامد (رجل - فخم)</option>
+            <option value="ar-EG-SalmaNeural">سلمى (أنثى - ناعم)</option>
+            <option value="ar-EG-ShakirNeural">شاكر (رجل - إخباري)</option>
+            <option value="ar-SY-AmanyNeural">أماني (أنثى - هادئ)</option>
+        </select>
+
+        <button class="btn-tool" style="width:100%; background:#4facfe;" onclick="sendToTermux()">🚀 تحديث وإنتاج الفيديو</button>
+    </div>
+
+    <div class="video-card" style="margin-top:20px;">
+        <h3>المعاينة الحالية:</h3>
+        <video controls width="100%">
             <source src="agia_final_video.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
         </video>
     </div>
 
-    <div class="grid-container">
-        <button class="btn-tool" onclick="alert('جاري تشغيل محرك الصور...')">🎨 صور</button>
-        <button class="btn-tool" onclick="alert('جاري معالجة الصوت...')">🎙️ صوت</button>
-        <button class="btn-tool" onclick="alert('بدء التحريك الذكي...')">✨ تحريك</button>
-        <button class="btn-tool" onclick="location.reload()">🎬 تحديث الفيديو</button>
-    </div>
+    <script>
+        function sendToTermux() {
+            const text = document.getElementById('script-text').value;
+            const voice = document.getElementById('voice-select').value;
+            alert("تم إرسال السكربت بنجاح! يرجى تشغيل أمر 'agia' في Termux لمعالجة الطلب.");
+            console.log("Text:", text, "Voice:", voice);
+        }
+    </script>
 </body>
 </html>
