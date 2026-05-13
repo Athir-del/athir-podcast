@@ -132,3 +132,15 @@ loadNews();setInterval(loadNews,600000);
 </script>
 </body>
 </html>
+<script>
+// تحديث التيكر بأخبار ثابتة ريثما نحل CORS
+var news = [
+  "ريال مدريد يستعد لنهائي دوري الأبطال",
+  "محمد صلاح يسجل هدفاً رائعاً في الدوري الإنجليزي", 
+  "برشلونة يتصدر الدوري الإسباني",
+  "مانشستر سيتي يتأهل لنصف النهائي",
+  "رونالدو يحطم رقماً قياسياً جديداً"
+];
+var t = news.map(n=>'<span class="ticker-item">'+n+'</span>').join('');
+document.getElementById('ticker').innerHTML = t+t;
+</script>
