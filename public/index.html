@@ -118,7 +118,7 @@ function updateTime(){var n=new Date(),h=n.getHours().toString().padStart(2,'0')
 updateTime();setInterval(updateTime,60000);
 async function loadNews(){
 try{
-var r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=4');
+var r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.skysports.com/rss/12040&count=4');
 var d=await r.json();
 if(d.items&&d.items.length>0){
 document.getElementById('heroTitle').textContent=d.items[0].title;
