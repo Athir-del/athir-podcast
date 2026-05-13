@@ -8,22 +8,23 @@
 </head>
 <body>
     <div class="header-container">
-        <img src="Ag.png" class="logo-img" alt="AGia Logo">
+        <img src="Ag.png" class="logo-img" alt="AGia Logo" onerror="this.src='https://via.placeholder.com/100'">
         <h1>أنشئ فيديوهاتك بالذكاء الاصطناعي</h1>
     </div>
 
     <div class="video-card">
         <h3 style="margin-top:0;">🎬 أحدث إنتاجات AGia:</h3>
-        <video controls width="100%" poster="Ag.png" style="border-radius:10px;">
+        <video id="main-video" controls width="100%" poster="Ag.png">
             <source src="agia_final_video.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
         </video>
     </div>
 
     <div class="grid-container">
-        <button class="btn-tool">🎨 صور</button>
-        <button class="btn-tool">🎙️ صوت</button>
-        <button class="btn-tool">✨ تحريك</button>
-        <button class="btn-tool">🎬 فيديو AI</button>
+        <button class="btn-tool" onclick="alert('جاري تشغيل محرك الصور...')">🎨 صور</button>
+        <button class="btn-tool" onclick="alert('جاري معالجة الصوت...')">🎙️ صوت</button>
+        <button class="btn-tool" onclick="alert('بدء التحريك الذكي...')">✨ تحريك</button>
+        <button class="btn-tool" onclick="location.reload()">🎬 تحديث الفيديو</button>
     </div>
 </body>
 </html>
