@@ -3,144 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AGia Sport</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<title>AGia Sport — أخبار كرة القدم</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--green:#00ff87;--dark:#080c10;--card:#0d1219;--border:#1a2332;--text:#e8edf2;--muted:#5a6a7a;--accent:#ff4757}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--dark);color:var(--text);font-family:'Cairo',sans-serif;min-height:100vh}
-header{border-bottom:1px solid var(--border);padding:0 20px;position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.95);backdrop-filter:blur(12px)}
-.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
-.logo-text{font-family:'Tajawal',sans-serif;font-weight:900;font-size:20px}
-.logo-text span{color:var(--green)}
-.live-badge{display:flex;align-items:center;gap:6px;background:rgba(255,71,87,0.1);border:1px solid rgba(255,71,87,0.3);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700}
-.live-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.ticker-wrap{background:var(--green);overflow:hidden;height:36px;display:flex;align-items:center}
-.ticker-label{background:#00cc6a;color:#000;font-weight:900;font-size:12px;padding:0 16px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
-.ticker-track{display:flex;animation:ticker 30s linear infinite;white-space:nowrap}
-.ticker-item{color:#000;font-weight:700;font-size:13px;padding:0 40px}
-.ticker-item::before{content:'⚽ '}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-main{max-width:1100px;margin:0 auto;padding:30px 20px}
-.status-bar{background:rgba(0,255,135,0.05);border:1px solid rgba(0,255,135,0.1);border-radius:10px;padding:12px 18px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--green);margin-bottom:24px}
-.status-bar span{color:var(--muted)}
-.spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite;flex-shrink:0}
-@keyframes spin{to{transform:rotate(360deg)}}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.section-title{font-family:'Tajawal',sans-serif;font-weight:900;font-size:22px;display:flex;align-items:center;gap:10px}
-.section-title::before{content:'';width:4px;height:24px;background:var(--green);border-radius:2px;display:block}
-.refresh-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-family:'Cairo',sans-serif;font-size:13px;cursor:pointer}
-.refresh-btn:hover{border-color:var(--green);color:var(--green)}
-.hero-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;min-height:280px}
-.hero-video{position:relative;background:#000;overflow:hidden}
-.hero-video video{width:100%;height:100%;object-fit:cover}
-.play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.play-btn{width:56px;height:56px;background:rgba(0,255,135,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:#000}
-.hero-content{padding:28px;display:flex;flex-direction:column;justify-content:space-between}
-.news-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(0,255,135,0.1);color:var(--green);border:1px solid rgba(0,255,135,0.2);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:14px}
-.hero-title{font-family:'Tajawal',sans-serif;font-weight:900;font-size:20px;line-height:1.5;margin-bottom:12px}
-.hero-desc{color:var(--muted);font-size:14px;line-height:1.8}
-.hero-footer{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.source-badge{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
-.source-dot{width:8px;height:8px;background:var(--green);border-radius:50%}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
-.news-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all 0.25s}
-.news-card:hover{border-color:rgba(0,255,135,0.3);transform:translateY(-3px)}
-.card-tag{font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px}
-.card-title{font-family:'Tajawal',sans-serif;font-weight:700;font-size:15px;line-height:1.6;margin-bottom:12px}
-.card-footer{display:flex;align-items:center;justify-content:space-between}
-.card-source{font-size:12px;color:var(--muted)}
-.video-section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:30px}
-.video-section h2{font-family:'Tajawal',sans-serif;font-weight:900;font-size:18px;margin-bottom:16px}
-.video-section h2 span{color:var(--green)}
-.video-player{width:100%;border-radius:10px;background:#000}
-footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center}
-.footer-logo{font-family:'Tajawal',sans-serif;font-weight:900;font-size:18px;margin-bottom:8px}
-.footer-logo span{color:var(--green)}
-.footer-text{font-size:13px;color:var(--muted)}
-@media(max-width:768px){.hero-card{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr}.hero-video{min-height:200px}}
+body{background:#080c10;color:#e8edf2;font-family:'Tajawal',sans-serif;min-height:100vh}
+header{background:rgba(8,12,16,0.97);border-bottom:1px solid #1a2332;padding:0 16px;position:sticky;top:0;z-index:99}
+.nav{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-size:22px;font-weight:900;color:#fff}.logo span{color:#00ff87}
+.live{display:flex;align-items:center;gap:6px;background:rgba(255,71,87,0.12);border:1px solid rgba(255,71,87,0.3);color:#ff4757;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.dot{width:7px;height:7px;background:#ff4757;border-radius:50%;animation:bl 1.2s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.ticker{background:#00ff87;height:34px;display:flex;align-items:center;overflow:hidden}
+.tlabel{background:#00cc6a;color:#000;font-weight:900;font-size:12px;padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0}
+.ttrack{display:flex;animation:tk 35s linear infinite;white-space:nowrap}
+.titem{color:#000;font-weight:700;font-size:13px;padding:0 32px}
+.titem::before{content:'⚽ '}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+main{max-width:900px;margin:0 auto;padding:20px 16px}
+.status{background:rgba(0,255,135,0.06);border:1px solid rgba(0,255,135,0.15);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:10px;font-size:13px;color:#00ff87;margin-bottom:22px}
+.status span{color:#5a6a7a}
+.spin{width:16px;height:16px;border:2px solid #1a2332;border-top-color:#00ff87;border-radius:50%;animation:sp 0.8s linear infinite;flex-shrink:0}
+@keyframes sp{to{transform:rotate(360deg)}}
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-ttl{font-size:20px;font-weight:900;display:flex;align-items:center;gap:8px}
+.sec-ttl::before{content:'';width:4px;height:22px;background:#00ff87;border-radius:2px;display:block}
+.rbtn{background:transparent;border:1px solid #1a2332;color:#5a6a7a;padding:5px 12px;border-radius:8px;font-family:'Tajawal',sans-serif;font-size:13px;cursor:pointer}
+.rbtn:hover{border-color:#00ff87;color:#00ff87}
+.top-news{background:#0d1219;border:1px solid #1a2332;border-radius:14px;padding:20px;margin-bottom:20px}
+.top-tag{display:inline-block;background:rgba(0,255,135,0.1);color:#00ff87;border:1px solid rgba(0,255,135,0.2);padding:3px 12px;border-radius:16px;font-size:12px;font-weight:700;margin-bottom:12px}
+.top-title{font-size:20px;font-weight:900;line-height:1.6;margin-bottom:10px}
+.top-desc{color:#5a6a7a;font-size:14px;line-height:1.8;margin-bottom:14px}
+.top-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid #1a2332}
+.src{display:flex;align-items:center;gap:6px;font-size:13px;color:#5a6a7a}
+.sdot{width:7px;height:7px;background:#00ff87;border-radius:50%}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+.card{background:#0d1219;border:1px solid #1a2332;border-radius:12px;padding:16px;cursor:pointer;transition:all 0.2s;border-top:2px solid transparent}
+.card:hover{border-top-color:#00ff87;transform:translateY(-2px)}
+.ctag{font-size:11px;font-weight:700;color:#00ff87;margin-bottom:8px}
+.ctitle{font-size:15px;font-weight:700;line-height:1.6;margin-bottom:10px}
+.cfoot{font-size:12px;color:#5a6a7a}
+.vid-sec{background:#0d1219;border:1px solid #1a2332;border-radius:14px;padding:20px;margin-bottom:24px}
+.vid-ttl{font-size:17px;font-weight:900;margin-bottom:14px}
+.vid-ttl span{color:#00ff87}
+video{width:100%;border-radius:10px;background:#000;display:block}
+footer{border-top:1px solid #1a2332;padding:20px 16px;text-align:center;color:#5a6a7a;font-size:13px}
+footer strong{color:#00ff87}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-<div class="header-inner">
-<div class="logo"><div class="logo-icon">⚽</div><div class="logo-text"><span>AG</span>ia Sport</div></div>
-<div class="live-badge"><div class="live-dot"></div>مباشر</div>
+<div class="nav">
+<div class="logo"><span>AG</span>ia Sport</div>
+<div class="live"><div class="dot"></div>مباشر</div>
 </div>
 </header>
-<div class="ticker-wrap">
-<div class="ticker-label">⚡ عاجل</div>
-<div class="ticker-track" id="ticker">
-<span class="ticker-item">جاري تحميل آخر الأخبار</span>
-<span class="ticker-item">AGia Sport مصدرك الذكي لأخبار كرة القدم</span>
-<span class="ticker-item">جاري تحميل آخر الأخبار</span>
-<span class="ticker-item">AGia Sport مصدرك الذكي لأخبار كرة القدم</span>
+<div class="ticker">
+<div class="tlabel">⚡ عاجل</div>
+<div class="ttrack" id="ticker">
+<span class="titem">جاري تحميل آخر أخبار كرة القدم</span>
+<span class="titem">AGia Sport مصدرك الذكي</span>
+<span class="titem">جاري تحميل آخر أخبار كرة القدم</span>
+<span class="titem">AGia Sport مصدرك الذكي</span>
 </div>
 </div>
 <main>
-<div class="status-bar"><div class="spinner"></div>وكيل AGia نشط — <span>يجلب أحدث أخبار كرة القدم تلقائياً</span></div>
-<div class="section-header"><div class="section-title">الخبر الأبرز</div><button class="refresh-btn" onclick="location.reload()">🔄 تحديث</button></div>
-<div class="hero-card">
-<div class="hero-video">
-<video id="mainVideo" autoplay muted loop playsinline><source src="agia_final_video.mp4" type="video/mp4"></video>
-<div class="play-overlay" onclick="toggleVideo()"><div class="play-btn" id="playBtn">▶</div></div>
+<div class="status"><div class="spin"></div>وكيل AGia نشط — <span>يجلب أخبار كرة القدم تلقائياً</span></div>
+<div class="sec-hdr"><div class="sec-ttl">الخبر الأبرز</div><button class="rbtn" onclick="loadNews()">🔄 تحديث</button></div>
+<div class="top-news">
+<div class="top-tag">⚽ كرة القدم</div>
+<div class="top-title" id="topTitle">جاري التحميل...</div>
+<div class="top-desc" id="topDesc">وكيل AGia يجلب أحدث أخبار كرة القدم من المصادر العالمية.</div>
+<div class="top-foot"><div class="src"><div class="sdot"></div><span id="topSrc">AGia Sport</span></div><span id="topTime">الآن</span></div>
 </div>
-<div class="hero-content">
-<div>
-<div class="news-tag">⚽ كرة القدم</div>
-<div class="hero-title" id="heroTitle">جاري تحميل آخر الأخبار...</div>
-<div class="hero-desc" id="heroDesc">وكيل AGia يجلب أحدث أخبار كرة القدم من المصادر العالمية ويحولها لمحتوى عربي.</div>
+<div class="sec-hdr"><div class="sec-ttl">آخر الأخبار</div></div>
+<div class="grid" id="grid">
+<div class="card"><div class="ctag">⚽</div><div class="ctitle">جاري التحميل...</div></div>
+<div class="card"><div class="ctag">⚽</div><div class="ctitle">جاري التحميل...</div></div>
+<div class="card"><div class="ctag">⚽</div><div class="ctitle">جاري التحميل...</div></div>
+<div class="card"><div class="ctag">⚽</div><div class="ctitle">جاري التحميل...</div></div>
 </div>
-<div class="hero-footer">
-<div class="source-badge"><div class="source-dot"></div>AGia Sport</div>
-<div class="time-badge" id="heroTime">الآن</div>
-</div>
-</div>
-</div>
-<div class="section-header"><div class="section-title">آخر الأخبار</div></div>
-<div class="news-grid" id="newsGrid">
-<div class="news-card"><div class="card-tag">⚽ أوروبا</div><div class="card-title">جاري التحميل...</div><div class="card-footer"><div class="card-source">BBC Sport</div></div></div>
-<div class="news-card"><div class="card-tag">⚽ إنجلترا</div><div class="card-title">جاري التحميل...</div><div class="card-footer"><div class="card-source">Sky Sports</div></div></div>
-<div class="news-card"><div class="card-tag">⚽ ترندينج</div><div class="card-title">جاري التحميل...</div><div class="card-footer"><div class="card-source">AGia AI</div></div></div>
-</div>
-<div class="video-section">
-<h2>📹 آخر فيديو منتج بـ <span>AGia AI</span></h2>
-<video class="video-player" controls><source src="agia_final_video.mp4" type="video/mp4"></video>
+<div class="vid-sec">
+<div class="vid-ttl">📹 آخر فيديو بـ <span>AGia AI</span></div>
+<video controls><source src="agia_final_video.mp4" type="video/mp4"></video>
 </div>
 </main>
-<footer><div class="footer-logo"><span>AG</span>ia Sport</div><div class="footer-text">مصدرك الذكي لأخبار كرة القدم • مدعوم بالذكاء الاصطناعي</div></footer>
+<footer>جميع الحقوق محفوظة © <strong>AGia Sport</strong> 2025 — مدعوم بالذكاء الاصطناعي</footer>
 <script>
-function toggleVideo(){var v=document.getElementById('mainVideo'),b=document.getElementById('playBtn');v.paused?(v.play(),b.textContent='⏸'):(v.pause(),b.textContent='▶')}
-function updateTime(){var n=new Date(),h=n.getHours().toString().padStart(2,'0'),m=n.getMinutes().toString().padStart(2,'0');document.getElementById('heroTime').textContent=h+':'+m}
-updateTime();setInterval(updateTime,60000);
+var FEEDS=[
+'https://api.rss2json.com/v1/api.json?rss_url=https://www.skysports.com/rss/12040&count=6',
+'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=6'
+];
 async function loadNews(){
+for(var u of FEEDS){
 try{
-var r=await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.skysports.com/rss/12040&count=4');
+var r=await fetch(u);
 var d=await r.json();
 if(d.items&&d.items.length>0){
-document.getElementById('heroTitle').textContent=d.items[0].title;
-document.getElementById('heroDesc').textContent=(d.items[0].description||'').replace(/<[^>]+>/g,'').slice(0,150)+'...';
-var t=d.items.map(i=>'<span class="ticker-item">'+i.title+'</span>').join('');
-document.getElementById('ticker').innerHTML=t+t;
-var g=d.items.slice(1,4).map(i=>'<div class="news-card"><div class="card-tag">⚽ كرة القدم</div><div class="card-title">'+i.title+'</div><div class="card-footer"><div class="card-source">BBC Sport</div></div></div>').join('');
-document.getElementById('newsGrid').innerHTML=g;
-}}catch(e){console.log(e)}}
-loadNews();setInterval(loadNews,600000);
+var items=d.items;
+document.getElementById('topTitle').textContent=items[0].title;
+document.getElementById('topDesc').textContent=(items[0].description||'').replace(/<[^>]+>/g,'').slice(0,180)+'...';
+document.getElementById('topSrc').textContent=d.feed&&d.feed.title?d.feed.title:'AGia Sport';
+var n=new Date();
+document.getElementById('topTime').textContent=n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
+var tk=items.map(i=>'<span class="titem">'+i.title+'</span>').join('');
+document.getElementById('ticker').innerHTML=tk+tk;
+document.getElementById('grid').innerHTML=items.slice(1,5).map(i=>'<div class="card"><div class="ctag">⚽ كرة القدم</div><div class="ctitle">'+i.title+'</div><div class="cfoot">'+((i.pubDate||'').slice(0,10))+'</div></div>').join('');
+return;
+}}catch(e){}
+}
+}
+loadNews();
+setInterval(loadNews,600000);
 </script>
 </body>
 </html>
-<script>
-// تحديث التيكر بأخبار ثابتة ريثما نحل CORS
-var news = [
-  "ريال مدريد يستعد لنهائي دوري الأبطال",
-  "محمد صلاح يسجل هدفاً رائعاً في الدوري الإنجليزي", 
-  "برشلونة يتصدر الدوري الإسباني",
-  "مانشستر سيتي يتأهل لنصف النهائي",
-  "رونالدو يحطم رقماً قياسياً جديداً"
-];
-var t = news.map(n=>'<span class="ticker-item">'+n+'</span>').join('');
-document.getElementById('ticker').innerHTML = t+t;
-</script>
