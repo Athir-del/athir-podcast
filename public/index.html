@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أثير AI - منصة الفيديو الذكي</title>
+    <title>أثير AI | AGia</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #050510; color: white; font-family: 'Amiri', serif;">
-    <header style="text-align: center; padding: 20px;">
-        <img src="Ag.png" alt="AGia Logo" style="width: 80px; border-radius: 50%;">
-        <h1 style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">أنشئ فيديوهاتك بالذكاء الاصطناعي</h1>
-    </header>
+<body>
+    <div class="header-container">
+        <img src="Ag.png" class="logo-img" alt="AGia Logo">
+        <h1>أنشئ فيديوهاتك بالذكاء الاصطناعي</h1>
+    </div>
 
-    <main style="padding: 20px;">
-        <!-- قسم عرض الفيديو الأخير من AGia -->
-        <section id="video-display" style="border: 2px solid #1a1a2e; border-radius: 15px; padding: 15px; background: #0f0f1e;">
-            <h2 style="font-size: 1.2rem;">🎬 أحدث إنتاجات AGia:</h2>
-            <video controls width="100%" style="border-radius: 10px;">
-                <source src="agia_final_video.mp4" type="video/mp4">
-            </video>
-        </section>
+    <div class="video-card">
+        <h3 style="margin-top:0;">🎬 أحدث إنتاجات AGia:</h3>
+        <video controls width="100%" poster="Ag.png" style="border-radius:10px;">
+            <source src="agia_final_video.mp4" type="video/mp4">
+        </video>
+    </div>
 
-        <!-- أدوات التحكم المستوحاة من الصورة 1000028255.jpg -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
-            <div style="background: #16213e; padding: 15px; border-radius: 10px; text-align: center;">🎨 صور</div>
-            <div style="background: #16213e; padding: 15px; border-radius: 10px; text-align: center;">🎙️ صوت</div>
-            <div style="background: #16213e; padding: 15px; border-radius: 10px; text-align: center;">✨ تحريك</div>
-            <div style="background: #16213e; padding: 15px; border-radius: 10px; text-align: center;">🎬 فيديو AI</div>
-        </div>
-    </main>
+    <div class="grid-container">
+        <button class="btn-tool">🎨 صور</button>
+        <button class="btn-tool">🎙️ صوت</button>
+        <button class="btn-tool">✨ تحريك</button>
+        <button class="btn-tool">🎬 فيديو AI</button>
+    </div>
 </body>
 </html>
