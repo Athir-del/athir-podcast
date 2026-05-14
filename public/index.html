@@ -87,56 +87,6 @@ footer strong{color:#00ff87}
 </main>
 <footer>جميع الحقوق محفوظة © <strong>AGia Sport</strong> 2025 — مدعوم بالذكاء الاصطناعي</footer>
 <script>
-var FEEDS=[
-'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=6&api_key=',
-'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=6'
-];
-async function loadNews(){
-for(var u of FEEDS){
-try{
-var r=await fetch(u);
-var d=await r.json();
-if(d.items&&d.items.length>0){
-var items=d.items;
-document.getElementById('topTitle').textContent=items[0].title;
-document.getElementById('topDesc').textContent=(items[0].description||'').replace(/<[^>]+>/g,'').slice(0,180)+'...';
-document.getElementById('topSrc').textContent=d.feed&&d.feed.title?d.feed.title:'AGia Sport';
-var n=new Date();
-document.getElementById('topTime').textContent=n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
-var tk=items.map(i=>'<span class="titem">'+i.title+'</span>').join('');
-document.getElementById('ticker').innerHTML=tk+tk;
-document.getElementById('grid').innerHTML=items.slice(1,5).map(i=>'<div class="card"><div class="ctag">⚽ كرة القدم</div><div class="ctitle">'+i.title+'</div><div class="cfoot">'+((i.pubDate||'').slice(0,10))+'</div></div>').join('');
-return;
-}}catch(e){}
-}
-}
-
-setInterval(loadNews,600000);
-</script>
-</body>
-</html>
-<script>
-// override loadNews
-async function loadNews(){
-  try{
-    var url='https://api.allorigins.win/get?url='+encodeURIComponent('https://www.skysports.com/rss/12040');
-    var r=await fetch(url);
-    var d=await r.json();
-    var parser=new DOMParser();
-    var xml=parser.parseFromString(d.contents,'text/xml');
-    var items=Array.from(xml.querySelectorAll('item')).slice(0,6);
-    if(items.length>0){
-      document.getElementById('topTitle').textContent=items[0].querySelector('title').textContent;
-      document.getElementById('topDesc').textContent=items[0].querySelector('description').textContent.replace(/<[^>]+>/g,'').slice(0,180)+'...';
-      var tk=items.map(i=>'<span class="titem">'+i.querySelector('title').textContent+'</span>').join('');
-      document.getElementById('ticker').innerHTML=tk+tk;
-      document.getElementById('grid').innerHTML=items.slice(1,5).map(i=>'<div class="card"><div class="ctag">⚽ كرة القدم</div><div class="ctitle">'+i.querySelector('title').textContent+'</div></div>').join('');
-    }
-  }catch(e){console.log(e)}
-}
-
-</script>
-<script>
 fetch('news.json')
 .then(r=>r.json())
 .then(news=>{
@@ -149,3 +99,5 @@ fetch('news.json')
   }
 });
 </script>
+</body>
+</html>
