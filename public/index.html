@@ -88,7 +88,7 @@ footer strong{color:#00ff87}
 <footer>جميع الحقوق محفوظة © <strong>AGia Sport</strong> 2025 — مدعوم بالذكاء الاصطناعي</footer>
 <script>
 var FEEDS=[
-'https://api.rss2json.com/v1/api.json?rss_url=https://www.skysports.com/rss/12040&count=6',
+'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=6&api_key=',
 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml&count=6'
 ];
 async function loadNews(){
@@ -115,3 +115,24 @@ setInterval(loadNews,600000);
 </script>
 </body>
 </html>
+<script>
+// override loadNews
+async function loadNews(){
+  try{
+    var url='https://api.allorigins.win/get?url='+encodeURIComponent('https://www.skysports.com/rss/12040');
+    var r=await fetch(url);
+    var d=await r.json();
+    var parser=new DOMParser();
+    var xml=parser.parseFromString(d.contents,'text/xml');
+    var items=Array.from(xml.querySelectorAll('item')).slice(0,6);
+    if(items.length>0){
+      document.getElementById('topTitle').textContent=items[0].querySelector('title').textContent;
+      document.getElementById('topDesc').textContent=items[0].querySelector('description').textContent.replace(/<[^>]+>/g,'').slice(0,180)+'...';
+      var tk=items.map(i=>'<span class="titem">'+i.querySelector('title').textContent+'</span>').join('');
+      document.getElementById('ticker').innerHTML=tk+tk;
+      document.getElementById('grid').innerHTML=items.slice(1,5).map(i=>'<div class="card"><div class="ctag">⚽ كرة القدم</div><div class="ctitle">'+i.querySelector('title').textContent+'</div></div>').join('');
+    }
+  }catch(e){console.log(e)}
+}
+loadNews();
+</script>
