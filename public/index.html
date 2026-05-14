@@ -110,7 +110,7 @@ return;
 }}catch(e){}
 }
 }
-loadNews();
+
 setInterval(loadNews,600000);
 </script>
 </body>
@@ -134,5 +134,18 @@ async function loadNews(){
     }
   }catch(e){console.log(e)}
 }
-loadNews();
+
+</script>
+<script>
+fetch('news.json')
+.then(r=>r.json())
+.then(news=>{
+  if(news.length>0){
+    document.getElementById('topTitle').textContent=news[0].title;
+    document.getElementById('topDesc').textContent='آخر أخبار كرة القدم من وكيل AGia الذكي';
+    var tk=news.map(i=>'<span class="titem">'+i.title+'</span>').join('');
+    document.getElementById('ticker').innerHTML=tk+tk;
+    document.getElementById('grid').innerHTML=news.slice(1).map(i=>'<div class="card"><div class="ctag">⚽ '+i.tag+'</div><div class="ctitle">'+i.title+'</div></div>').join('');
+  }
+});
 </script>
